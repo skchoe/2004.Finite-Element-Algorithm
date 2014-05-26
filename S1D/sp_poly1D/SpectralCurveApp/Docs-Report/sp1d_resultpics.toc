@@ -1,0 +1,3 @@
+\contentsline {section}{\numberline {1}Question 1: H-Convergence of Spectral Method}{1}
+\contentsline {section}{\numberline {2}Question 2: P-Convergence of Spectral Method}{1}
+\contentsline {section}{\numberline {3}Question 3: Approximation of High order Polynomial}{1}

@@ -1,0 +1,35 @@
+
+Chapter 3 Expansion bases
+
+- Will be using Modal basis
+- Generalized Modal basis (triangular/tetrahedral domains)
+- No baricentric coordinate system(will use collapsed coordinate system)
+- Definition of \tilda \psi_pq(pqr)(\eta) with that of supper case a,b,c.
+- Quadrilateral <-> collaped : Nonlinear mapping - any problem?
+- More general product of L^2 orthogonal expansion 
+   \phi_(pq)(\xi_1, \xi_2) = \tilda \psi_p() \psi_pq() , why?
+- Comparision between Model/Orthogonal expansion.
+
+- In orthogonal expansion, the mass matrix is mainly diagonal 
+- In modified c^0 expansion, see stiffness matrix is mainly diagonal???
+
+Question list
+Testing code list
+
+
+
+
+implementation plan
+-Modified C^0 principal basis function
+ . Mass matrix
+ . Stiffness matrix
+
+
+Chapter 4 Multi-D formulations
+
+Question list
+Testing code list
+
+
+
+implementation plan

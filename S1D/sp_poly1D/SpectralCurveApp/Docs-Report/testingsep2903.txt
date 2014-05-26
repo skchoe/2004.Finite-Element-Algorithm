@@ -1,0 +1,11 @@
+TESTING
+ A. Error on global assembly module.
+    - Without global assembly : SpDiffab
+      order 11 on [0, 1e-10]
+
+
+
+    - With GA :
+
+      Order 11, 12
+      

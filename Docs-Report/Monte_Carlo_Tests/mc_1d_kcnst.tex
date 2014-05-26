@@ -1,0 +1,120 @@
+\documentclass[11pt,letterpaper]{article}
+
+% Vertical Lengths - Max 9.0
+\setlength{\voffset}{0in} \setlength{\topmargin}{.0in}
+\setlength{\headheight}{0in} \setlength{\topskip}{-2.2in}
+\setlength{\textheight}{9.0in} \setlength{\footskip}{-.0in}
+
+% Horizontal Lengths - Max 6.5
+\setlength{\hoffset}{0in}
+\setlength{\oddsidemargin}{-.2in}
+\setlength{\textwidth}{6.9in}
+\setlength{\evensidemargin}{-.2in}
+
+%\usepackage{fancyheadings}
+
+%\usepackage{url}
+\usepackage[]{epsfig,amsmath}[]
+
+%\pagestyle{headings}
+\pagestyle{plain}
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New definitions and commands
+\newtheorem{define}{Definition}[section]
+\newtheorem{theorem}[define]{Theorem}
+\newtheorem{question}[define]{Question}
+\newtheorem{problem}[define]{Problem}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Start of document body
+\begin{document}
+
+\title{{\bfseries Results of  Monte Carlo Test for 1-dimensional Spectral Polynomial Methods}}
+
+%\vfill
+\author{Seungkeol Choe}
+\renewcommand{\today}{Feb 12th, 2004}
+
+\maketitle
+
+\begin{abstract}
+In this document we write the result history for the Monte-Carlo experiment on 
+1-dimensional Spectral Polynomial Element methods. Throughout the updates, we try the simulation in various settings around the given Elliptic equation. 
+\end{abstract}
+
+%\tableofcontents
+%\listoffigures
+%\listoftables
+
+
+%\clearpage
+%----------------------------------------------------------------------
+
+The overall problem in 1-dimensional partial differential equation is given by
+\begin{problem}
+\begin{equation*}
+     \frac{d}{dx}\left[ \kappa(x)\frac{d}{dx}\right] u(x) = \sin(\pi x),
+\end{equation*}
+for all x in $[-1, 1]$.
+The boundary conditions are as follows:
+\begin{eqnarray}\label{bdycond}
+    u(a) &=& {\mathcal G}_D \qquad \mbox{ : Dirichlet Condition}\\
+    \frac{d}{dx}u(b) &=& 0\qquad \mbox{ : Neumann Condition}.
+\end{eqnarray}
+$\kappa(x)$ will be given in each experiment.
+\end{problem}
+
+\section {Result 1: Constant Case for $\kappa(x)$}
+
+The problem setting for this experiment is followed by this table:
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|l|l|} \hline
+Offset of Dirichlet Condition& 100 \\ \hline
+Number of iteration& 1000 \\ \hline
+$\kappa(x) $& 5 \\ \hline
+Sample Distribution& N(0,1) \\ \hline
+Standard Deviation of Sample & 0.9526 \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\clearpage
+
+\begin{figure}[h]
+\begin{center}
+\epsfig{file = MeanVarCrv.eps, height = 6.5cm}
+\epsfig{file = ErrToExactSol.eps, height = 6.5cm}
+\caption{\label{MeanVarCrv} (Left)Distribution of results by Monte Carlo Simulation, (Right) The error graph: Difference between Mean of Monte-Carlo Solutions and Exact solution}
+\end{center}
+\end{figure}
+
+By result, Figure \ref{MeanVarCrv} is showing the following information
+\begin{itemize}
+\item (Left Graph) 
+	\begin{itemize}
+	\item Mean of solutions(Blue line)
+	\item Upper bdy of standard deviation from Mean(Red line)
+	\item Lower bdy of standard deviation from Mean(Magenta line)
+	\item 2 Differences of Red/Magenta lines to Blue line are approximately equal to the half of standard deviation of samples.
+	\end{itemize}	
+
+\item (Right Graph)
+	\begin{itemize}
+        \item A graph of curve of difference between Mean of solutions and Exact solution.
+	\end{itemize}
+\item Total Eerror: $L^{\infty}$
+	\begin{itemize}
+        \item 1.3157
+	\end{itemize}
+\end{itemize}
+
+\section {Result 2: Heaviside Step Function Case for $\kappa(x)$}
+
+\section {Result 3: High Curved Smooth Function Case for $\kappa(x)$}
+
+
+\end{document}

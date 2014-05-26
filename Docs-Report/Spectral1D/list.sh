@@ -1,0 +1,9 @@
+dos2unix sp1d_all.tex sp1d_all.tex
+dos2unix sp1d_ch1.tex sp1d_ch1.tex
+dos2unix sp1d_ch3_1.tex sp1d_ch3_1.tex
+dos2unix sp1d_ch3_2.tex sp1d_ch3_2.tex
+dos2unix sp1d_chapdx.tex sp1d_chapdx.tex
+dos2unix sp1d_chbib.tex sp1d_chbib.tex
+dos2unix sp1d_res1.tex sp1d_res1.tex
+dos2unix sp1d_res2.tex sp1d_res2.tex
+dos2unix sp1d_resultpics.tex sp1d_resultpics.tex

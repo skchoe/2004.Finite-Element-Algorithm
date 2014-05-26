@@ -1,0 +1,275 @@
+
+
+\{ {\it  sp2d\_ch2ex.tex} \}
+
+\subsection{Example of the Method}
+
+In this section we look into the numerical method in practice.
+Let's think of the case:
+\begin{equation}
+N_r = 1, \;\;\;\; P = 2 \;\;\;\; N_\theta = 4,
+\end{equation}
+that is we have only one element in $R$-direction with order 2 and 4 modes in $\theta$-direction. In this case, we the local and global basis function for spectral polynomial method is identical.
+
+The differential equation
+\begin{eqnarray}
+- \left(\frac{\partial^2}{\partial r^2} + \frac{1}{r} \frac{\partial}{\partial r} + \frac{1}{r^2}\frac{\partial^2}{\partial \theta^2} \right) u(r,\theta) = f(r, \theta)  \\
+\end{eqnarray}
+is defined for  $(r, \theta) \in [a, b] \times (0, 2\pi]$ with the boundary condition:
+
+\begin{eqnarray}
+du(a,\theta) &=& g_1(\theta) \\
+\frac{\partial}{\partial r} u(b,\theta) &=& g_2(\theta)
+\end{eqnarray}
+
+We approximate the numerical solution of this using the 3 1st
+order basis functions:
+
+\begin{eqnarray}
+\psi_j(x) = \left \{
+    \begin{array}{ll}
+    \frac{1-\chi^{-1}(x)}{2} & j=0, \\
+    (\frac{1-\chi^{-1}(x)}{2})(\frac{1+\chi^{-1}(x)}{2})P_0^{1,1}(\chi^{-1}(x)) & j=1 \\
+    \frac{1+\chi^{-1}(x)}{2} & j=2. \\
+    \end{array} \right.
+ \end{eqnarray}
+
+where $\chi$ is a parametric linear mapping from $[-1, 1]$, to $[a, b]$.
+
+Since $P=2$, the total degree of freedom for each angle $\theta$ is $3$.
+We define the solution $u(r,\theta)$ to be the form:
+\begin{equation}
+u(r, \theta) = \sum_{j=0}^2 \sum_{k=-1}^2 \hat u_{j,k} \psi_j(r) e^{ik\theta}.
+\end{equation}
+
+%By the Trefthen's book, we assume
+%\begin{equation}
+%u(r, \theta) = \sum_{j=0}^4 \sum_{k=-2}^2 \tilde u_{j,k}^g \psi_j^g(r) e^{ik\theta}.
+%\end{equation}
+%where
+%\begin{eqnarray}
+%\tilde u_{j,k}^g = \left \{
+%    \begin{array}{ll}
+%    \hat u_{j,N/2}^g/2,  & k=-N/2, \\
+%    \hat u_{j,k}^g,      & -N/2+1 \le k \le N/2-1\\
+%   \hat u_{j,N/2}^g/2,  & k=N/2, \\
+%    \end{array} \right.
+% \end{eqnarray}
+To apply Dirichlet condition note that
+\begin{eqnarray}
+\psi_j(a) = \left \{
+    \begin{array}{ll}
+    1 & j = 0, \\
+    0 & j = 1, 2 \\
+    \end{array} \right.
+\end{eqnarray}
+
+So we have
+\begin{equation}
+u(a, \theta) = \sum_{k=-1}^2 \hat u_{0,k} \psi_0(a) e^{ik\theta}  = \sum_{k=-1}^2 \hat u_{0,k} e^{ik\theta}.
+\end{equation}
+
+We finally obtain these relationships:
+
+\begin{eqnarray}
+\begin{bmatrix}
+    g_1(\frac{\pi}{2}) \\
+    g_1(\pi) \\
+    g_1(\frac{3\pi}{2}) \\
+    g_1(2\pi) \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+    e^{i(-1)\frac{\pi}{2}} & e^{i(0)\frac{\pi}{2}} & e^{i(1)\frac{\pi}{2}} & e^{i(2)\frac{\pi}{2}} \\
+    e^{i(-1)\pi}           & e^{i(0)\pi}           & e^{i(1)\pi}           & e^{i(2)\pi} \\
+    e^{i(-1)\frac{3\pi}{2}} & e^{i(0)\frac{3\pi}{2}} & e^{i(1)\frac{3\pi}{2}} & e^{i(2)\frac{3\pi}{2}} \\
+    e^{i(-1)2\pi}           & e^{i(0)2\pi}           & e^{i(1)2\pi}           & e^{i(2)2\pi} \\
+\end{bmatrix}
+\begin{bmatrix}
+    \hat u_{0,-1} \\
+    \hat u_{0,0} \\
+    \hat u_{0,1} \\
+    \hat u_{0,2} \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+    -i&1&i&-1\\
+    -1&1&-1&1\\
+    i&1&-i&-1\\
+    1&1&1&1\\
+\end{bmatrix}
+\begin{bmatrix}
+    \hat u_{0,-1} \\
+    \hat u_{0,0} \\
+    \hat u_{0,1} \\
+    \hat u_{0,2} \\
+\end{bmatrix}
+\end{eqnarray}
+
+By direct inversion of the matrix we have 4 unknowns
+\begin{eqnarray}
+\begin{bmatrix}
+    \hat u_{0,-1} \\
+    \hat u_{0,0} \\
+    \hat u_{0,1} \\
+    \hat u_{0,2} \\
+\end{bmatrix}
+= \frac{1}{4}
+\begin{bmatrix}
+    i&-1&-i&1\\
+    1&1&1&1\\
+    -i&-1&i&1\\
+    -1&1&-1&1\\
+\end{bmatrix}
+\begin{bmatrix}
+    g_1(\frac{\pi}{2}) \\
+    g_1(\pi) \\
+    g_1(\frac{3\pi}{2}) \\
+    g_1(2\pi) \\
+\end{bmatrix}
+\end{eqnarray}
+
+For Newmann Boundary condition, from equation \ref{bdyt}, we had
+
+\begin{eqnarray} \label{bdyt}
+&\sum_j \sum_k \hat{u}_{jk} \delta_{qk} \left( ({\bf M}_3)_{pj} + ({\bf M}_2)_{pj} + k^2 ({\bf M}_1)_{pj} \right)\\
+= &T_4 + \int_0^{2\pi} \sum_j \sum_k \hat{u}_{jk} e^{iq\theta} e^{ik\theta} \left[r^2 \phi_p(r) \frac{d}{dr}\phi_j(r)\right]_a^b d\theta
+%= &T_4 + \sum_j \sum_k \hat{u}_{jk} \delta_{qk} \left[b^2\phi_p(b)\frac{d}{dr}\phi_j(b) - a^2\phi_p(a)\frac{d}{dr}\phi_j(a) \right]
+\end{eqnarray}
+
+In this equation, we can drive the boundary term as follows:
+\begin{eqnarray} \label{bdyt}
+&\int_0^{2\pi} \sum_j \sum_k \hat{u}_{jk} e^{iq\theta} e^{ik\theta} \left[r^2 \phi_p(r) \frac{d}{dr}\phi_j(r)\right]_a^b d\theta \\
+=&b^2\phi_p(b) \int_0^{2\pi} \sum_j \sum_k \hat{u}_{jk} \frac{d}{dr}\phi_j(b) e^{ik\theta} e^{iq\theta} d\theta \\
+-&a^2\phi_p(a) \int_0^{2\pi} \sum_j \sum_k \hat{u}_{jk} \frac{d}{dr}\phi_j(a) e^{ik\theta} e^{iq\theta} d\theta \\
+=&b^2\phi_p(b) \int_0^{2\pi} \frac{d}{dr}u(b, \theta) e^{iq\theta} d\theta \\
+-&a^2\phi_p(a) \int_0^{2\pi} \frac{d}{dr}u(a, \theta) e^{iq\theta} d\theta \\
+=&b^2\phi_p(b) \int_0^{2\pi} \frac{d}{dr}u(b, \theta) e^{iq\theta} d\theta \\
+-&a^2\phi_p(a) \int_0^{2\pi} \frac{d}{dr}u(a, \theta) e^{iq\theta} d\theta \\
+=&b^2\phi_p(b) \widehat{ \frac{d}{dr}u(b) }_l \\
+-&a^2\phi_p(a) \widehat{ \frac{d}{dr}u(a) }_l \\
+\end{eqnarray}
+
+We now apply these two conditions:
+
+For $k = -1, 0, 1, 2$, with the Dirichlet condition we have the matrices:
+
+%\begin{gather}
+\begin{eqnarray}
+\mathcal{M}^{(k)} &=& \begin{bmatrix}
+                        ({\bf M}_3)_{pj} + ({\bf M}_2)_{pj} + k^2 ({\bf M}_1)_{pj}
+                  \end{bmatrix}_{p = 0, j = 0}^{2,2}, \\
+\mathbf{\hat u}_k &=& \begin{bmatrix}
+                        \hat u_{0,k} \\
+                        \hat u_{1,k} \\
+                        \hat u_{2,k} \\
+                    \end{bmatrix},   \\
+\mathcal{F}_k &=& \begin{bmatrix}
+                        \iint f(r, \theta)\phi_0(r)e^{ik\theta}d\theta dr \\
+                        \iint f(r, \theta)\phi_1(r)e^{ik\theta}d\theta dr \\
+                        \iint f(r, \theta)\phi_2(r)e^{ik\theta}d\theta dr \\
+                    \end{bmatrix}
+               =  \begin{bmatrix}
+                        \sum_\sigma w_\sigma r_\sigma^2\phi_0(r_\sigma) \widehat{f(r_\sigma)}_k \\
+                        \sum_\sigma w_\sigma r_\sigma^2\phi_1(r_\sigma) \widehat{f(r_\sigma)}_k \\
+                        \sum_\sigma w_\sigma r_\sigma^2\phi_2(r_\sigma) \widehat{f(r_\sigma)}_k \\
+                    \end{bmatrix}\\
+\mathcal{GB}_k &=& b^2  \widehat{u^\prime(b)}_l
+                    \begin{bmatrix}
+                        \phi_0(b)\\
+                        \phi_1(b)\\
+                        \phi_2(b)\\
+                    \end{bmatrix} \\
+\mathcal{GA}_k &=& a^2  \widehat{u^\prime(a)}_l
+                    \begin{bmatrix}
+                        \phi_0(a)\\
+                        \phi_1(a)\\
+                        \phi_2(a)\\
+                    \end{bmatrix} \\
+\end{eqnarray}
+%\end{gather}
+
+Recall that we have $\mathcal{F}_{-1}, \mathcal{F}_{0}, \mathcal{F}_{1}, \mathcal{F}_{2}$.
+
+For fixed $\sigma$, define a vector
+
+\begin{equation}
+\widehat{f(r_\sigma,\theta)}= \begin{bmatrix}
+                                \widehat{f(r_\sigma,\theta_1)} \\
+                                \widehat{f(r_\sigma,\theta_2)} \\
+                                \widehat{f(r_\sigma,\theta_3)} \\
+                                \widehat{f(r_\sigma,\theta_4)} \\
+                              \end{bmatrix}
+\end{equation}
+where $\theta_k = k * \frac{\pi}{2}, k=1,2,3,4$.
+
+Since we know $\hat u_{0, k}$ for each $k$, we can modify above
+elements so that the relation become an augmented system.
+
+Then we obtain the following global system.
+
+\begin{eqnarray}
+\begin{bmatrix}
+    \mathcal{M}^{(-1)}& 0             & 0             & 0 \\
+    0              & \mathcal{M}^{(0)}& 0             & 0 \\
+    0              & 0              & \mathcal{M}^{(1}) & 0 \\
+    0              & 0              & 0             & \mathcal{M}^{(2)}.  \\
+\end{bmatrix}
+\begin{bmatrix}
+    \mathbf{\hat u}_{-1}\\
+    \mathbf{\hat u}_{0}\\
+    \mathbf{\hat u}_{1}\\
+    \mathbf{\hat u}_{2}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+    \mathcal{F}_{-1}\\
+    \mathcal{F}_{0}\\
+    \mathcal{F}_{1}\\
+    \mathcal{F}_{2}\\
+\end{bmatrix}
++
+\begin{bmatrix}
+    \mathcal{GB}_{-1}\\
+    \mathcal{GB}_{0}\\
+    \mathcal{GB}_{1}\\
+    \mathcal{GB}_{2}\\
+\end{bmatrix}
+-
+\begin{bmatrix}
+    \mathcal{GA}_{-1}\\
+    \mathcal{GA}_{0}\\
+    \mathcal{GA}_{1}\\
+    \mathcal{GA}_{2}\\
+\end{bmatrix}
+\end{eqnarray}
+
+From this, we obtain $\left[ \mathbf{\hat u}_{-1}, \mathbf{\hat u}_{0},\mathbf{\hat u}_{1},\mathbf{\hat u}_{2} \right]$.
+
+Since we originally set the solution to be of the form:
+\begin{equation}
+u(r_\sigma, \theta_\tau) = \sum_{j = 0}^{4}\sum_{k = -2}^{2} \hat u_{jk}\psi_j(r_\sigma)e^{ik\theta_\tau},
+\end{equation}
+this have the matrix form as follows:
+\begin{eqnarray}
+\begin{bmatrix}
+    u(r_1, \theta_1)&u(r_2, \theta_1)&u(r_3, \theta_1) \\
+    u(r_1, \theta_2)&u(r_2, \theta_2)&u(r_3, \theta_2) \\
+    u(r_1, \theta_3)&u(r_2, \theta_3)&u(r_3, \theta_3) \\
+    u(r_1, \theta_4)&u(r_2, \theta_4)&u(r_3, \theta_4) \\
+\end{bmatrix} \\
+=
+\begin{bmatrix}
+    ifft(u_0)_1 & ifft(u_1)_1 & ifft(u_2)_1 & ifft(u_3)_1 & ifft(u_4)_1 & \\
+    ifft(u_0)_2 & ifft(u_1)_2 & ifft(u_2)_2 & ifft(u_3)_2 & ifft(u_4)_2 & \\
+    ifft(u_0)_3 & ifft(u_1)_3 & ifft(u_2)_3 & ifft(u_3)_3 & ifft(u_4)_3 & \\
+    ifft(u_0)_4 & ifft(u_1)_4 & ifft(u_2)_4 & ifft(u_3)_4 & ifft(u_4)_4 & \\
+\end{bmatrix}
+\begin{bmatrix}
+    \psi_0(r_1) & \psi_0(r_2) & \psi_0(r_3) \\
+    \psi_1(r_1) & \psi_1(r_2) & \psi_1(r_3) \\
+    \psi_2(r_1) & \psi_2(r_2) & \psi_2(r_3) \\
+    \psi_3(r_1) & \psi_3(r_2) & \psi_3(r_3) \\
+    \psi_4(r_1) & \psi_4(r_2) & \psi_4(r_3) \\
+\end{bmatrix}
+\end{eqnarray}

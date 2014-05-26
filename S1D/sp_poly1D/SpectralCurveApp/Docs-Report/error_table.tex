@@ -1,0 +1,73 @@
+\documentclass[11pt,letterpaper,landscape]{article}
+
+% Vertical Lengths - Max 9.0
+\setlength{\voffset}{0in} \setlength{\topmargin}{.0in}
+\setlength{\headheight}{0in} \setlength{\topskip}{-1.2in}
+\setlength{\textheight}{9.0in} \setlength{\footskip}{-.0in}
+
+% Horizontal Lengths - Max 6.5
+\setlength{\hoffset}{0in}
+\setlength{\oddsidemargin}{-.2in}
+\setlength{\textwidth}{6.9in}
+\setlength{\evensidemargin}{-.2in}
+
+\usepackage{url}
+\usepackage[]{epsfig,amsmath,lscape}[]
+%\usepackage{lscape} %  in latex preamble
+
+
+\pagestyle{headings} \pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New definitions and commands
+\newtheorem{define}{Definition}[section]
+\newtheorem{theorem}[define]{Theorem}
+\newtheorem{question}[define]{Question}
+\newtheorem{problem}[define]{Problem}
+
+\begin{document}
+
+\title{Error table by H/P test of Poisson Equation on [0,1]}
+\maketitle
+
+{\bfseries Predefined conditions }
+
+\begin{itemize}
+\item The interval defined is $[0,1]$. \item Element sizes are
+equivalent. \item Dirichlet condition at $x=0$ is zero. \item
+Neumann condition at $x=1$ is zero. \item The number of samples
+used to calculate the error is 300.
+\end{itemize}
+\begin{tabular}{|c|c|c|c|} \hline
+Order of Approximation& Number of Elements & Order of eachElement&
+Maximum Norm of Error \\ \hline \hline
+
+
+5&5&[1, 1, 12, 1, 1]&0.0255 \\\hline
+
+5&5&[2, 2, 2, 2, 2]&0.0019 \\ \hline
+
+5&5&[3, 3, 3, 3, 3]&2.4000e-004\\ \hline
+
+5&5&[4, 4, 4, 4, 4] & 5.6437e-006\\ \hline
+
+5&5&[5, 5, 5, 5, 5]&5.7732e-015\\ \hline
+
+15&5&[5, 5, 5, 5, 5]&4.3229e-006\\ \hline
+
+15&5&[7, 7, 7, 7, 7]&2.2388e-007\\ \hline
+
+15&5&[8, 8, 8, 8, 8]&8.6603e-008\\ \hline
+
+15&5&[9, 9, 9, 9, 9]&6.7875e-008\\ \hline
+
+15&5&[11, 11, 11, 11, 11]&6.6704e-008\\ \hline
+
+15&5&[13, 13, 13, 13, 13]&6.6711e-008\\ \hline
+
+15&5&[15, 15, 15, 15, 15]&6.6767e-008\\ \hline
+
+15&5&[8, 21, 21, 21, 8]&Wait too long\\ \hline
+
+\end{tabular}
+\end{document}

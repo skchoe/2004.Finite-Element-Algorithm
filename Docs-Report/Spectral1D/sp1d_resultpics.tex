@@ -1,0 +1,67 @@
+\documentclass[11pt,letterpaper]{article}
+
+% Vertical Lengths - Max 9.0
+\setlength{\voffset}{0in} \setlength{\topmargin}{.0in}
+\setlength{\headheight}{0in} \setlength{\topskip}{-2.2in}
+\setlength{\textheight}{9.0in} \setlength{\footskip}{-.0in}
+
+% Horizontal Lengths - Max 6.5
+\setlength{\hoffset}{0in}
+\setlength{\oddsidemargin}{-.2in}
+\setlength{\textwidth}{6.9in}
+\setlength{\evensidemargin}{-.2in}
+
+%\usepackage{fancyheadings}
+
+%\usepackage{url}
+\usepackage[]{epsfig,amsmath}[]
+
+%\pagestyle{headings}
+\pagestyle{plain}
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New definitions and commands
+\newtheorem{define}{Definition}[section]
+\newtheorem{theorem}[define]{Theorem}
+\newtheorem{question}[define]{Question}
+\newtheorem{problem}[define]{Problem}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Start of document body
+\begin{document}
+
+\title{{\bfseries Results of 1 Dimensional Spectral Polynomial Element Solver}}
+
+%\vfill
+\author{Seung-Keol Choe}
+\renewcommand{\today}{Sep 21th, 2003}
+
+\maketitle
+
+\begin{abstract}
+This document is for specifying the result of spectral method in 1
+dimensional case. For given 3 questions, we present 2 solutions
+for question 1, and 2. And show test result to setup best order
+and element that shows the feasibility of high order methods. This
+is just for showing the result currently working on. Sections have
+convergence graphs and their explanations.
+\end{abstract}
+
+%\tableofcontents
+%\listoffigures
+%\listoftables
+
+
+%\clearpage
+%----------------------------------------------------------------------
+%  In Section 1 and 2, we solved this steady state Poisson problem.
+\input{sp1d_res1}
+
+\clearpage
+%----------------------------------------------------------------------
+\input{sp1d_res2}
+%\clearpage
+%----------------------------------------------------------------------
+\end{document}

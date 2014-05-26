@@ -1,0 +1,119 @@
+> radC := 2;
+                                   radC := 2
+
+> radT := 9;
+                                   radT := 9
+
+> thj := 0;
+                                   thj := 0
+
+> th1 := 0;
+                                   th1 := 0
+
+> th2 := Pi/2;
+                                          Pi
+                                  th2 := ----
+                                          2
+
+> cos_c:=cos(x);
+                                cos_c := cos(x)
+
+> sin_c:=sin(x);
+                                sin_c := sin(x)
+
+> cos_t:=cos(thj);
+                                  cos_t := 1
+
+> sin_t:=sin(thj);
+                                  sin_t := 0
+
+> upel := (radC * cos_c-radT*cos_t)*cos_c + (radC*sin_c-radT*sin_t)*sin_c;
+                                                           2
+                   upel := (2 cos(x) - 9) cos(x) + 2 sin(x)
+
+> dnel:=(radC*cos_c-radT*cos_t)^2+(radC*sin_c-radT*sin_t)^2;
+                                            2           2
+                      dnel := (2 cos(x) - 9)  + 4 sin(x)
+
+> fz := upel/dnel;
+                                                          2
+                          (2 cos(x) - 9) cos(x) + 2 sin(x)
+                    fz := ---------------------------------
+                                           2           2
+                             (2 cos(x) - 9)  + 4 sin(x)
+
+> nsb := 1/(2*Pi) * radC * int(fz, x= th1...th2);
+                                                    Pi
+                               -1/2 arctan(11/7) + ----
+                                                    8
+                        nsb := ------------------------
+                                          Pi
+
+> evalf(%);
+                                -0.03480224355
+
+> th2 := Pi/4;
+                                          Pi
+                                  th2 := ----
+                                          4
+
+> radT := 0;
+                                   radT := 0
+
+> nsb := 1/(2*Pi) * radC * int(fz, x= th1...th2);
+                                               3 Pi      Pi
+                          -1/2 arctan(11/7 cot(----)) + ----
+                                                8        16
+                   nsb := ----------------------------------
+                                          Pi
+
+> evalf(%);
+                                -0.02933440507
+
+> radC := 2;
+                                   radC := 2
+
+> radT := 0;
+                                   radT := 0
+
+> th1 := 0;
+                                   th1 := 0
+
+> th2 := Pi/4;
+                                          Pi
+                                  th2 := ----
+                                          4
+
+> thj := 0;
+                                   thj := 0
+
+> cos_c:=cos(x);
+                                cos_c := cos(x)
+
+> sin_c:=sin(x);
+                                sin_c := sin(x)
+
+> cos_t:=cos(thj);
+                                  cos_t := 1
+
+> sin_t:=sin(thj);
+                                  sin_t := 0
+
+> upel := (radC * cos_c-radT*cos_t)*cos_c + (radC*sin_c-radT*sin_t)*sin_c;
+                                         2           2
+                         upel := 2 cos(x)  + 2 sin(x)
+
+> dnel:=(radC*cos_c-radT*cos_t)^2+(radC*sin_c-radT*sin_t)^2;
+                                         2           2
+                         dnel := 4 cos(x)  + 4 sin(x)
+
+> fz := upel/dnel;
+                                        2           2
+                                2 cos(x)  + 2 sin(x)
+                          fz := ---------------------
+                                        2           2
+                                4 cos(x)  + 4 sin(x)
+
+> nsb := 1/(2*Pi) * radC * int(fz, x= th1...th2);
+                                  nsb := 1/8
+----------------------------------------------------------------------------

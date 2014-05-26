@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0045)http://www.wikipedia.org/wiki/Spectral_method -->
+<HTML lang=en><HEAD><TITLE>Spectral method - Wikipedia</TITLE>
+<META http-equiv=Content-type content="text/html; charset=iso-8859-1">
+<META content=index,follow name=robots><LINK href="/favicon.ico" 
+rel="shortcut icon"><LINK 
+href="Spectral method - Wikipedia_files/wikistandard.css" rel=stylesheet>
+<SCRIPT src="Spectral method - Wikipedia_files/wikibits.js" 
+type=text/javascript></SCRIPT>
+
+<STYLE type=text/css media=screen>A.stub {
+	TEXT-DECORATION: underline
+}
+A.new {
+	TEXT-DECORATION: underline
+}
+A.internal {
+	TEXT-DECORATION: underline
+}
+A.external {
+	TEXT-DECORATION: underline
+}
+A.new {
+	COLOR: #cc2200
+}
+#quickbar A.new {
+	
+}
+#quickbar {
+	BORDER-RIGHT: #000000 2px solid; LEFT: 4px; POSITION: absolute; TOP: 4px
+}
+#article {
+	MARGIN-LEFT: 152px; MARGIN-RIGHT: 4px
+}
+</STYLE>
+
+<META content="MSHTML 6.00.2800.1170" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff>
+<DIV id=content>
+<DIV id=topbar>
+<TABLE cellSpacing=0 width="98%" border=0>
+  <TBODY>
+  <TR>
+    <TD width=152>&nbsp;</TD>
+    <TD class=top vAlign=top align=left><A class=internal title="Main Page" 
+      href="http://www.wikipedia.org/wiki/Main_Page">Main Page</A> | <A 
+      class=internal title=Special:Recentchanges 
+      href="http://www.wikipedia.org/wiki/Special:Recentchanges">Recent 
+      changes</A> | <A class=internal title="Spectral method" 
+      href="http://www.wikipedia.org/w/wiki.phtml?title=Spectral_method&amp;action=edit">Edit 
+      this page</A> | <A class=internal title="Spectral method" 
+      href="http://www.wikipedia.org/w/wiki.phtml?title=Spectral_method&amp;action=history">Page 
+      history</A> | 
+      <FORM class=inline id=specialpages 
+      action=http://www.wikipedia.org/w/redirect.phtml method=get><SELECT 
+      name=wpDropdown> <OPTION value=Special:Specialpages selected>Special 
+        pages</OPTION> <OPTION value=Special:Preferences>Set my user 
+        preferences</OPTION> <OPTION value=Special:Watchlist>My 
+        watchlist</OPTION> <OPTION value=Special:Recentchanges>Recently updated 
+        pages</OPTION> <OPTION value=Special:Upload>Upload image files</OPTION> 
+        <OPTION value=Special:Imagelist>Image list</OPTION> <OPTION 
+        value=Special:Listusers>Registered users</OPTION> <OPTION 
+        value=Special:Statistics>Site statistics</OPTION> <OPTION 
+        value=Special:Randompage>Random article</OPTION> <OPTION 
+        value=Special:Lonelypages>Orphaned articles</OPTION> <OPTION 
+        value=Special:Unusedimages>Orphaned images</OPTION> <OPTION 
+        value=Special:Popularpages>Popular articles</OPTION> <OPTION 
+        value=Special:Wantedpages>Most wanted articles</OPTION> <OPTION 
+        value=Special:Shortpages>Short articles</OPTION> <OPTION 
+        value=Special:Longpages>Long articles</OPTION> <OPTION 
+        value=Special:Newpages>Newly created articles</OPTION> <OPTION 
+        value=Special:Ancientpages>Oldest articles</OPTION> <OPTION 
+        value=Special:Intl>Interlanguage links</OPTION> <OPTION 
+        value=Special:Allpages>All pages by title</OPTION> <OPTION 
+        value=Special:Ipblocklist>Blocked IP addresses</OPTION> <OPTION 
+        value=Special:Maintenance>Maintenance page</OPTION> <OPTION 
+        value=Special:Booksources>External book sources</OPTION></SELECT> <INPUT type=submit value=Go name=redirect> </FORM>
+      <P class=subtitle><A class=internal title="Spectral method" 
+      href="http://www.wikipedia.org/w/wiki.phtml?title=Spectral_method&amp;printable=yes">Printable 
+      version</A></P></TD>
+    <TD class=top vAlign=top noWrap align=right>Not logged in <BR><A 
+      class=internal title=Special:Userlogin 
+      href="http://www.wikipedia.org/w/wiki.phtml?title=Special:Userlogin&amp;returnto=Spectral_method">Log 
+      in</A> | <A class=internal title=Wikipedia:Help 
+      href="http://www.wikipedia.org/wiki/Wikipedia:Help">Help</A> <BR>
+      <FORM class=inline name=search action=/w/wiki.phtml method=get><INPUT 
+      size=19 name=search> <INPUT type=submit value=Go name=go>&nbsp;<INPUT type=submit value=Search></FORM></TD></TR></TBODY></TABLE></DIV>
+<DIV id=article>
+<H1 class=pagetitle>Spectral method</H1>
+<P class=subtitle>From Wikipedia, the free encyclopedia. 
+<P>In applied mathematics, <STRONG>Spectral methods</STRONG> are algorithms to 
+solve certain kinds of <A class=internal title="Partial differential equation" 
+href="http://www.wikipedia.org/wiki/Partial_differential_equation">partial 
+differential equations</A> numerically using some sort of <A class=internal 
+title="Fast Fourier Transform" 
+href="http://www.wikipedia.org/wiki/Fast_Fourier_Transform">Fast Fourier 
+Transform</A>. 
+<P>Partial differential equations (PDEs) describe a wide array of physical 
+processes such has heat conduction and sound propagation. In many such 
+equations, there are underlying "basic waves" that can be used to give efficient 
+algorithms for computing solutions to these PDEs. 
+<P>In all cases, one is provided with input data (such as a description of the 
+medium and initial condition for a sound propagation experiment) and a specific 
+PDE governing the physical process. One then writes the input data as a 
+superposition of the basic waves of the PDE. In this form, the solution of the 
+PDE is easily calculated. 
+<P><EM>See also:</EM> <A class=internal title="Finite element method" 
+href="http://www.wikipedia.org/wiki/Finite_element_method">Finite element 
+method</A> <A class=internal title="Discrete element method" 
+href="http://www.wikipedia.org/wiki/Discrete_element_method">Discrete element 
+method</A> 
+<P>
+<H2>A concrete example </H2>
+<P>Here we presume a basic understanding of basic multivariate <A class=internal 
+title=Calculus href="http://www.wikipedia.org/wiki/Calculus">calculus</A> and <A 
+class=internal title="Fourier series" 
+href="http://www.wikipedia.org/wiki/Fourier_series">Fourier series</A>. If 
+g(x,y) is a complex-valued function of two real variables, and g is periodic in 
+x and y (that is, g(x,y)=g(x+2&#960;,y)=g(x,y+2&#960;)) then we are interested in finding 
+a function f(x,y) so that 
+<P>
+<DL>
+  <DD>f<SUB>xx</SUB>(x,y)+f<SUB>yy</SUB>(x,y)=g(x,y) for all x,y </DD></DL>
+<P>where f<SUB>xx</SUB> and f<SUB>yy</SUB> denote the second partial derivatives 
+of f in x and y, respectively. This is Laplace's equation, and can be physically 
+interpreted as some sort of heat conduction problem. 
+<P>If we write f and g in Fourier series: 
+<P>
+<DL>
+  <DD>f=&#8721;a<SUB>j,k</SUB>exp(ijx)exp(iky) 
+  <DD>g=&#8721;b<SUB>j,k</SUB>exp(ijx)exp(iky) </DD></DL>
+<P>and substitute into the differential equation, we obtain this equation: 
+<P>
+<DL>
+  <DD>&#8721;a<SUB>j,k</SUB>(-(j<SUP>2</SUP>+k<SUP>2</SUP>))exp(ijx)exp(iky)=&#8721;b<SUB>j,k</SUB>exp(ijx)exp(iky) 
+  </DD></DL>
+<P>Here, we crashed the differentials through the infinite sums, but a 
+justification is beyond the scope of this article. By the uniqueness theorem for 
+Fourier expansions, we must then equate the Fourier coefficients term by term, 
+giving 
+<P>(*) a<SUB>j,k</SUB>=-b<SUB>j,k</SUB>/(j<SUP>2</SUP>+k<SUP>2</SUP>) 
+<P>which is an explicit formula for the Fourier coefficients a<SUB>j,k</SUB>. 
+<P>To turn this into an algorithm, only finitely many frequencies are solved 
+for. 
+<P>
+<H3>Algorithm </H3>
+<P>
+<OL>
+  <LI>Compute the Fourier transform (b<SUB>j,k</SUB>) of g. 
+  <LI>Computer the Fourier transform (a<SUB>j,k</SUB>) of f via the formula (*) 
+  and the Fourier transform of g. 
+  <LI>Compute f by taking an inverse Fourier transform of (a<SUB>j,k</SUB>). 
+  </LI></OL>
+<P>Since we're only interested in a finite window of frequencies (of size n, 
+say) this can be done using a Fast Fourier Transform algorithm. Therefore, 
+globally the algorithm runs in time O(nlogn). </P></DIV><BR clear=all>
+<DIV id=footer>
+<TABLE cellSpacing=0 width="98%" border=0>
+  <TBODY>
+  <TR>
+    <TD width=152>&nbsp;</TD>
+    <TD class=bottom vAlign=top align=left><STRONG><A class=internal 
+      title="Spectral method" 
+      href="http://www.wikipedia.org/w/wiki.phtml?title=Spectral_method&amp;action=edit">Edit 
+      this page</A></STRONG> | <A class=new title="Talk:Spectral method" 
+      href="http://www.wikipedia.org/w/wiki.phtml?title=Talk:Spectral_method&amp;action=edit">Discuss 
+      this page</A> | <A class=internal title="Spectral method" 
+      href="http://www.wikipedia.org/w/wiki.phtml?title=Spectral_method&amp;action=history">Page 
+      history</A> | <A class=internal title=Special:Whatlinkshere 
+      href="http://www.wikipedia.org/w/wiki.phtml?title=Special:Whatlinkshere&amp;target=Spectral_method">What 
+      links here</A> | <A class=internal title=Special:Recentchangeslinked 
+      href="http://www.wikipedia.org/w/wiki.phtml?title=Special:Recentchangeslinked&amp;target=Spectral_method">Related 
+      changes</A><BR><BR><A class=internal title="Main Page" 
+      href="http://www.wikipedia.org/wiki/Main_Page">Main Page</A> | <A 
+      class=internal title=Wikipedia:About 
+      href="http://www.wikipedia.org/wiki/Wikipedia:About">About Wikipedia</A> | 
+      <A class=internal title=Special:Recentchanges 
+      href="http://www.wikipedia.org/wiki/Special:Recentchanges">Recent 
+      changes</A> | 
+      <FORM class=inline name=search action=/w/wiki.phtml method=get><INPUT 
+      size=19 name=search> <INPUT type=submit value=Go name=go>&nbsp;<INPUT type=submit value=Search></FORM><BR><SPAN 
+      id=pagestats>This page was last modified 19:41 2 Jul 2003. All text is 
+      available under the terms of the <A class=internal 
+      href="http://www.wikipedia.org/wiki/GNU_FDL">GNU Free Documentation 
+      License</A>.</SPAN></TD></TR></TBODY></TABLE></DIV></DIV>
+<DIV id=quickbar><A href="http://www.wikipedia.org/wiki/Main_Page"><IMG 
+alt="[Main Page]" src="Spectral method - Wikipedia_files/wiki.png" border=0></A> 
+
+<HR>
+<A class=internal title="Main Page" 
+href="http://www.wikipedia.org/wiki/Main_Page">Main Page</A> <BR><A 
+class=internal title=Special:Recentchanges 
+href="http://www.wikipedia.org/wiki/Special:Recentchanges">Recent changes</A> 
+<BR><A class=internal title=Special:Randompage 
+href="http://www.wikipedia.org/wiki/Special:Randompage">Random page</A> <BR><A 
+class=internal title="Current events" 
+href="http://www.wikipedia.org/wiki/Current_events">Current events</A> 
+<HR>
+<STRONG><A class=internal title="Spectral method" 
+href="http://www.wikipedia.org/w/wiki.phtml?title=Spectral_method&amp;action=edit">Edit 
+this page</A></STRONG> <BR><A class=new title="Talk:Spectral method" 
+href="http://www.wikipedia.org/w/wiki.phtml?title=Talk:Spectral_method&amp;action=edit">Discuss 
+this page</A> <BR><A class=internal title="Spectral method" 
+href="http://www.wikipedia.org/w/wiki.phtml?title=Spectral_method&amp;action=history">Page 
+history</A> <BR><A class=internal title=Special:Whatlinkshere 
+href="http://www.wikipedia.org/w/wiki.phtml?title=Special:Whatlinkshere&amp;target=Spectral_method">What 
+links here</A> <BR><A class=internal title=Special:Recentchangeslinked 
+href="http://www.wikipedia.org/w/wiki.phtml?title=Special:Recentchangeslinked&amp;target=Spectral_method">Related 
+changes</A> 
+<HR>
+<A class=internal title=Special:Specialpages 
+href="http://www.wikipedia.org/wiki/Special:Specialpages">Special pages</A> 
+<BR><A class=internal title="Wikipedia:Bug reports" 
+href="http://www.wikipedia.org/wiki/Wikipedia:Bug_reports">Bug reports</A> 
+</DIV><!-- Time since request: 0.30 secs. --><!-- Cached/compressed 20030703052602 --></BODY></HTML>

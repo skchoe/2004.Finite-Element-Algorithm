@@ -1,0 +1,46 @@
+D/data////
+D/fig////
+D/mat////
+D/test////
+/cvSlTable.mat/1.1/Fri Oct 15 21:04:04 2004//
+/feSetHnodesQuadratic.m/1.6/Sat Oct 16 09:31:06 2004//
+/JacobiGLZW.m/1.1/Sat Oct 16 09:31:06 2004//
+/JacobiGRZW.m/1.1/Sat Oct 16 09:31:06 2004//
+/JacobiGZW.m/1.1/Sat Oct 16 09:31:06 2004//
+/JacobiGZeros.m/1.1/Sat Oct 16 09:31:06 2004//
+/JacobiMassMatrix.m/1.1/Sat Oct 16 09:31:06 2004//
+/JacobiPoly.m/1.1/Sat Oct 16 09:31:06 2004//
+/JacobiPolyDerivative.m/1.1/Sat Oct 16 09:31:06 2004//
+/JacobiPolyDerivative2.m/1.1/Sat Oct 16 09:31:06 2004//
+/JacobiPolyDerivativeN.m/1.1/Sat Oct 16 09:31:06 2004//
+/ModifiedJacobiPoly.m/1.1/Sat Oct 16 09:31:06 2004//
+/ModifiedJacobiPolyDerivative.m/1.1/Sat Oct 16 09:31:06 2004//
+/QuadratureDegree.m/1.1/Sat Oct 16 09:31:06 2004//
+/feEvalL2Error.m/1.4/Sat Oct 16 09:31:04 2004//
+/feEvalLogSlope.m/1.1/Sat Oct 16 09:31:04 2004//
+/feExactSolution.m/1.6/Sat Oct 16 09:31:04 2004//
+/feInConduct.m/1.1/Sat Oct 16 09:31:04 2004//
+/feInConductDxy.m/1.1/Sat Oct 16 09:31:04 2004//
+/feInMeshSquareDD.m/1.1/Sat Oct 16 09:31:04 2004//
+/feInMeshSquareDN.m/1.1/Sat Oct 16 09:31:04 2004//
+/feInMeshSqulus.m/1.1/Sat Oct 16 09:31:05 2004//
+/feInSolution.m/1.1/Sat Oct 16 09:31:05 2004//
+/feInSource.m/1.1/Sat Oct 16 09:31:05 2004//
+/feLocalBasis.m/1.3/Sat Oct 16 09:31:05 2004//
+/feMeshTorsoBis34.m/1.3/Sat Oct 16 09:31:05 2004//
+/feMeshTorsoBis37.m/1.3/Sat Oct 16 09:31:05 2004//
+/feMeshTorsoOrg37.m/1.2/Sat Oct 16 09:31:05 2004//
+/feMeshTorsoTrs34.m/1.3/Sat Oct 16 09:31:05 2004//
+/feMeshTorsoTrs37.m/1.3/Sat Oct 16 09:31:05 2004//
+/fePlotExactSol.m/1.2/Sat Oct 16 09:31:06 2004//
+/feSetHnodesCubic.m/1.9/Wed Oct 20 17:42:49 2004//
+/tmpDivUnknowns.m/1.3/Sat Oct 23 06:20:07 2004//
+/fePlotNumSol.m/1.15/Wed Oct 27 04:49:56 2004//
+/pathlist.m/1.1/Wed Oct 27 07:32:26 2004//
+/feDataProc.m/1.14/Fri Nov  5 22:41:07 2004//
+/App_fe2DPoisson.m/1.48/Result of merge+Tue Nov 16 00:57:02 2004//
+/fe2DPoisson.m/1.38/Tue Nov 16 00:57:03 2004//
+/feInLoadMesh.m/1.1/Tue Nov 16 00:57:03 2004//
+/feInMeshCons.m/1.5/Result of merge//
+/feMeshTorsoOrg34.m/1.7/Tue Nov 16 00:57:03 2004//
+/fePostProcOrdering.m/1.5/Result of merge+Tue Nov 16 00:57:03 2004//

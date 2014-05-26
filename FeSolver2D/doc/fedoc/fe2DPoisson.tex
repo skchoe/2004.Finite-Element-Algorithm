@@ -1,0 +1,124 @@
+\documentclass[11pt, notitlepage,  letterpaper]{article}
+
+
+%% Horizontal Lengths - Max 6.5
+\setlength{\footskip}{0.5in}
+\setlength{\hoffset}{0in}
+\setlength{\oddsidemargin}{-.2in}
+\setlength{\evensidemargin}{-.2in}
+%\setlength{\textwidth}{6.9in}
+\setlength{\textwidth}{6.6in}
+
+%% Vertical Lengths - Max 9.0
+\setlength{\headheight}{0in} \setlength{\topskip}{0in}
+\setlength{\voffset}{0in} \setlength{\topmargin}{0.5in}
+\setlength{\textheight}{8.4in}
+
+%\usepackage{fancyheadings}
+
+\usepackage{url}
+\usepackage[]{epsfig,amsmath}[]
+
+
+%\pagestyle{headings}
+%\pagestyle{fancy}
+\pagenumbering{arabic}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New definitions and commands
+\newtheorem{define}{Definition}[section]
+\newtheorem{theorem}[define]{Theorem}
+\newtheorem{question}[define]{Question}
+\newtheorem{problem}[define]{Problem}
+
+
+%**************************************
+\long\def\comment#1{}
+\def \pder#1#2{\frac{\partial {#1}}{\partial {#2}}}
+\def \dfe {\buildrel \rm def \over =}
+\def\half{{\textstyle {1\over2}}}
+\def\vk{von-K\'{a}rm\'{a}n }
+
+% ++++ Vectors<85>.
+\def \vepsilon{ \boldsymbol{\varepsilon} }
+\def \vu{ \boldsymbol{u} }
+\def \vU{ \boldsymbol{U} }
+\def \vzeta{ \boldsymbol{\zeta} }
+\def \vx{ \boldsymbol{x} }
+\def \vn{ \boldsymbol{n}}
+\def \vf{ \boldsymbol{f} }
+\def \vxi{ \boldsymbol{\xi} }
+
+\def \Hx { \hat{1} }
+\def \Hy { \hat{2} }
+\def \Ht{ \hat{t} }
+\def \Hu{ \hat{u} }
+\def \Hv{ \hat{v} }
+\def \Hw{ \hat{w} }
+\def \vc { \boldsymbol{c} }
+
+\def \vn{ \boldsymbol{n} }
+\def \vV{ \mathbf{V} }
+\def \vv{ \mathbf{v} }
+
+\def \vsig{ \boldsymbol{\sigma}}\def \tnsrsig{ \underset{\thickapprox}
+{\boldsymbol{\sigma} }}
+\def \tnsreps{\underset{\thickapprox}{\boldsymbol{\varepsilon} }}
+
+%  +++++ Tensors
+\def \tnsrsig{ \underset{\thickapprox}{\boldsymbol{\sigma} }}
+\def \tnsreps{\underset{\thickapprox}{\boldsymbol{\varepsilon} }}
+
+%  +++++ Operators
+\def\calB{{\cal B}}
+\def\calF{{\cal F}}
+\def\calU{{\cal U} }
+\def\calUvu{ \cal U(\vu) }
+\def\calR{\cal R }
+%**************************************
+
+
+
+\begin{document}
+\title{
+{Finite Element Solver for Poisson Equation on 2D Mesh}
+%\\{Using Spectral Fourier Methods}
+}
+%
+%\vfill
+%\author{S.\ Choe \\ skchoe@cs.utah.edu \and R.\ M.\ Kirby \\ kirby@cs.utah.edu}
+%
+%\renewcommand{\today}{Jan 30th, 2004}
+%
+\maketitle
+
+%\begin{abstract}
+%\end{abstract}
+
+%\noinden {\bf Keywords: Spectral Element Methods, Poisson Equation}
+
+%\tableofcontents
+
+%-------------------------------------------------------------------------------
+%\clearpage
+\input{fe2DPo_ch2}
+
+
+%\input{fe2DPo_ch1}
+
+
+%\section{The Numerical Result of  Finite Element Poisson  Solver}
+
+%%\newpage
+%\input{fe2DPo_ch2}
+
+%------------------------------------------------------------------------------
+%   BIBLIOGRAPHY
+\input{fe2DPo_bb}
+
+%-------------------------------------------------------------------------------
+%   APPENDIX
+
+
+\end{document}

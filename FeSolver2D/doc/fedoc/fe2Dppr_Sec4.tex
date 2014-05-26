@@ -1,0 +1,122 @@
+\section{Numerical Methodology}
+
+We applied a finite element methods as an deterministic numerical
+solver for given ECG forward modeling problem. In this section we
+give a brief review about our approach and describe a problem
+setup of which the polynomial chaos solver is making use in
+uncertainty quantification. In the end, we how the error size
+decreases by the refinement of the torso data set and simplified
+square data for verification of accuracy of the solver.
+
+\subsection{Finite Element Methods}
+
+The data set is a 2-dimensional slice of torso volume data. It is
+discrtised by triangular elements having straight edges. We define
+nodal finite elements over them by assigning additional nodal
+points and defining corresponding shape functions to obtain
+linear, quadratic, and cubic finite element approximation of given
+problem. Table\ref{torsospec} is showing the number of nodes and
+elements for the 3 kinds of approximations.
+
+\begin{table}
+\centering \caption {\label{torsospec} The number of nodes and
+elements for each approximation.}
+\begin{tabular}{|c||c|c|c|c|} \hline
+    &Interior Nodes & Exterior Boundary $\Omega{1}$ & Inner Boundaries $\Omega{0}$& Elements \\ \hline
+    Linear Elements     &545    &   53 & 60 &1203 \\ \hline
+    Quadratic Elements&2293 &   106 & 120 &1203 \\ \hline
+    Cubic Elements&5244 &159 & 180 &1203    \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+The shape functions of certain order are obtained by taking
+products of the 1-dimensional Lagrange polynomials of the order.
+By definition in \cite{Hughes}, we used 3,6, and 10 nodal points
+and shape functions for linear, quadratic, and cubic
+approximations, respectively.
+
+The deterministic part of our ECG modeling is represented by the
+following Laplace equation with conductivity $\sigma(\vx)$ on the
+torso $\Omega$. To approximate numerically, we formulate the
+method of weighted residual by incorporating the standard
+Bubnov-Galerkin method \cite{Karniadarkis} which uses test
+functions to be same as trial function in weak formulation.
+
+{\bf DEFINED ALREADY}
+
+\begin{eqnarray}
+\bigtriangledown \cdot {\sigma(\vx) \bigtriangledown}u(\vx) & = & f(\vx)\\
+u(\Omega_{0}) & = & \alpha(\Omega_{0}) \\
+\bigtriangledown u(\Omega_{1}) & = & 0
+\end{eqnarray}
+
+where $\Omega_{0}$ is the interior boundary, corresponding to the
+surface of the heart, and $\Omega_{1}$ is the exterior boundary,
+corresponding to the surface of the thorax.
+
+
+\subsection{Numerical Accuracy}
+
+\begin{figure}[h]
+\begin{center}
+  \epsfig{file = Figures/conv3_89_1.eps, width = 8cm}
+  \epsfig{file = Figures/conv10_89_1.eps, width = 8cm}
+  \caption{\label{torsoerr} Decrease of errors with respect to mesh element size and order of approximation: The norm used are $L^{2}$ norms. 3 lines are showing convergence in different approximation orders in trial(basis) functions: Linear (Blue line), Quadratic (Red tiny dots), and Cubic (Green dots)}
+\end{center}
+\end{figure}
+
+\begin{center}
+\begin{tabular}{|c|c|c|} \hline
+    Linear& Quadratic & Cubic \\ \hline \hline
+    3.503e-1 & 1.4e-3 & 2.44e-5\\ \hline
+    8.82e-2     & 2.0e-4 & 1.51e-6\\ \hline
+    3.93e-2  & 1.0e-4 &    3.0e-7\\ \hline \hline
+    1.9904& 3.0287&    4.0082\\ \hline
+\end{tabular}
+\begin{tabular}{|c|} \hline
+    Resolution\\ \hline \hline
+    1\\ \hline
+    2\\ \hline
+    3\\ \hline \hline
+    Error Decrease  \\ \hline
+\end{tabular}
+\begin{tabular}{|c|c|c|} \hline
+    Linear& Quadratic & Cubic \\ \hline \hline
+    e-1 & e-3 & e-5\\ \hline
+    e-2 & e-4 & e-6\\ \hline
+    e-2 & e-4 & e-7\\ \hline \hline
+    & &   \\ \hline
+\end{tabular}
+\end{center}
+
+
+
+
+\begin{thebibliography}{9}
+
+\bibitem{Hughes}Hughes, Thomas. J. R. \/
+        {\bf The Finite Element Method, Linear Static and Dynamic Finite Element
+        Analysis}.
+        Prentice Hall, 1987.
+
+\bibitem{Johnson}Johnson, Christopher R. \/
+        {\bf Lecture note of Advanced Methods in Scientific
+        Computing}.
+        School of Computing, University of Utah, 2002.
+
+\bibitem{Karniadarkis}Karniadakis, George Em, Sherwin, Spencer J. \/
+        {\bf Spectral/Hp Element Methods for Cfd}.
+        Oxford Univ Press, 1999.
+
+\bibitem{Burnett}Burnett, David S. \/
+        {\bf Finite Element Analysis, From Concepts to
+        Applications}.
+        Addison-Wesley Publishing Company, 1987.
+
+\bibitem{Zienkiewicz}Zienkiewicz, O. C., Taylor, R. L. \/
+        {\bf The Finite Element Method; The Basis}.
+        Butterworth Heinemann, 2000.
+
+\end{thebibliography}

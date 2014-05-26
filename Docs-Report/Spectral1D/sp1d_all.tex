@@ -1,0 +1,89 @@
+\documentclass[11pt,letterpaper]{article}
+
+% Vertical Lengths - Max 9.0
+\setlength{\voffset}{0in} \setlength{\topmargin}{.0in}
+\setlength{\headheight}{0in} \setlength{\topskip}{-1.2in}
+\setlength{\textheight}{9.0in} \setlength{\footskip}{-.0in}
+
+% Horizontal Lengths - Max 6.5
+\setlength{\hoffset}{0in}
+\setlength{\oddsidemargin}{-.2in}
+\setlength{\textwidth}{6.9in}
+\setlength{\evensidemargin}{-.2in}
+
+%\usepackage{fancyheadings}
+
+\usepackage{url}
+\usepackage[]{epsfig,amsmath}[]
+
+
+%\pagestyle{headings}
+%\pagestyle{fancy}
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New definitions and commands
+\newtheorem{define}{Definition}[section]
+\newtheorem{theorem}[define]{Theorem}
+\newtheorem{question}[define]{Question}
+\newtheorem{problem}[define]{Problem}
+
+\begin{document}
+
+\title{{\normalsize Fall 2003, Semester research;}\\
+        {\bfseries Development of Numerical Solver using Spectral and Fourier Method}
+}
+
+\vfill
+\author{Seungkeol Choe \thanks{Computational Engineering and Science program, University of Utah}\\
+        Mike Kirby \thanks{Assistant Professor, Scientific Computing and Imaging Institute, University of Utah}
+       }
+
+\renewcommand{\today}{Aug 28th, 2003}
+
+\maketitle
+
+\begin{abstract}
+This document is for specifying details of Spectral methods and
+Fourier method.
+\end{abstract}
+
+\tableofcontents
+%\listoffigures
+%\listoftables
+
+\clearpage
+%--------------------------------------------------------------------------------------
+%  SEC.1 A Steady-State Diffusion Problem
+\input{sp1d_ch1}
+
+
+\clearpage
+%--------------------------------------------------------------------------------------
+%  SEC.2 Spectral Polynomial Methods in 1 Dimensional Space
+\input{sp1d_ch2}
+\clearpage
+%--------------------------------------------------------------------------------------
+%  SEC.3 RESULTS
+\section {Results}
+
+%\subsection {H/P-Refinement}
+\input{sp1d_ch3_1}
+%\subsection {Note on High-order methods}
+
+\input{sp1d_ch3_2}
+
+
+%--------------------------------------------------------------------------------------
+%
+%\clearpage
+
+%--------------------------------------------------------------------------------------
+%   BIBLIOGRAPHY
+\input{sp1d_chbib}
+
+%--------------------------------------------------------------------------------------
+%   APPENDIX
+%\input{sp1d_chapdx}
+
+\end{document}

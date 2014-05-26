@@ -1,0 +1,69 @@
+--------------------------------
+Report ahead of regular meeting
+--------------------------------
+
+Jun 30, 04
+
+Task 1. Finite Element Solver
+**********************************************************************
+  subtasks              coded       verified    comment/result
+------------------------------------------------------------------
+
+Data generation                        
+
+ .Defining Domain         x            x
+ .Refinement module       x            x
+ .Post processing         x            x
+ .File output             x            x
+
+
+FEM solver
+
+ .Data loading            x            x
+
+ .Reordering for interior/bdy          x
+
+ .Local Bases
+  -Lin/Quad/Cubic         x            x
+
+ .Local Elts Matrices
+  - Linear                x            x
+  - Quadratic             x            x
+  - Cubic                 x            x
+  * Integration is verified when we use integrand of general function
+
+ .Global assembly  
+  - Linear                x            x      by the result of cs6220.
+  - Quadratic             x                   review is required
+  - Cubic                 x                   review is required
+ .Solution 
+  - Linear                x
+  - Quadratic 
+  - Cubic
+ .H-test
+  - Linear                x                   Error doesn't decrease
+  - Quadratic  
+  - Cubic
+ .P-test
+
+**********************************************************************
+
+
+Task 2. BEM write up
+
+ - I am going to add descriptions about
+    . Problem definition
+    . BEM quick introduction
+    . Current solution I obtained
+    . Doubtful points.
+
+--------
+Schedule
+--------
+Jun 30 - Finishing FEM, Linear basis
+       - Send it to Sarah.
+
+Jul 03 - Finishing FEM, Quadratic basis
+Jul 06 - Finishing FEM, Cubic basis
+Jul 08,9 - BEM report update,review
+

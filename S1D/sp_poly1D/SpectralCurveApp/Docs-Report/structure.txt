@@ -1,0 +1,25 @@
+Structure of status report
+
+
+1. Steady-state Diffusion Problem
+
+  a. Diffusion problem
+  b. Galerkin method with weak solution
+  c. Boundary conditions
+
+
+2. Spectral Polynomial Method in 1 Dimension
+
+  a. Basis functions
+  b. Spectral method in an element
+  c. h/p refinement using global stiffness.
+
+
+3. Results
+
+  a. h-refinement
+  b. p-refinement
+  c. note on high-order method
+
+
+A. Gaussian Quadrature

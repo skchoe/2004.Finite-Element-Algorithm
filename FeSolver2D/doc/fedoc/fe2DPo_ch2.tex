@@ -1,0 +1,112 @@
+\section{Numerical Methodology}
+
+We applied a finite element methods as an deterministic numerical
+solver for given ECG forward modeling problem. In this section we
+give a brief review about our approach and describe a problem
+setup of which the polynomial chaos solver is making use in
+uncertainty quantification. In the end, we how the error size
+decreases by the refinement of the torso data set and simplified
+square data for verification of accuracy of the solver.
+
+\subsection{Finite Element Methods}
+
+The data set is a 2-dimensional slice of torso volume data. It is
+discrtised by triangular elements having straight edges. We define
+nodal finite elements over them by assigning additional nodal
+points and defining corresponding shape functions to obtain
+linear, quadratic, and cubic finite element approximation of given
+problem. Table\ref{torsospec} is showing the number of nodes and
+elements for the 3 kinds of approximations.
+
+
+The shape functions of certain order are obtained by taking
+products of the 1-dimensional Lagrange polynomials of the order.
+By definition of nodal approximation shown in \cite{Burnett87},
+\cite{Hughes87}, \cite{Johnson02}, and \cite{Zienkiewicz00}, we
+used 3,6, and 10 nodal points and shape functions for linear,
+quadratic, and cubic approximations, respectively.
+
+
+The deterministic part of our ECG modeling is represented by the
+following Laplace equation with conductivity $\sigma(\vx)$ on the
+torso $\Omega$ as shown in equation (\ref{detelliptic}). To
+approximate numerically, we formulate the method of weighted
+residual by incorporating the standard Bubnov-Galerkin method
+\cite{Karniadarkis99} which uses test functions to be same as
+trial function in weak formulation.
+
+\begin{eqnarray}
+\label{detelliptic}
+\bigtriangledown \cdot {\sigma(\vx) \bigtriangledown}u(\vx) & = & f(\vx)\\
+u(\Omega_{0}) & = & \alpha(\Omega_{0}) \\
+\bigtriangledown u(\Omega_{1}) & = & 0
+\end{eqnarray}
+where $\Omega_{0}$ is the interior boundary, corresponding to the
+surface of the heart, and $\Omega_{1}$ is the exterior boundary,
+corresponding to the surface of the thorax.
+
+
+\begin{table}
+\caption {\label{torsospec} The number of nodes and elements for
+each approximation.}
+\begin{tabular}{|c||c|c|c|c|} \hline
+    &Interior Nodes & Exterior Boundary $\Omega{1}$ & Inner Boundaries $\Omega{0}$& Elements \\ \hline
+    Linear Elements     &545    &   53 & 60 &1203 \\ \hline
+    Quadratic Elements&2293 &   106 & 120 &1203 \\ \hline
+    Cubic Elements&5244 &159 & 180 &1203    \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Numerical Accuracy}
+
+To verify the accuracy of finite element solver, we tested two
+experiments which took various conditions into account. The first
+one is to see if the solver can process different scales on the
+choice of different mesh data. We applied the solver to realistic
+torso data whose scale vary on $(-200,200)\times(-200,200)$. The
+we set Dirichlet boundary conditions on all exterior and interior
+boundaries. The second experiment is to see if the solver is
+accurately approximating a known analytic solution. This checked
+the convergence of error to the known solution by using
+progressive mesh refinements in 3 different order of
+approximations. The figure(\ref{torsoerr}) is showing the change
+of resultant errors in each experiment:
+\begin{figure}[h]
+\begin{center}
+  \epsfig{file = Figures/conv3_89_1.eps, width = 8cm}
+  \epsfig{file = Figures/conv10_89_1.eps, width = 8cm}
+  \caption{\label{torsoerr} Decrease of errors with respect to mesh element size
+  and order of approximation: The norm used are $L^{2}$ norms.
+  3 lines are showing convergence in different approximation orders in trial(basis) functions:
+  Linear (Blue line), Quadratic (Red tiny dots), and Cubic (Green dots). They are the result of
+  solving on realistic torso data on 3 different mesh refinements(Left) and on Neumann and Dirichlet
+  boundary conditions on progressive refinements of square data set(Right).}
+\end{center}
+\end{figure}
+
+Table(\ref{table_err1}) is explicitly showing the error of the
+finite element solver to known analytic solution. We choose
+$u(x,y) = \cos(c_1 x)\cos(c_2 y)$ to be an analytic solution. We
+noticed the errors decrease for increase of order of approximation
+and mesh refinements. And it is showing the slope of error
+decrease in both experiments. The values are close to $1+$order of
+approximation as expected in theory.
+\begin{table}
+\begin{center}
+\caption{\label{table_err1} (Left)The errors of approximation of
+finite solver to the known analytic solution, (Right)The slopes
+which show the speed of convergence of each different order of
+approximations and mesh refinements}
+\begin{tabular}{|c||c|c|c|} \hline
+    Mesh Resolution&Linear& Quadratic & Cubic \\ \hline \hline
+    1&3.503e-1 & 1.4e-3 & 2.44e-5\\ \hline
+    2&8.82e-2  & 2.0e-4 & 1.51e-6\\ \hline
+    3&3.93e-2  & 1.0e-4 & 3.0e-7\\ \hline
+\end{tabular}
+\begin{tabular}{|c||c|c|c|} \hline
+    Experiments&Linear& Quadratic & Cubic \\ \hline \hline
+    Ex. 1&1.9904& 3.0287&   4.0082\\ \hline
+    Ex. 2&1.9630& 2.9928&   4.0186\\ \hline
+\end{tabular}
+\end{center}
+\end{table}

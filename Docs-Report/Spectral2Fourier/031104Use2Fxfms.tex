@@ -1,0 +1,103 @@
+\documentclass[11pt,letterpaper]{article}
+
+\setlength{\oddsidemargin}{-0.06in}
+\setlength{\evensidemargin}{0.06in} \setlength{\topmargin}{0.4in}
+\setlength{\textwidth}{6.50in} \setlength{\textheight}{8.93in}
+\raggedbottom \hfuzz=3pt
+
+\usepackage[]{epsfig,amsmath}[]
+\pagestyle{headings}
+
+\begin{document}
+
+\title{{\bfseries Question on using fft, ifft in code} }
+%\maketitle
+The right hand side of weak form is  \begin{equation} G(p,q)
+\equiv \int_a^b \int_0^{2\pi} f(r, \theta)\phi_p(r) e^{iq\theta}
+d\theta dr. \end{equation}
+
+Let $V$ be the discrete sampling of above function $f(r,
+\theta)$,then $V$ is 2x2 array of components
+
+\begin{equation}
+v_{\sigma,\tau} = f(r_\sigma, \theta_\tau)
+\end{equation}
+where $\sigma = 0, \cdots, N_r-1$ and $\tau=0,
+\cdots, N_\theta-1$ with $N_r$ is number of quadrature points for
+all elements and $N_\theta$ is number of modes in $\theta$
+direction element.
+
+For numerical evaluation, we use Gauss-Lobatto Quadrature formula
+for $r$ direction integral and Fourier transform for $\theta$
+direction integral.
+
+Note that there're weight factors $\{w_\sigma\}_{\sigma =0}^{N_r}$
+which are used for weighted sum of integrand on each
+$\{r_\sigma\}$.
+
+
+For fixed $r_0$, the discrete Fourier transform for $f(r_0,
+\theta)$is defined by
+
+\begin{equation} f(r_0, \theta_\tau) =
+\sum_{k=-N_\theta/2+1}^{N_\theta/2} \widehat{f(r_0)}_k
+e^{ik\theta_\tau} \end{equation}
+
+where $k$ $\in \{-\frac{N_\theta}{2}+1, \cdots,
+\frac{N_\theta}{2}\}$.
+
+The flow I understood in last meeting is as follows:
+
+\begin{eqnarray}
+G(p, q) &=& \int_a^b r^2\phi_p(r) \widehat{f(r)} dr \sum_{k=-N_\theta/2+1}^{N_\theta/2} \delta_{kq} \\
+        &=& \int_a^b r^2\phi_p(r) \widehat{f(r)} dr \\
+        &=& \sum_\sigma w_\sigma r_\sigma^2\phi_p(r_\sigma) \widehat{f(r_\sigma)}
+\end{eqnarray}
+
+The \textbf{first question} is how to deal with array form of
+$\widehat{f(r_\sigma)}$. Since given $\sigma $,
+$\widehat{f(r_\sigma)}$ would be defined from the vector
+$[f(r_\sigma, \theta_\tau]_{\tau=0}^{N_\theta-1}$  $G(p, q) $ will
+be vector form. This phenomena happens the same in using ifft() as
+follows:
+
+In our solution form,
+
+\begin{equation} u(r,\theta) = \sum_{j=0}^{N_r}
+\sum_{k=-N_\theta/2+1}^{N_\theta/2} \hat{u}_{jk} \phi_j(r)
+e^{ik\theta} \end{equation}, we can apply ifft to compute terms
+having $e^{ik\theta}$ like this:
+
+\begin{eqnarray}
+u(r,\theta) &=& \sum_{j=0}^{N_r} \phi_j(r) \sum_{k=-N_\theta/2+1}^{N_\theta/2} \hat{u}_{jk} e^{ik\theta} \\
+        &=& \sum_{j=0}^{N_r} \phi_j(r) N_\theta ifft(\hat{u}_{jk})\\
+\end{eqnarray} here, since we can compute $ifft(\hat{u}_{jk})$
+from the vector form $[\hat{u}_{jk}]_{k=-N_\theta/2 +
+1}^{N_\theta/2}$ But this also produces vector form.
+
+The \textbf{second question} is to verify Trefthan's definition of
+discrete Fourier transform (dft/inverse dft pair). In my code that
+implements dft/inverse dft, when I change scale term in front of
+summation differently from his book, I could obtain similar result
+to the result of matlab fft(), ifft(). I attach the code here.
+
+In his book I omit $h$ in (3.2) and change $\frac{1}{2\pi}$ to
+$\frac{1}{N_\theta}$ in (3.3). The result of this change is
+different from that of matlab fft(), ifft() in that
+
+\begin{itemize} \item The counting order \item sign of $Re(\hat
+u)$ when $\theta \ne 0$.\end{itemize} which were talked in last
+meeting.
+
+I think in last meeting I couldn't get the point how to implement
+what I learned. For example, the how to connect $k$ in
+
+\begin{equation} M_3 + M_2 -k^2 M_1 \end{equation} with fft() in
+RHS.
+
+For this I decide to finish the write-up and verify all things.
+This would be good to prevent unexpected things from coming out
+during programming.
+
+
+ \end{document}

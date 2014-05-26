@@ -1,0 +1,124 @@
+%\{ {\it  sp1d\_ch2.tex} \}
+\section{Formulation of BEM on Annulus}
+The original formulation for any boundary $\gamma$:
+\begin{eqnarray}
+\frac{1}{2}u(x) = -\int_{\gamma} u(z) \nabla G(z,x)\cdot {\bf n}
+dz + \int_{\gamma} \frac{\partial u}{\partial n}(z) G(z, x) dz.
+\end{eqnarray}
+
+In annulus domain we set two circle $\gamma_1$ and $\gamma_2$ to
+compose $\gamma$, where $\gamma_1$ is outer circle and $\gamma_2$
+is inner circle respectively. Then we have
+\begin{eqnarray}
+\frac{1}{2}u(x) = -\int_{\gamma_1} u(z) \nabla G(z,x) \cdot {\bf
+n} dz -\int_{\gamma_2} u(z) \nabla G(z,x) \cdot {\bf n}dz +
+\int_{\gamma_1} \frac{\partial u}{\partial n}(z) G(z, x) dz +
+\int_{\gamma_2} \frac{\partial u}{\partial n}(z) G(z, x) dz.
+\end{eqnarray}
+for all $x$ on $\gamma$.
+
+By discretization with element $E_j^1$ for $\gamma_1$, and $E_j^2$
+for $\gamma_2$, $j=1 \dots N$,
+
+\begin{eqnarray}
+\frac{1}{2}u(x) &=& \\
+&-&\sum_{j=1}^{N}\int_{E_j^1} u(z) \nabla G(z,x) \cdot {\bf n}dz
+-\sum_{j=1}^{N}\int_{E_j^2} u(z) \nabla G(z,x) \cdot {\bf n}dz \\
+&+& \sum_{j=1}^{N}\int_{E_j^1} \frac{\partial u}{\partial n}(z)
+G(z, x) dz + \sum_{j=1}^{N}\int_{E_j^2} \frac{\partial u}{\partial
+n}(z) G(z, x) dz.
+\end{eqnarray}
+
+Let ${x_1^k, \dots, x_N^k}$ be the center points of elements
+${E_1^k, \dots, E_N^k}$ for $k=1,2$. The we can approximate above
+equation by
+
+\begin{eqnarray}
+\frac{1}{2}u(x_i^1) &=& \\
+&-&\sum_{j=1}^{N}u(x_j^1)\int_{E_j^1}  \nabla G(z,x_i^1) \cdot
+{\bf n}dz
+-\sum_{j=1}^{N}u(x_j^2)\int_{E_j^2}  \nabla G(z,x_i^1)\cdot {\bf n} dz \\
+&+& \sum_{j=1}^{N}\frac{\partial u}{\partial n}(x_j^1)\int_{E_j^1}
+G(z, x_i^1) dz + \sum_{j=1}^{N}\frac{\partial u}{\partial
+n}(x_j^2)\int_{E_j^2}  G(z, x_i^1) dz.
+\end{eqnarray}
+
+\newpage
+Define
+\begin{eqnarray}
+\alpha^k_j(x) &=& \int_{E_j^k}G(z,x)dz\\
+\beta^k_j(x) &=& \int_{E_j^k}\nabla G(z,x)\cdot {\bf n}dz
+\end{eqnarray}
+where $k=1,2$. Then we can rearrange above equation by putting
+unknowns to left and known values to right side as follows:
+
+\begin{eqnarray}
+\frac{1}{2} u(x_i^1) &+& \sum_{j=1}^N \beta_j^1(x_i^1)u(x_j^1) -
+\sum_{j=1}^N\alpha^2_j(x_i^1)\frac{\partial u}{\partial n}(x_j^2)
+\\
+&=& -\sum_{j=1}^N\beta_j^2(x_i^1)u(x_j^2) + \sum_{j=1}^N
+\alpha^1_j(x_i^1)\frac{\partial u}{\partial n}(x_j^1).
+\end{eqnarray}
+
+Let $F_i^1$ be right side of above equation, $i=1,\dots,N$.
+
+ With same way, by applying $x = x^2_i, i=1\dots
+N$, we obtain the following
+\begin{eqnarray}
+&&\sum_{j=1}^N \beta_j^1(x_i^2)u(x_j^1) - \sum_{j=1}^N
+\alpha^2_j(x_i^2)\frac{\partial u}{\partial n}(x_j^2)
+\\
+&=& - \frac{1}{2} u(x_i^2) -\sum_{j=1}^N\beta_j^2(x_i^2)u(x_j^2) +
+\sum_{j=1}^N \alpha^1_j(x_i^2)\frac{\partial u}{\partial
+n}(x_j^1).
+\end{eqnarray}
+
+Let $F_i^2$ be right side of above equation, $i=1,\dots,N$.
+
+Based on these two equations we can setup system of linear
+equation as follows:
+
+
+\begin{eqnarray*}
+\begin{bmatrix}
+    \frac{1}{2}+\beta^1_1(x_1^1)& \beta^1_2(x_1^1)& \cdots &
+    \beta^1_N(x_1^1)& -\alpha_1^2(x_1^1)& \cdots&\cdots&
+    -\alpha_N^2(x_1^1) \\
+    \beta^1_1(x_2^1)& \frac{1}{2}+\beta^1_2(x_2^1)& \cdots &
+    \beta^1_N(x_2^1)& -\alpha_1^2(x_2^1)& \cdots&\cdots&
+    -\alpha_N^2(x_2^1) \\
+    \vdots& \vdots& \ddots& \vdots& \vdots& \ddots& \ddots& \vdots\\
+    \beta^1_1(x_N^1)& \beta^1_2(x_N^1)& \cdots &
+    \frac{1}{2} + \beta^1_N(x_N^1)& -\alpha_1^2(x_N^1)&
+    \cdots&\cdots&
+    -\alpha_N^2(x_N^1) \\
+    \beta_1^1(x_1^2)& \beta_2^1(x_1^2)& \cdots& \beta_1^N(x_1^2)&
+    -\alpha_1^2(x_1^2)& \cdots& \cdots& -\alpha_N^2(x_1^2)  \\
+    \beta_1^1(x_2^2)& \beta_2^1(x_2^2)& \cdots& \beta_1^N(x_2^2)&
+    -\alpha_1^2(x_2^2)& \cdots& \cdots& -\alpha_N^2(x_2^2)  \\
+    \vdots& \vdots& \ddots& \vdots& \vdots& \ddots& \ddots& \vdots\\
+    \beta_1^1(x_N^2)& \beta_2^1(x_N^2)& \cdots& \beta_1^N(x_N^2)&
+    -\alpha_1^2(x_N^2)& \cdots& \cdots& -\alpha_N^2(x_N^2)  \\
+\end{bmatrix}
+\begin{bmatrix}
+    u(x_1^1)    \\
+    u(x_2^1)    \\
+    \vdots      \\
+    u(x_N^1)    \\
+    \frac{\partial u}{\partial n}(x_1^2)    \\
+    \frac{\partial u}{\partial n}(x_2^2)    \\
+    \vdots      \\
+    \frac{\partial u}{\partial n}(x_N^2)    \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+    F_1^1   \\
+    F_2^1   \\
+    \vdots  \\
+    F_N^1   \\
+    F_1^2   \\
+    F_2^2   \\
+    \vdots  \\
+    F_N^2   \\
+\end{bmatrix}.
+\end{eqnarray*}

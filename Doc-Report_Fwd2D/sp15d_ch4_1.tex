@@ -1,0 +1,13 @@
+%\clearpage
+%\{ {\it  sp1d\_ch4\_1.tex} \}
+
+Throughout this project, we looked into the theory of Spectral Polynomial and Fourier Method and its solvability. We also investigated the feature of convergence in the viewpoint of h/p convergence property in comparison to classical finite element method. By using Galerkin method, we could incorporate the weak solution and get the problem to be changed to system of linear equations which we can solve it by computer.
+
+By implementing the Spectral element solver for one dimensional Poisson equation having Dirichlet and Neumann boundary conditions, we could experiment all the theory with various specific cases of high-order solutions which were hard to get acceptable convergence in a given time and resolution of domain.  
+
+For the future study, we would like deal with problems regarding:
+
+\begin{itemize}
+\item
+In supplying $\sigma(r,\theta)$ , we assume $\sigma$ to be dependent only of radius variable. But in general case, we can expand $\sigma$ to be an linear combination of Fourier basis. Computing with only one Fourier basis component, we can easily find the shape of matrix to be dependent of wave number. By adding these matrices up, we could build left hand side stiffness matrix.  
+\end{itemize}

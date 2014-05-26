@@ -1,0 +1,70 @@
+\documentclass[11pt,letterpaper]{article}
+
+\setlength{\oddsidemargin}{-0.06in}
+\setlength{\evensidemargin}{0.06in} \setlength{\topmargin}{0.4in}
+\setlength{\textwidth}{6.50in} \setlength{\textheight}{8.93in}
+\raggedbottom \hfuzz=3pt
+
+\usepackage[]{epsfig,amsmath}[]
+\pagestyle{headings}
+
+\begin{document}
+
+\title{{\bfseries Derivation for Double integral using Fourier Transform}
+}
+%\maketitle
+
+Double integral in Fourier method is defined as follows
+\begin{equation}
+G(p,q) \equiv \int_a^b \int_0^{2\pi} f(r, \theta)\phi_p(r) e^{iq\theta} d\theta dr.
+\end{equation}
+
+Let $V$ be the discrete sampling of above function $f(r, \theta)$,then $V$ is 2x2 array of components
+\begin{equation}
+v_{\sigma,\tau} = f(r_\sigma, \theta_\tau)
+\end{equation}
+where $\sigma = 0, \cdots, N_r-1$ and $\tau=0, \cdots, N_\theta-1$ with $N_r$ is number of quadrature points for all elements and $N_\theta$ is number of modes in $\theta$ direction element.
+
+For numerical evaluation, we use Gauss-Lobatto Quadrature formula for $r$ direction integral and Fourier transform for $\theta$ direction integral.
+
+Note that there're weight factors $\{w_\sigma\}_{\sigma =0}^{N_r}$ which are used for weighted sum of integrand on each $\{r_\sigma\}$.
+
+
+For fixed $r_0$, the discrete Fourier transform for $f(r_0, \theta)$is defined by
+
+\begin{equation}
+f(r_0, \theta_\tau) = \sum_{k=-N_\theta/2+1}^{N_\theta/2} \widehat{f(r_0)}_k e^{ik\theta_\tau}
+\end{equation}
+
+where \begin{equation}
+\widehat{f(r_0)}_k = \frac{1}{2\pi} \int_0^{2\pi} f(r_0, \theta) e^{-ik\theta} d\theta
+\end{equation}
+with k $\in \{-\frac{N_\theta}{2}+1, \cdots, \frac{N_\theta}{2}\}$.
+
+The flow I understood in last meeting is as follows:
+
+\begin{eqnarray}
+G(p, q) &=& \int_a^b r^2\phi_p(r) \int_0^{2\pi} f(r,\theta) e^{iq\theta} d\theta dr \\
+        &=& \int_a^b r^2\phi_p(r) \int_0^{2\pi} \sum_{k=-N_\theta/2+1}^{N_\theta/2} \widehat{f(r)}_k e^{ik\theta} e^{iq\theta} d\theta dr \\
+        &=& \int_a^b r^2\phi_p(r) \sum_{k=-N_\theta/2+1}^{N_\theta/2}  \int_0^{2\pi}  \widehat{f(r)}_k e^{ik\theta} e^{iq\theta} d\theta dr \\
+        &=& \int_a^b r^2\phi_p(r) dr \sum_{k=-N_\theta/2+1}^{N_\theta/2}  \widehat{f(r)}_k \delta_{kq} \\
+        &=& \int_a^b r^2\phi_p(r) dr \widehat{f(r)}_q \\
+        &=& \sum_\sigma w_\sigma r_\sigma^2\phi_p(r_\sigma) \widehat{f(r_\sigma)}_q
+\end{eqnarray}
+
+
+
+This derivation assumes that
+\begin{equation}
+f(r_0, \theta) = \sum_{k=-N_\theta/2+1}^{\frac{N_\theta}{2}} \widehat{f(r_0)} e^{ik\theta}
+\end{equation}
+where $\theta \in [0,2\pi]$ and
+
+\begin{equation}
+\widehat{f(r_0)}_k = \frac{1}{2\pi} \int_0^{2\pi} f(r_0, \theta) e^{-ik\theta} d\theta
+\end{equation}
+
+The expression about each $\widehat{f(r_0)}_k$ is based on Trapezoidal Rule.
+
+
+\end{document}

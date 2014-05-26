@@ -1,0 +1,116 @@
+\documentclass[11pt, notitlepage,  letterpaper]{article}
+
+
+%% Horizontal Lengths - Max 6.5
+\setlength{\footskip}{0.5in}
+\setlength{\hoffset}{0in}
+\setlength{\oddsidemargin}{-.2in}
+\setlength{\evensidemargin}{-.2in}
+%\setlength{\textwidth}{6.9in}
+\setlength{\textwidth}{6.6in}
+
+%% Vertical Lengths - Max 9.0
+\setlength{\headheight}{0in} \setlength{\topskip}{0in}
+\setlength{\voffset}{0in} \setlength{\topmargin}{0.5in}
+\setlength{\textheight}{8.5in}
+
+%\usepackage{fancyheadings}
+
+\usepackage{url}
+\usepackage[]{epsfig,amsmath}[]
+%\usepackage{doublespace}
+
+%\pagestyle{headings}
+%\pagestyle{fancy}
+\pagenumbering{arabic}
+
+\renewcommand{\baselinestretch}{1.15}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New definitions and commands
+\newtheorem{define}{Definition}[section]
+\newtheorem{theorem}[define]{Theorem}
+\newtheorem{question}[define]{Question}
+\newtheorem{problem}[define]{Problem}
+
+
+%**************************************
+
+\begin{document}
+%\title{{\normalsize Fall 2003, Semester research;}\\
+\title{
+{Solving the Poisson Partial Differential Equation}\\
+{using Spectral Polynomial Methods }
+}
+
+ \vfill
+\author{Seungkeol\ Choe \thanks{Computational Engineering and Science Program, University of Utah}}
+
+\renewcommand{\today}{April 18th, 2004}
+
+\maketitle
+
+\begin{abstract}
+In this report, we present a spectral polynomial method for
+solving the Poisson equation with Dirichlet and Neumann boundary
+conditions respectively on a one dimensional compact interval. We
+can control the number, size of elements, and order of
+approximating polynomials to obtain accurate solutions with faster
+convergence than the classical finite element method. We present a
+spectral Fourier method for solving a Poisson equation with the
+same boundary conditions on an two dimensional annulus domain. By
+using the tensor product between one dimensional spectral bases
+and Fourier bases, we apply the high-order method to radius
+direction and the fast Fourier transform to angular direction.
+\end{abstract}
+
+%\noinden {\bf Keywords: Spectral Element Methods, Poisson Equation}
+\clearpage
+
+\tableofcontents
+
+%-------------------------------------------------------------------------------
+\clearpage
+
+%\begin{spacing}{2}
+
+\section{Introduction}
+\input{ces_ch1}
+
+\clearpage
+\section{Spectral Polynomial Elements Method on an Interval}
+
+\subsection{Mathematical Formulations}
+\input{Doc-Report_Fwd1D/sp1d_ch2}
+
+\subsection{Experiment Results}
+\input{Doc-Report_Fwd1D/sp1d_ch3_1}
+\input{Doc-Report_Fwd1D/sp1d_ch3_2}
+
+%\clearpage
+%\vspace*{3cm}
+\clearpage
+\section{Spectral Fourier Method on 2-dimensional Annulus}
+
+\subsection{Mathematical Formulations}
+\input{Doc-Report_Fwd2D/sp15d_ch2}
+
+\subsection{Experiment Results}
+\input{Doc-Report_Fwd2D/sp15d_ch3_1}
+\input{Doc-Report_Fwd2D/sp15d_ch3_2}
+
+\clearpage
+\section{Conclusion}
+\input{ces-conclusion}
+
+%\end{spacing}
+%------------------------------------------------------------------------------
+%   BIBLIOGRAPHY
+\input{ces_chbib}
+
+
+%-------------------------------------------------------------------------------
+%   APPENDIX
+
+
+\end{document}

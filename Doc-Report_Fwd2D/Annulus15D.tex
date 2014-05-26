@@ -1,0 +1,92 @@
+\documentclass[11pt, notitlepage,  letterpaper]{article}
+
+
+%% Horizontal Lengths - Max 6.5
+\setlength{\footskip}{0.5in}
+\setlength{\hoffset}{0in}
+\setlength{\oddsidemargin}{-.2in}
+\setlength{\evensidemargin}{-.2in}
+%\setlength{\textwidth}{6.9in}
+\setlength{\textwidth}{6.6in}
+
+%% Vertical Lengths - Max 9.0
+\setlength{\headheight}{0in} \setlength{\topskip}{0in}
+\setlength{\voffset}{0in} \setlength{\topmargin}{0.5in}
+\setlength{\textheight}{8.4in}
+
+%\usepackage{fancyheadings}
+
+\usepackage{url}
+\usepackage[]{epsfig,amsmath}[]
+
+
+%\pagestyle{headings}
+%\pagestyle{fancy}
+\pagenumbering{arabic}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New definitions and commands
+\newtheorem{define}{Definition}[section]
+\newtheorem{theorem}[define]{Theorem}
+\newtheorem{question}[define]{Question}
+\newtheorem{problem}[define]{Problem}
+
+
+%**************************************
+
+
+\begin{document}
+\title{
+{Solving Two-dimensional Forward Problems on an Annulus}\\{Using
+Spectral Fourier Methods}}
+
+\vfill
+\author{S.\ Choe \\ skchoe@cs.utah.edu \and R.\ M.\ Kirby \\ kirby@cs.utah.edu}
+
+\renewcommand{\today}{Jan 30th, 2004}
+
+\maketitle
+
+\begin{abstract}
+In this report, we present a spectral Fourier method for solving a
+Poisson equation with Dirichlet and Neumann boundary conditions
+respectively on an annulus domain. By using the tensor product
+between spectral and Fourier bases, we could apply the high-order
+method on the annulus domain. The fast Fourier transform allowed
+the rapid convergence on the radius to be maintained to all
+angular direction on the annulus.
+\end{abstract}
+
+%\noinden {\bf Keywords: Spectral Element Methods, Poisson Equation}
+
+\tableofcontents
+
+%-------------------------------------------------------------------------------
+\clearpage
+
+\section{Introduction}
+\input{sp15d_ch1}
+
+\section{The Numerical Solution of Poisson Equation on a 2-dimensional Annulus}
+\input{sp15d_ch2}
+
+\section{Experiment Results}
+\input{sp15d_ch3_1}
+\input{sp15d_ch3_2}
+
+\section{Conclusion}
+\input{sp15d_ch4_1}
+
+%------------------------------------------------------------------------------
+%   BIBLIOGRAPHY
+\input{sp15d_chbib}
+
+
+%-------------------------------------------------------------------------------
+%   APPENDIX
+%
+%\input{sp15d_chapdx}
+
+
+\end{document}

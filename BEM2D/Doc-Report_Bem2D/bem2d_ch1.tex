@@ -1,0 +1,245 @@
+\section{Formulation of Boundary Element Method on a Circle}
+In this section, we define a differential equation which satisfies
+Laplace equation defined on a circle $\gamma$ as follows:
+\begin{itemize}
+\item {\bf Domain} : A Disk of radius 1.
+\item {\bf Boundary Condition} : {\bf Outer} normal vectors.
+\item {\bf Analytic solution} : $u(x,y) = x^2 - y^2$.
+\item {\bf Orientation of Integral} : Counter clock wise.
+\end{itemize}
+
+Note that, regardless of direction of normal vectors,
+mathematically this formulation should gives an unique numerical
+solution.
+
+According to boundary element method, we can set up the following
+relation:
+
+\begin{eqnarray}
+\frac{1}{2}u(x) = -\int_{\gamma} u(z) \nabla G(z,x)\cdot {\bf n}
+dz + \int_{\gamma} \frac{\partial u}{\partial n}(z) G(z, x) dz.
+\end{eqnarray}
+
+By discretization with element $E_j$ on $\gamma$, $j=1 \dots N$,
+
+\begin{eqnarray}
+\frac{1}{2}u(x) =  &-&\sum_{j=1}^{N}\int_{E_j} u(z) \nabla
+G(z,x)\cdot {\bf n} dz + \sum_{j=1}^{N}\int_{E_j} \frac{\partial
+u}{\partial n}(z) G(z, x) dz.
+\end{eqnarray}
+
+
+Let ${x_1, \dots, x_N}$ be the center points of elements ${E_1,
+\dots, E_N}$. The we can approximate above equation by
+
+\begin{eqnarray}
+\frac{1}{2}u(x_i) = - \sum_{j=1}^{N}u(x_j)\int_{E_j} \nabla
+G(z,x_i)\cdot {\bf n} dz + \sum_{j=1}^{N}\frac{\partial
+u}{\partial n}(x_j)\int_{E_j} G(z, x_i) dz.
+\end{eqnarray}
+
+
+Define
+\begin{eqnarray}
+\alpha_j^i &=& \int_{E_j}G(z,x_i)dz\\
+\beta_j^i &=& \int_{E_j}\nabla G(z,x_i)\cdot {\bf n} dz.
+\end{eqnarray}
+Then we can rearrange above equation by putting unknowns to left
+and known values to right side as follows:
+
+\begin{eqnarray}
+\frac{1}{2} u(x_i) &+& \sum_{j=1}^N \beta_j^iu(x_j) = \sum_{j=1}^N
+\alpha^i_j\frac{\partial u}{\partial n}(x_j),
+\end{eqnarray}
+for all $i,j = 1 \dots N$.
+
+This enables to set up the following system of linear equations
+for $u(x_j), j = 0, \dot, N$.
+
+\begin{eqnarray}
+\label{mat1}
+\begin{bmatrix}
+    \frac{1}{2}+\beta^1_1& \beta^1_2& \cdots & \beta^1_N \\
+    \beta^2_1& \frac{1}{2}+\beta^2_2& \cdots & \beta^2_N\\
+    \vdots& \vdots& \ddots& \vdots\\
+    \beta^N_1& \beta^N_2& \cdots & \frac{1}{2} + \beta^N_N \\
+\end{bmatrix}
+\begin{bmatrix}
+    u(x_1)    \\
+    u(x_2)    \\
+    \vdots      \\
+    u(x_N)    \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+    \sum_{j=1}^N \alpha^1_j\frac{\partial u}{\partial n}(x_j)   \\
+    \sum_{j=1}^N \alpha^2_j\frac{\partial u}{\partial n}(x_j)   \\
+    \vdots  \\
+    \sum_{j=1}^N \alpha^N_j\frac{\partial u}{\partial n}(x_j)   \\
+\end{bmatrix}.
+\end{eqnarray}
+
+Note that $\{\alpha^i_j, \beta^i_j\}$ in  (\ref{mat1}) assume the
+condition defined in the beginning(CCW, Outer normal).
+
+Mathematically, the original problem has same result as the case
+when we have both clockwise orientation and inward normal vector.
+In boundary element formulation, this fact can be seen through the
+change in (\ref{mat1}), since $\{\alpha^i_j, \frac{\partial
+u}{\partial n}(x_j)\}$ have opposite signs but $\{\beta^i_j\}$ has
+no sign change.
+
+\begin{itemize}
+\item Radius 1cm
+\item Number of elements: $2^6 \cdots 2^{12}$
+\item Slope: 1.45xx
+\end{itemize}
+
+\begin{figure}[h]
+    \begin{center}
+    \epsfig{file = circle_htest_6_12.eps, width = 12cm}
+    \caption{This figure is showing the h-convergence test for above problem}
+    \end{center}
+\end{figure}
+
+
+\section{Case: Clockwise Orientation with Outer normal}
+In this section we define shortly a slightly different example
+based on the initial definition of example at previous section.
+
+\begin{itemize}
+\item {\bf Domain} : A Disk of radius 1.
+\item {\bf Boundary Condition} : {\bf Outer} normal vectors.
+\item {\bf Analytic solution} : $u(x,y) = x^2 - y^2$.
+\item {\bf Orientation of Integral} : Clock wise.
+\end{itemize}
+
+This cause the changes to each element of formulation above:
+\begin{itemize}
+\item {\bf $\alpha^i_j$} : Sign Change
+\item {\bf $\beta^i_j$} : Sign Change
+\item {\bf $\frac{\partial u}{\partial n}(x_j)$} : No Change.
+\end{itemize}
+
+With the same meaning of notation as (\ref{mat1}), we can set up
+the system of linear equation for this problem by modifying signs:
+
+
+\begin{eqnarray}
+\label{mat2}
+\begin{bmatrix}
+    \frac{1}{2}-\beta^1_1& -\beta^1_2& \cdots & -\beta^1_N \\
+    -\beta^2_1& \frac{1}{2}-\beta^2_2& \cdots & -\beta^2_N\\
+    \vdots& \vdots& \ddots& \vdots\\
+    -\beta^N_1& -\beta^N_2& \cdots & \frac{1}{2} - \beta^N_N \\
+\end{bmatrix}
+\begin{bmatrix}
+    u(x_1)    \\
+    u(x_2)    \\
+    \vdots      \\
+    u(x_N)    \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+    - \sum_{j=1}^N \alpha^1_j\frac{\partial u}{\partial n}(x_j)   \\
+    - \sum_{j=1}^N \alpha^2_j\frac{\partial u}{\partial n}(x_j)   \\
+    \vdots  \\
+    - \sum_{j=1}^N \alpha^N_j\frac{\partial u}{\partial n}(x_j)   \\
+\end{bmatrix}.
+\end{eqnarray}
+
+\section{Question}
+{\bf Above two cases (\ref{mat1} and \ref{mat2}) has only
+difference in its orientation. But two solutions from \ref{mat1}
+and \ref{mat2} are definitely different. Is there anything wrong
+on the formulation of second problem(clockwise orientation)? I
+wonder if Gauss theorem presume a type of orientation or direction
+of normal vectors.}
+
+\section{Computation of $\alpha_j(x_i), \beta_j(x_i)$}
+We set
+\begin{eqnarray}
+(x_1, x_2) &=& R (\cos(\theta_1), \sin(\theta_1))\\
+(z_1, z_2) &=& r (\cos(\theta_2), \sin(\theta_2))
+\end{eqnarray}
+
+\subsection{Nonsingular $\alpha$}
+\begin{eqnarray}
+\alpha_j(x) &=& \int_{E_j} - \frac{1}{2\pi} \log | x-z | dx \\
+&=&- \frac{1}{2\pi} \int_{E_j} \frac{1}{2} \log\left[(x_1-z_1)^2 + (x_2-z_2)^2 \right] dx \\
+&=&- \frac{1}{2\pi} r |J_j| \frac{1}{2} \left[ \sum_{k} \log \{(R \cos(\theta_1)-r\cos(\theta_2(\xi_k))^2 + (R\sin(\theta_1)-r\sin(\theta_2(\xi_k))^2 \} \cdot w_k \right].
+\end{eqnarray}
+
+\subsection{Singular $\alpha$}
+In this case we have $R = r$. This enables:
+\begin{equation}
+|x-z| = 2 R \sin(\frac{|\theta_1 - \theta_2|}{2}).
+\end{equation}
+
+\begin{eqnarray}
+\alpha_j(x_i) &=& - \frac{R}{2\pi} \int_{\theta_j}^{\theta_{j+1}}  \log \left[2R\sin(\frac{|\theta - \theta_i|}{2}) \right] d\theta \\
+&=&- \frac{R}{2\pi} \int_{\theta_j}^{\theta_{j+1}}  \log\left[\frac{\sin(\frac{|\theta - \theta_i|}{2})}{\frac{|\theta - \theta_i|}{2}}\right] + \log(R |\theta-\theta_i|)d\theta \\
+&=&- \frac{R}{2\pi} |J_j| \left[\sum_k\log(\frac{\sin(\frac{|\theta -\theta_i|}{2})}{\frac{|\theta -\theta_i|}{2}})\right]-\frac{R}{2\pi}\left[\int_{\theta_j}^{\theta_{j+1}}\log(R|\theta-\theta_i|) d\theta \right].
+\end{eqnarray}
+Note that
+\begin{eqnarray}
+&&-\frac{R}{2\pi}\left[\int_{\theta_j}^{\theta_{j+1}}\log(R|\theta-\theta_i|) d\theta \right]\\
+&=&-\frac{R}{2\pi}\left[\int_{\theta_j}^{\theta_i}\log\{R(\theta_i-\theta)\}d\theta+\int_{\theta_i}^{\theta_{j+1}}\log\{R(\theta-\theta_i)\}d\theta\right]\\
+&=&-\frac{R}{2\pi}\left[\int_{R(\theta_i-\theta_j}^{0}\log\psi(-\frac{1}{R})d\psi+\int_{0}^{R(\theta_{j+1}-\theta_i}\log\psi \frac{1}{R} d\psi \right]\\
+&=&-\frac{R}{2\pi} \frac{1}{R} \left[\int_{0}^{R(\theta_i-\theta_j)}\log\psi d\psi+\int_{0}^{R(\theta_{j+1}-\theta_i)}\log\psi d\psi \right]\\
+&=&-\frac{1}{2\pi} \left[ (\theta_i-\theta_j)\{ \log\{R(\theta_i-\theta_j)\} - 1 \} + (\theta_{j+1}-\theta_i) \{ \log\{R(\theta_{j+1}-\theta_i)\}-1\}\right]\\
+\end{eqnarray}
+
+\subsection{Nonsingular $\beta$}
+\begin{eqnarray}
+G(z, x) &=& -\frac{1}{2\pi}\log|z-x| = -\frac{1}{2\pi} \frac{1}{2} \log\left[ (z_1-x_1)^2 + (z_2-x_2)^2 \right] \\
+G_{z_1} &=& -\frac{1}{2\pi}\frac{z_1-x_1}{(z_1-x_1)^2 +(z_2-x_2)^2}\\
+G_{z_2} &=& -\frac{1}{2\pi}\frac{z_2-x_2}{(z_1-x_1)^2 +(z_2-x_2)^2}\\
+\end{eqnarray}
+
+\begin{eqnarray}
+\nabla_z G(z, x) \cdot {\bf n} &=& G_{z_1} \cos\theta_z + G_{z_2} \sin\theta_z\\
+&=&-\frac{1}{2\pi}\frac{(r\cos\theta_z-R\cos\theta_x)\cos\theta_z+(r\sin\theta_z-R\sin\theta_x)\sin\theta_z}{(r\cos\theta_z-R\cos\theta_x)^2+(r\sin\theta_z- R\sin\theta_x)^2}.
+\end{eqnarray}
+
+\begin{eqnarray}
+&&\beta_j(x_i) = R \int_{\theta_j}^{\theta_{j+1}} \nabla G(z,x)\cdot {\bf n} d\theta \\
+&=& R |J_j| (-\frac{1}{2\pi}) \sum_k\frac{(r\cos\theta_z(\xi_k)-R\cos\theta_x)\cos\theta_z(\xi_k)+(r\sin\theta_z(\xi_k)-R\sin\theta_x)\sin\theta_z(\xi_k)}{(r\cos\theta_z(\xi_k)-R\cos\theta_x)^2+(r\sin\theta_z(\xi_k)-R\sin\theta_x)^2} \cdot w_k.
+\end{eqnarray}
+
+\subsection{Singular $\beta$}
+\begin{eqnarray}
+\beta_j(x_i) &=& R \int_{\theta_j}^{\theta_{j+1}} -\frac{1}{2\pi}\frac{R(\cos\theta_z-\cos\theta_x)\cos\theta_z+R(\sin\theta_z-\sin\theta_x)\sin\theta_z}{R^2(\cos\theta_z-\cos\theta_x)^2+R^2(\sin\theta_z-\sin\theta_x)^2}d\theta\\
+&=&-\frac{1}{2\pi} \frac{1}{2} (\theta_{j+1} - \theta_j)
+\end{eqnarray}
+
+\section{Check list for debugging Bem with constant basis on a
+circle}
+
+\begin{itemize}
+\item alpha - nonsing
+    \begin{enumerate}
+    \item direct testing - Test passed
+    \end{enumerate}
+\item alpha - sing
+    \begin{enumerate}
+    \item direct testing - On testing
+    \end{enumerate}
+        \begin{enumerate}
+        \item 1) trepezoidal / simson's               a) b)
+        \item 2) trepezoidal / my quadrature  a) b)
+        \item 3) simson's    / my quadrature  a) b)
+        \end{enumerate}
+
+\item beta - nonsing
+    \begin{itemize}
+    \item direct testing - Test passed, yet the case with radC=radT untested.
+    \item circuit testing - needless
+    \end{itemize}
+
+\item beta - sing
+    \begin{itemize}
+    \item direct testing - Test passed
+    \item circuit testing - Test
+    \end{itemize}
+\end{itemize}

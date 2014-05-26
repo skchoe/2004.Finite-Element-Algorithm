@@ -1,0 +1,155 @@
+
+\documentclass[11pt, notitlepage,  letterpaper]{article}
+
+
+%% Horizontal Lengths - Max 6.5
+\setlength{\footskip}{0.5in} \setlength{\hoffset}{0in}
+\setlength{\oddsidemargin}{-.2in}
+\setlength{\evensidemargin}{-.2in}
+%\setlength{\textwidth}{6.9in}
+\setlength{\textwidth}{6.6in}
+
+%% Vertical Lengths - Max 9.0
+\setlength{\headheight}{0in} \setlength{\topskip}{0in}
+\setlength{\voffset}{0in} \setlength{\topmargin}{0.5in}
+\setlength{\textheight}{8.4in}
+
+%\usepackage{fancyheadings}
+
+\usepackage{url}
+\usepackage[]{epsfig,amsmath}[]
+
+
+%\pagestyle{headings}
+%\pagestyle{fancy}
+\pagenumbering{arabic}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New definitions and commands
+\newtheorem{define}{Definition}[section]
+\newtheorem{theorem}[define]{Theorem}
+\newtheorem{question}[define]{Question}
+\newtheorem{problem}[define]{Problem}
+
+
+%**************************************
+
+
+\begin{document}
+%\title{
+%{CS6962: Coursework 2}\\{Partitioning a Problem in Different
+%Ways}\\{\large Paper Submission} }
+%
+%\vfill
+\author{Seungkeol\ Choe \\ skchoe@cs.utah.edu}
+
+\renewcommand{\today}{Apr 30th, 2004}
+
+%\maketitle
+
+%\begin{abstract}
+%\end{abstract}
+
+%\noinden {\bf Keywords: Spectral Element Methods, Poisson Equation}
+
+%\tableofcontents
+
+%-------------------------------------------------------------------------------
+%\clearpage
+\section{Convergence of FE solver and slopes}
+
+%\smallskip %\smallskipamount
+\medskip %medskipamount
+%\bigskip %bigskipamount
+%\vfill
+\renewcommand{\arraystretch}{1.5}
+%\centering
+
+We examined a superconvergence for finite element approximation using linear/quadratic/cubic basis functions and obtained the following results:
+
+\begin{figure}[h]
+    \begin{center}
+    \epsfig{file = superconv70.eps, width = 16cm}
+    \caption{\label{scrvsol1}Convergence Test for the Method where N = 4,8,12,16,20, and 24 to the exact solution $u(x,y) = e^{- x^2 - y^2}$}
+    \end{center}
+\end{figure}
+
+The slopes for convergence in terms of 2 kinds of norm are as follows:
+
+\begin{center}
+\begin{tabular}{|c||r|r|r|}  \hline
+Norm  & Linear & Quadratic & Cubic\\ \hline \hline
+$L^{\infty}$&1.7717&3.6939&3.9453 \\\hline
+$L^2$&2.0243&3.0282&4.0368\\\hline
+\end{tabular}
+\end{center}
+
+The example solution was
+\begin{equation}
+u(x,y) = e^{- x^2 - y^2}.
+\end{equation}
+
+Conductivity Matrix A was defined as:
+\begin{eqnarray}
+    A(1,1) &=& \cos^2(\pi r^2) + \sin^2(\pi r^2)\\
+    A(1,2) &=& A(2,1) = \cos(\pi r^2) +  \sin(\pi r^2) + 2\\
+    A(2,2) &=& (\sin(\pi r^2)+2)^2
+\end{eqnarray}
+
+We subdivide the domain more finely to obtained small size of errors:
+
+\begin{figure}[h]
+    \begin{center}
+    \epsfig{file = superconv71.eps, width = 16cm}
+    \caption{\label{scrvsol2}Continued Convergence Test N = 24,28,32,36, and 40 $u(x,y) = e^{- x^2 - y^2}$}
+    \end{center}
+\end{figure}
+
+The following table shows slopes for convergence in terms of 2 kinds of norm:
+\begin{center}
+\begin{tabular}{|c||r|r|r|}  \hline
+Norm  & Linear & Quadratic & Cubic\\ \hline \hline
+$L^{\infty}$&1.8389&3.9372&3.9843 \\\hline
+$L^2$&1.9992&3.0074&4.0099\\\hline
+\end{tabular}
+\end{center}
+
+\newpage
+This graph shows the result again which combines previous results.
+\begin{figure}[h]
+    \begin{center}
+    \epsfig{file = superconv72.eps, width = 16cm}
+    \caption{\label{scrvsol2} N = 4, 8, 12, 16, 20, 24,28,32 $u(x,y) = e^{- x^2 - y^2}$}
+    \end{center}
+\end{figure}
+
+The following table shows slopes for convergence in terms of 2 kinds of norm:
+\begin{center}
+\begin{tabular}{|c||r|r|r|}  \hline
+Norm  & Linear & Quadratic & Cubic\\ \hline \hline
+$L^{\infty}$&1.4306&2.7583&4.0664 \\\hline
+$L^2$&1.8903&3.0051&4.1248\\\hline
+\end{tabular}
+\end{center}
+
+
+\newpage
+All together : total 9 experiments.
+\begin{figure}[h]
+    \begin{center}
+    \epsfig{file = superconv74.eps, width = 16cm}
+    \caption{\label{scrvsol2} N = 4, 8, 12, 16, 20, 24,28,32, 36 $u(x,y) = e^{- x^2 - y^2}$}
+    \end{center}
+\end{figure}
+
+The following table shows slopes for convergence in terms of 2 kinds of norm:
+\begin{center}
+\begin{tabular}{|c||r|r|r|}  \hline
+Norm  & Linear & Quadratic & Cubic\\ \hline \hline
+$L^{\infty}$&1.4616&2.7922&4.0640 \\\hline
+$L^2$&1.8950&3.0055&4.1194\\\hline
+\end{tabular}
+\end{center}
+
+\end{document}

@@ -1,0 +1,176 @@
+
+%\{ {\it  sp1d\_ch1.tex} \}
+
+The spectral method is a numerical scheme for approximating the
+solution of partial differential equations. It has developed
+rapidly in the past three decades and has been applied to
+numerical simulation problems in many fields.
+
+One reason for its broad and fast acceptance is its use of various
+systems of infinitely differentiable basis functions as trial
+functions. By choosing an appropriate orthogonal system based on
+domain of orthogonality, we can apply the method to periodic and
+non-periodic problems, as well as problems defined on various
+domains, such as compact domain, half/all intervals.
+
+Another advantage of the spectral method is its high accuracy. In
+particular, the spectral polynomial method allows control of both
+the resolution of element size and the order of approximation.
+This results in exponential convergence, which is a marked
+improvement over classical finite difference and other purely
+element methods.
+
+For solving the problem, we discretize the domain and obtain the
+following approximation of infinite series. A function $u$ is
+represented via a truncated series expansion as follows:
+\begin{equation}
+\label{solapprx}
+u \approx u_N = \sum_{n=0}^{N} \hat u_n \phi_n,
+\end{equation}
+where $\phi_n$ are the basis functions. In general the Chebyshev
+polynomials $T_n$ or the Legendre polynomials $L_n$ or another
+member of the class of Jacobi polynomials $P_n^{\alpha, \beta}$
+are employed as basis functions.
+
+In choosing proper basis function, we apply the following 3
+characteristics to the candidate basis.
+\begin{itemize}
+\item {\bf Numerical Efficiency} After discretization,
+the choice of basis affects complexity of mass matrix. Moreover we
+need consider the efficiency in solving the system of linear
+equations. For example, using the monomials $\{x^k\}_{k=0}^{N}$
+result in the matrix whose non-zero component are the half. But
+its inverse matrix is full and the cost of inverting is dominant.
+In contrast, the Legendre polynomial basis composes diagonal mass
+matrix and its inverse matrix can be calculated very efficiently.
+\item {\bf Conditioning} If a matrix system is ill-conditioned
+the round-off error in the matrix system can lead to large errors
+in the solution. Furthermore the number iteration required in
+inverting the matrix using iterative solver can be increase by the
+condition number. The condition number of monomials and Lagrange
+polynomial are close to $10^p$, for the polynomial order $p$. But
+Legendre polynomial has condition number $2P+1$. This condition
+also affects the degree of linear independence of each basis
+function.
+\end{itemize}
+
+This project seeks to study the fundamental theory of spectral
+method, problems, solvability, and to obtain its constructive
+procedure to apply the method to various application problems. By
+checking solutions obtained via the spectral method against exact
+solutions, we can validate the method and see how much we can save
+the effort on discretisation of domain to achieve the same degree
+of accuracy in comparison to classical element methods.
+
+In chapter 2, I investigate spectral method solutions for the
+forward Poisson problem with Dirichlet and Neumann boundary
+condition on each end of one dimensional interval domain. In
+chapter 3, I investigate the spectral polynomial method and
+Fourier method for solving the forward Poisson problem with
+Dirichlet and Neumann boundary condition on inner and outer
+boundary circles respectively. Our approach utilizes spectral
+polynomial element and Fourier method in tensor product form. As
+an conclusion we present the result of numerical solution and its
+convergence by h/p adaptive control.
+
+\subsection{Poisson Equation}
+
+Science and engineering disciplines are generally interested in
+systems of continuous quantities and relations. This project
+focuses on solutions of the Poisson equation, which appears in
+various field such as electrostatics, magnetics, heat flow,
+elastic membranes, torsion, and fluid flow.
+
+For example, electrostatics, the governing equation appears as
+Gauss's law in differential form \cite{Johnson}:
+\begin{equation}
+\nabla \cdot \mathbf{E} = 4 \pi \rho
+\end{equation}
+which indicates that the charge within a closed spherical surface
+is related to the electric field \textbf{E} normal to surface
+element where $\rho$ is a charge density.
+
+Since it is known in electrostatics that the electric field \textbf{E} is conservative, \textbf{E} is a form of gradient of a scalar potential $\Phi$,
+\begin{equation}
+\mathbf{E} = - \nabla\Phi.
+\end{equation}
+With these two relationships, we obtain a Poisson equation
+\begin{equation}
+\nabla^2\Phi = -4\pi\rho.
+\end{equation}
+
+
+In this report, the one-dimensional Poisson equation is defined as
+
+\begin{equation}
+\label{poisson1} L(u) \equiv  \frac{d^2}{dx^2} u + f = 0.
+\end{equation}
+where $u$ and $f$ are defined on $\Omega$.
+
+In pointwise viewpoint, the one dimensional Poisson equation
+(\ref{poisson1}) is written as
+\begin{equation}
+\label{poisson2} L(u)(x) \equiv \frac{d^2}{dx^2} u(x) + f(x) = 0,
+\end{equation}
+for all $x$ in $(a, b)$.
+
+\subsection{Method of Weighted Residuals}
+According to the Weierstrass approximation theorem, for any given
+real valued continuous solution $u$ on a compact interval $[a, b]$
+we can obtain real polynomial function $p$ of certain degree such
+that $p$ uniformly approximates $u$. Although the result of
+convergence at each point is within a predefined error bound, this
+does not satisfy the requirement that we need to acquire an
+accurate solution on a specific situation. By imposing certain
+restrictions, we can obtain a formulation that satisfies the
+requirement.
+
+To describe this, we set a general linear differential equation on $\Omega$.
+\begin{equation}
+\label{pde1} L(u) = 0.
+\end{equation}
+with appropriate initial and boundary conditions. Under certain
+restriction,  we assume that the true solution $u(x)$ can be
+approximated by a finite series expansion of the form:
+\begin{equation}
+\label{sol1} u^{\delta}(x) = \sum_{i=0}^{N_{dof}-1} \hat u_i
+\Phi_i(x),
+\end{equation}
+where $\Phi_i(x)$ are polynomial trial functions and $\hat u_i$
+are $N_{dof}$ unknown coefficients. We assume the following:
+\begin{eqnarray}
+    \hat u_0  &=& \mathcal{G}_{D} \qquad \mbox{: Dirichlet Boundary Value}, \\
+    \Phi_0(a) &=& 1,  \Phi_{N_{dof}-1}(b) = 1 \qquad \mbox{where $a, b$ are the boundary of domain $\Omega$}\\
+\end{eqnarray}
+We then define a non-zero residual $R$ by:
+\begin{equation}
+R(u^{\delta}) = L(u^{\delta}).
+\end{equation}
+
+Define a set of functions, $H^1(\Omega)$  and a norm
+$||\cdot||_{H^1(\Omega)}$ on the space as follows:
+\begin{eqnarray}
+H^1(\Omega) &=& \{v \in L^2(\Omega) : \frac{d}{dx}v \in L^2(\Omega)\}, \\
+||v ||_{H^1(\Omega)} &=& \left[ \int_{\Omega}v(x)^2 + \frac{d}{dx}v(x)^2 dx \right]^{\frac{1}{2}}, \quad v \in H^1(\Omega).
+\end{eqnarray}
+
+We define an inner-product $\langle \cdot, \cdot \rangle$ over
+$H^1(\Omega)$  as follows:
+\begin{equation}
+\label{functional}
+\langle u, v \rangle = \int_{\Omega} u(x) \cdot v(x) dx,
+\end{equation}
+
+This method is restricted to test functions, $v(x)$ that satisfy:
+\begin{equation}
+\langle v, R \rangle = 0.
+\end{equation}
+
+For example, in the collocation method, the $j^{th}$ test function
+is the Dirac delta function which evaluates to a collocation point
+$x = x_j$. Then we have
+\begin{equation}
+0 = \langle \delta_j, R \rangle = \int_{\Omega} R(u^{\delta})(x)\delta_j(x)dx = R(u^{\delta})(x_j) = L(u^{\delta})(x_j).
+\end{equation}
+
+Other possible test functions are examined in \cite{Karniadarkis}.

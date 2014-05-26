@@ -1,0 +1,195 @@
+\section {Approximation of High order Polynomial solving
+                                                1-D Poisson Equation}
+
+In this section we construct a polynomial $P_n$ of order $n$
+defined on $[0,1]$, which satisfies the following.
+\begin{eqnarray*}
+ P_n(0) = 0, &P_n(1) = 1 \\
+ \frac{d^k}{dx^k}P_n(0) = 0, &\frac{d^k}{dx^k}P_n(1) = 0
+\end{eqnarray*}
+for all $k = 1, \cdots, n-2$. \\
+Then for each $n$, we obtain a polynomial $P_n$ by solving a
+system of linear equations having unique solution which determines
+the set of coefficients of $P_n$. We will apply the spectral
+polynomial solver to approximate the second derivative $Q_{n-2}$
+of $P_n$.
+
+Figure \ref{sol1}, \ref{sol2}, and \ref{sol3} are showing some
+samples of solution of order($n$) $21$, $13$, and $13$.
+respectively.
+
+\begin{problem}
+\label{problem2}Consider the following differential equation for
+$u(x)$ such that
+\begin{equation*}
+    \frac{d^2}{dx^2} u(x) = Q_{n-2},
+\end{equation*}
+for all $x$ in $[0, 1]$. Then the problem is to find approximation
+$p(x)$ of $u(x)$ using spectral polynomial method.
+\end{problem}
+
+\noindent
+%\begin{minipage}[b]{.46\linewidth}
+\begin{figure}
+  \centering%
+  \epsfig{file = figs/0_sol21.eps, %
+        height = 6cm}
+  \caption{\label{sol1}Solution polynomial of order 21}
+%\end{minipage}\hfill
+\end{figure}
+
+%\begin{minipage}[b]{.46\linewidth}
+\begin{figure}
+  \centering%
+  \epsfig{file = figs/0_sol13.eps, height = 6cm}
+  \caption{\label{sol2}Solution of order 13}
+%\end{minipage}\hfill
+\end{figure}
+
+%\begin{minipage}[b]{.46\linewidth}
+\begin{figure}
+  \centering%
+  \epsfig{file = figs/0_sol03.eps, height = 6cm}
+  \caption{\label{sol3}Solution of Of order 3}
+%\end{{minipage}\hfill
+\end{figure}
+
+\subsection{Existence of Approximate Solution}
+
+The Figure \ref{crvconvf1} and \ref{crvconvf2} are showing the
+result of spectral polynomial method approximating the solution of
+Problem \ref{problem2}. The maximum error value in Table
+ \ref{crvconv1t} is showing the approximation is within numerically
+exact solution tolerance.
+
+\begin{figure}[h]
+\begin{center}
+\epsfig{file = figs/3_apcrv_app.eps, %
+        height = 9cm}
+\caption{\label{crvconvf1}Graph showing spectral approximation
+satisfying Problem \ref{problem2}}
+\end{center}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+\epsfig{file = figs/3_apcrv_err.eps, %
+        height = 9cm}
+\caption{\label{crvconvf2}Graph showing the error of approximation
+in Figure \ref{crvconvf1}}
+\end{center}
+\end{figure}
+
+\begin{table}[h]
+\centering \caption{\label{crvconv1t} Specification of
+                              Figure \ref{crvconvf1} and its error}
+\begin{tabular}{|c|c|c|c|} \hline
+Element Size &Num. of Element &Orders    &Err   \\ \hline \hline
+$0.2$        &$5$             &$5, 5, 5, 5, 5$ &$5.7732e-015$ \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\clearpage
+%----------------------------------------------------------------------
+
+\subsection{Convergence of Solution in Equidistance and Uniformly Ordered Elements}
+
+In this section we show the convergence of solutions obtained by
+handling orders of basis on each element. We fix the element to be
+same size(length) and divide the domain $[0, 1]$ by 5 elements.
+
+Figure \ref{crvconvf3} is the result of convergence to
+approximating to a solution of order $5$ in Problem
+\ref{problem2}. It shows monotonic decreasing with same similar
+slope until the order reaches from $1$ to $4$, and the slope get
+stiff between order $4$ and $5$.
+
+Figure \ref{crvconvf4} is that of solution of order $7$. In this
+case, the error stops to decrease after the order is larger than
+$7$. This part should be considered carefully and need to be made
+sure the applicable range of the numerical method.
+
+\begin{figure}[h]
+\begin{center}
+\epsfig{file = figs/31_equiconv_ord5.eps, %
+        height = 9cm}
+\caption{\label{crvconvf3}Graph showing convergence of order 5
+problem}
+\end{center}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+\epsfig{file = figs/31_equiconv_ord7.eps, %
+        height = 9cm}
+\caption{\label{crvconvf4}Graph showing convergence of order 7
+problem}
+\end{center}
+\end{figure}
+
+
+%\clearpage
+%----------------------------------------------------------------------
+
+\subsection{Test of Convergence of Solution in Variable Ordered Elements}
+
+According to the idea that the solution need to be carefully
+approximated specially in the center of the curve, we assign
+different orders by the position of elements. I tested 2 cases.
+The one is to variate 3 elements in center among 5 elements. The
+other is to variate 1 element in the exact center of all elements.
+
+Figure \ref{crvconvf5} is the first case with 3 different orders
+at the $2$ ends of elements. Since it is based on the solution of
+order $5$, the orders in 3 center elements moves from $1$ to $5$.
+
+Figure \ref{crvconvf6} is the same as Figure \ref{crvconvf5}
+except that it is based on solution of order 7 problem and the
+orders at the center elements varies from 1 to 7.
+
+
+\begin{figure}[h]
+\begin{center}
+\epsfig{file = figs/32_variconv_ordppp5.eps, %
+        height = 9cm}
+\caption{\label{crvconvf5}Graph showing convergence of order 5
+problem}
+\end{center}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+\epsfig{file = figs/32_variconv_ordppp7.eps, %
+        height = 9cm}
+\caption{\label{crvconvf6}Graph showing convergence of order 7
+problem}
+\end{center}
+\end{figure}
+
+Figure \ref{crvconvf7} and Figure \ref{crvconvf8} are the same as
+\ref{crvconvf5} and \ref{crvconvf6} except that these have the
+element that varies only a center element. The 2 different control
+of orders on each element doesn't give out much different error
+movement. This means choosing wise orders in each element can save
+time of computing since the lower is the order, the faster does
+the system solve.
+
+\begin{figure}[h]
+\begin{center}
+\epsfig{file = figs/32_variconv_ordp5.eps, %
+        height = 9cm}
+\caption{\label{crvconvf7}Graph showing convergence of order 5
+problem}
+\end{center}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+\epsfig{file = figs/32_variconv_ordp7.eps, %
+        height = 9cm}
+\caption{\label{crvconvf8}Graph showing convergence of order 7
+problem}
+\end{center}
+\end{figure}

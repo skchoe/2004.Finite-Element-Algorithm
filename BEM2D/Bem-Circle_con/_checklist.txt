@@ -1,0 +1,22 @@
+Check list for debugging Bem with constant basis on a circle.
+
+alpha - nonsing
+	direct testing - Test passed
+alpha - sing
+	direct testing - On testing
+									1) trepezoidal / simson's				a) b)
+									2) trepezoidal / my quadrature	a) b)
+									3) simson's    / my quadrature  a) b)
+
+									a) for f(x) = log(sin(x)/x) on [-1, 1];
+									b) for f(x) = log(sin(x-\theta)/2)/(x-\theta)/2)) on 
+																[0, \theta, 2*\theta\];
+
+beta - nonsing
+	direct testing - Test passed, yet the case with radC=radT untested.
+	circuit testing - needless
+
+
+beta - sing
+	direct testing - Test passed
+	circuit testing - Test

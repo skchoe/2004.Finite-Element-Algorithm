@@ -1,0 +1,84 @@
+\documentclass[11pt,letterpaper,landscape]{article}
+
+% Vertical Lengths - Max 9.0
+\setlength{\voffset}{0in} \setlength{\topmargin}{.0in}
+\setlength{\headheight}{0in} \setlength{\topskip}{-1.2in}
+\setlength{\textheight}{9.0in} \setlength{\footskip}{-.0in}
+
+% Horizontal Lengths - Max 6.5
+\setlength{\hoffset}{0in}
+\setlength{\oddsidemargin}{-.2in}
+\setlength{\textwidth}{6.9in}
+\setlength{\evensidemargin}{-.2in}
+
+\usepackage{url}
+\usepackage[]{epsfig,amsmath,lscape}[]
+%\usepackage{lscape} %  in latex preamble
+
+
+\pagestyle{headings} \pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New definitions and commands
+\newtheorem{define}{Definition}[section]
+\newtheorem{theorem}[define]{Theorem}
+\newtheorem{question}[define]{Question}
+\newtheorem{problem}[define]{Problem}
+
+\begin{document}
+
+\title{
+{Table of value of $u$ and $D^{(1)}u$ at $x=0$, $x=1$, and }\\
+{P-Convergence graphs for $u$ of order 7, 10, and 15 } }
+\maketitle
+
+\begin{center}
+
+\begin{tabular}{|c|c|c|c|c|} \hline
+Order of $u$& $u(0)$ & $u(1)$&$D^{(1)}u(0)$ &$D^{(1)}u(1)$
+\\ \hline \hline
+
+3&0&1&0&0 \\\hline
+5&0&1&0&0\\ \hline
+7&0&1.00000000000003&0&1.136868377216160e-013\\ \hline
+9&0&1.00000000000156&0&6.366462912410498e-012\\ \hline
+11&0&0.99999999995913&0&-8.549250196665525e-011\\ \hline
+13&0&1.00000000004684&0&-2.981323632411659e-009\\ \hline
+15&0&0.99999999880129&0&6.714253686368465e-008\\ \hline
+17&0&0.99999985288014&0&-8.293049177154899e-006\\ \hline
+19&0&0.99970423483319&0&-6.050852825865150e-004\\ \hline
+21&0&1.00539462760207&0&0.02194331772625\\  \hline
+\end{tabular}
+\end{center}
+
+
+
+\begin{figure}[h]
+\begin{center}
+\epsfig{file = figs/figo07.eps, %
+        height = 9cm}
+\caption{\label{crvconvf4}Figure Showing P-convergence of S-curve
+of order 7}
+\end{center}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+\epsfig{file = figs/figo10.eps, %
+        height = 9cm}
+\caption{\label{crvconvf4}Figure Showing P-convergence of S-curve
+of order 10}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[h]
+\begin{center}
+\epsfig{file = figs/figo15.eps, %
+        height = 9cm}
+\caption{\label{crvconvf4}Figure Showing P-convergence of S-curve
+of order 15}
+\end{center}
+\end{figure}
+
+\end{document}

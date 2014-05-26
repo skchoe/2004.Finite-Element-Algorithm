@@ -1,0 +1,35 @@
+Horder = 6
+
+
+Max_error1 =
+
+  1.2179e-004
+
+
+Max_error3 =
+
+  1.6362e-011
+
+
+Max_error5 =
+
+  7.3275e-015
+
+
+
+
+
+Horder = 9
+Max_error1 =
+
+  1.9073e-006
+
+
+Max_error3 =
+
+  2.4647e-014
+
+
+Max_error5 =
+
+  3.6859e-014

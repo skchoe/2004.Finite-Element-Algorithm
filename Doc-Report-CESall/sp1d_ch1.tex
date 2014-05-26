@@ -1,0 +1,87 @@
+
+%\{ {\it  sp1d\_ch1.tex} \}
+
+Spectral method is a numerical scheme to approximate and simulate the solution of partial differential equations. It has developed rapidly in the past three decades and been applied to many field in numerical simulation.
+
+One of main reasons that it has gained broad and fast acceptance is that it can take various system of infinitely differentiable basis functions as trial functions. By choosing an appropriate orthogonal system based on its domain of orthogonality, we can apply the method to problems such as periodic/non-periodic problems and problems defined on compact domain, half/all intervals.
+
+The other thing which is so fascinating is its high accuracy. In particular, the spectral polynomial method facilitates the control of the resolution of element size and the order of approximation. This enables the method to converge in exponential speed which shows a noticeable difference from classical finite difference and other purely element methods.
+
+The goal of this project is to study the fundamental theory of spectral method in its existence, solvability, and to obtain its constructive procedure to apply the method in various application field. By checking the solutions of problems having exact solution in its accuracy, we can validate the method and see how much we can save the effort on discretisation of domain to achieve the same degree of accuracy in comparison to classical element methods.
+
+In this report, I investigate the spectral method for solving a partial differential equation specific to the forward Poisson problem with Dirichlet and Neumann boundary condition on each end of one dimensional interval domain. Throughout the report, I will briefly explain the method of weighted residual that is necessary to go further toward spectral polynomial method in this section. We will look into mathematical background and procedure of spectral method on forward poisson problem in section 2 and in the end, we make sure the result based on the mathematical theory.
+
+
+\subsection{Poisson Equations}
+
+In the science and engineering system, we are interested in the system having continuous quantities and relations. We put our main focus on the system having poisson relationship. We have experienced this system in various field such as Electrostatics, Magnetics, Heat flow, Elastic Membranes, Torsion, and Fluid Flow, etc.
+
+For example, in Electrostatics, we can see the Gauss's law in differential form as follows\cite{Johnson}:
+\begin{equation}
+\nabla \cdot \mathbf{E} = 4 \pi \rho
+\end{equation}
+which means the charge within a closed spherical surface is related to the electric field \textbf{E} normal to surface element where $\rho$ is a charge density.
+
+Since it is known in electrostatics that the electric field \textbf{E} is conservative, \textbf{E} is a form of gradient of a scalar potential $\Phi$,
+\begin{equation}
+\mathbf{E} = - \nabla\Phi.
+\end{equation}
+With these two relationships, we obtain a Poisson equation
+\begin{equation}
+\nabla^2\Phi = -4\pi\rho.
+\end{equation}
+
+In this report, the Poisson equation is defined as
+
+\begin{equation}
+\label{poisson1}
+L(u) \equiv  \nabla^2 u + f = 0.
+\end{equation}
+where $u$ and $f$ are defined on $\Omega$.
+
+In pointwise viewpoint, the one dimensional Poisson equation
+(\ref{poisson1}) is written as
+\begin{equation}
+\label{poisson2}
+L(u)(x) \equiv \frac{d^2}{dx^2} u(x) + f(x) = 0,
+\end{equation}
+for all $x$ in $[a, b]$.
+
+\subsection{Method of Weighted Residuals}
+According to the Weierstrass approximation theorem, for any given real valued continuous solution $u$ on a compact interval $[a, b]$ we can obtain real polynomial function $p$ of certain degree such that $p$ uniformly approximates $u$. Even though the speed of convergence of each point is within a predefined threshold, this does not satisfies the requirement that we need to acquire an accurate solution on a specific situation. By imposing certain restrictions, we can obtain a formulation that satisfies the requirement.
+
+To describe this, we set a general linear differential equation on $\Omega$.
+\begin{equation}
+\label{pde1} L(u) = 0.
+\end{equation}
+with appropriate initial and boundary conditions. Under certain restriction, we assume that the solution $u(x)$ can be represented exactly in the form of approximation
+\begin{equation}
+\label{sol1} u^{\delta}(x) = \sum_{i=0}^{N_{dof-1}} \hat u_i \Phi_i(x),
+\end{equation}
+where $\Phi_i(x)$ are polynomials called trial functions and $\hat u_i$ are $N_{dof}$ unknown coefficients by assuming the following:
+\begin{eqnarray}
+    \hat u_0  &=& \mathcal{G}_{D} \qquad \mbox{: Dirichlet Boundary Value}, \\
+    \Phi_0(a) &=& 1,  \Phi_{N_{dof}-1}(b) = 1 \qquad \mbox{where $a, b$ are the boundary of domain $\Omega$}\\
+\end{eqnarray}
+Then we can define a non-zero residual $R$ by
+\begin{equation}
+R(u^{\delta}) = L(u^{\delta}).
+\end{equation}
+
+We define an inner-product $\langle \cdot, \cdot \rangle$ over $C^0(\Omega)$  as follows:
+\begin{equation}
+\label{functional}
+\langle u, v \rangle = \int_{\Omega} u(x) \cdot v(x) dx.
+\end{equation}
+
+The restriction of this method is imposed on the choice of test function $v(x)$ that satisfies
+\begin{equation}
+\langle v, R \rangle = 0.
+\end{equation}
+
+For example, in the collocation method, the $j^{th}$ test function is the Dirac delta function which is one at a collocation point $x = x_j$. Then we have
+\begin{equation}
+0 = \langle \delta_j, R \rangle = \int_{\Omega} R(u^{\delta})(x)\delta_j(x)dx = R(u^{\delta})(x_j) = L(u^{\delta})(x_j).
+\end{equation}
+
+Other types of test functions are explained in \cite{Karniadarkis} with the list of test functions that we can characterize the restrictions based on their definition. The Galerkin method is one such method in which the test functions are defined by $\Phi_i$ which are in the same set of trial functions.

@@ -1,0 +1,116 @@
+\documentclass{elsart}
+\usepackage{amsmath,amssymb}
+\usepackage{epsfig}
+\usepackage{cite}
+\usepackage{fancybox}
+\usepackage{multicol}
+\usepackage{graphicx}
+
+
+
+\bibliographystyle{unsrt}
+\journal{Applied Numerical Mathematics}
+
+
+
+\psfigdriver{dvips}
+\setlength{\oddsidemargin}{-0.06in}
+
+\setlength{\evensidemargin}{0.06in}
+\setlength{\topmargin}{0.4in}
+\setlength{\textwidth}{6.50in}
+\setlength{\textheight}{8.93in}
+\raggedbottom \hfuzz=3pt
+%
+
+\long\def\comment#1{}
+\def \pder#1#2{\frac{\partial {#1}}{\partial {#2}}}
+\def \dfe {\buildrel \rm def \over =}
+\def\half{{\textstyle {1\over2}}}
+
+
+
+% ++++ Vectors.
+
+%  +++++ Tensors
+\def \tnsrsig{ \underset{\thickapprox}{\boldsymbol{\sigma} }}
+\def \tnsreps{\underset{\thickapprox}{\boldsymbol{\varepsilon} }}
+
+
+
+
+\def\calR{\cal R }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New definitions and commands
+\newtheorem{define}{Definition}[section]
+\newtheorem{theorem}[define]{Theorem}
+\newtheorem{question}[define]{Question}
+\newtheorem{problem}[define]{Problem}
+
+
+%**************************************
+
+\begin{document}
+\begin{frontmatter}
+\title{Solving ECG Inverse Problems Using Spectral Element Methods}
+
+
+\author[addr1]{S.\ Choe},
+\ead{skchoe@cs.utah.edu}
+\author[addr1]{R.\ M.\ Kirby \thanksref{corresp}}
+\ead{kirby@cs.utah.edu}
+
+
+\address[addr1]{School of Computing, Univ.\ of Utah, Salt Lake City, Utah, USA.}
+
+\thanks[corresp]{Corresponding Author}
+\date{Dec 1, 2003}
+
+
+\begin{abstract}
+
+\end{abstract}
+
+\end{frontmatter}
+
+\maketitle
+\noindent {\bf Keywords:}
+
+%\tableofcontents
+
+
+
+\section{Introduction}
+%\input{sp12d_ch1}
+
+\section{Theory of Spectral Polynomial/Fourier Elements Method}
+%\input{sp1d_ch2}
+
+\input{sp2d_ch21}
+\input{sp2d_ch2ex}
+
+\section{Experiment Results}
+%\input{sp1d_ch3_1}
+%\input{sp1d_ch3_2}
+\input{sp2d_ch3_1}
+\input{sp2d_ch3_2}
+
+\section{Conclusion}
+%\input{sp1d_ch4_1}
+
+%-------------------------------------------------------------------------------
+
+%\clearpage
+
+%------------------------------------------------------------------------------
+%   BIBLIOGRAPHY
+%\input{sp12d_chbib}
+
+%-------------------------------------------------------------------------------
+%   APPENDIX
+%S
+%\input{sp1d_chapdx}
+
+
+\end{document}

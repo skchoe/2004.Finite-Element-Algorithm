@@ -1,0 +1,115 @@
+
+\documentclass[11pt, notitlepage,  letterpaper]{article}
+
+
+%% Horizontal Lengths - Max 6.5
+\setlength{\footskip}{0.5in} \setlength{\hoffset}{0in}
+\setlength{\oddsidemargin}{-.2in}
+\setlength{\evensidemargin}{-.2in}
+%\setlength{\textwidth}{6.9in}
+\setlength{\textwidth}{6.6in}
+
+%% Vertical Lengths - Max 9.0
+\setlength{\headheight}{0in} \setlength{\topskip}{0in}
+\setlength{\voffset}{0in} \setlength{\topmargin}{0.5in}
+\setlength{\textheight}{8.4in}
+
+%\usepackage{fancyheadings}
+
+\usepackage{url}
+\usepackage[]{epsfig,amsmath}[]
+
+
+%\pagestyle{headings}
+%\pagestyle{fancy}
+\pagenumbering{arabic}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New definitions and commands
+\newtheorem{define}{Definition}[section]
+\newtheorem{theorem}[define]{Theorem}
+\newtheorem{question}[define]{Question}
+\newtheorem{problem}[define]{Problem}
+
+
+%**************************************
+
+
+\begin{document}
+%\title{
+%{CS6962: Coursework 2}\\{Partitioning a Problem in Different
+%Ways}\\{\large Paper Submission} }
+%
+%\vfill
+\author{Seungkeol\ Choe \\ skchoe@cs.utah.edu}
+
+\renewcommand{\today}{Apr 30th, 2004}
+
+%\maketitle
+
+%\begin{abstract}
+%\end{abstract}
+
+%\noinden {\bf Keywords: Spectral Element Methods, Poisson Equation}
+
+%\tableofcontents
+
+%-------------------------------------------------------------------------------
+%\clearpage
+\section{Convergence of FE solver and slopes: with Conductivity defined Elementwise}
+
+%\smallskip %\smallskipamount
+\medskip %medskipamount
+%\bigskip %bigskipamount
+%\vfill
+\renewcommand{\arraystretch}{1.5}
+%\centering
+
+We examined a superconvergence for finite element approximation using linear/quadratic/cubic basis functions and obtained the following results:
+
+
+Conductivity Matrix A is defined to be constant and diagonal over all domain:
+
+We subdivide the domain more finely to obtained small size of errors:
+
+\begin{figure}[h]
+    \begin{center}
+    \epsfig{file = EwiseErrDD.eps, width = 16cm}
+    \caption{\label{scrvsol2}Continued Convergence Test N = 4, 8, 12, 16, 24,28,32,36, and 40 $u(x,y) = e^{- x^2 - y^2}$} with Dirichlet Boundary of Square.
+    \end{center}
+\end{figure}
+
+The following table shows slopes for convergence in terms of 2 kinds of norm:
+\begin{center}
+\begin{tabular}{|c||r|r|r|}  \hline
+Norm  & Linear & Quadratic & Cubic\\ \hline \hline
+$L^{\infty}$&2.0233236&3.9334217&3.7874339 \\\hline
+$L^2$&1.9673284&2.9872180&4.0287991\\\hline
+\end{tabular}
+\end{center}
+
+\newpage
+
+This shows the decrease of error for F.E. Solver of Elliptic problem defined on a square with Mixed(Dirichlet and Neumann, not Robin) boundary conditions. 
+
+Conductivity Matrix A is defined to be constant and diagonal over each element of domain:
+
+We subdivide the domain more finely to obtained small size of errors:
+
+\begin{figure}[h]
+    \begin{center}
+    \epsfig{file = EwiseErrDN.eps, width = 16cm}
+    \caption{\label{scrvsol2}Continued Convergence Test N = 4, 8, 12, 16, 24,28,32,36, and 40 $u(x,y) = e^{- x^2 - y^2}$} with Dirichlet and Neumann Boundary of Square.
+    \end{center}
+\end{figure}
+
+The following table shows slopes for convergence in terms of 2 kinds of norm:
+\begin{center}
+\begin{tabular}{|c||r|r|r|}  \hline
+Norm  & Linear & Quadratic & Cubic\\ \hline \hline
+$L^{\infty}$&2.1286392&3.2724651&3.8174268 \\\hline
+$L^2$&1.8352189&2.9784264&4.0018499\\\hline
+\end{tabular}
+\end{center}
+\end{document}

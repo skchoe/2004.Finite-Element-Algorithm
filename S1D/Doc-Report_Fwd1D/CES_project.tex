@@ -1,0 +1,87 @@
+\documentclass[11pt, notitlepage,  letterpaper]{article}
+
+
+%% Horizontal Lengths - Max 6.5
+\setlength{\footskip}{0.5in}
+\setlength{\hoffset}{0in}
+\setlength{\oddsidemargin}{-.2in}
+\setlength{\evensidemargin}{-.2in}
+%\setlength{\textwidth}{6.9in}
+\setlength{\textwidth}{6.6in}
+
+%% Vertical Lengths - Max 9.0
+\setlength{\headheight}{0in} \setlength{\topskip}{0in}
+\setlength{\voffset}{0in} \setlength{\topmargin}{0.5in}
+\setlength{\textheight}{8.4in}
+
+%\usepackage{fancyheadings}
+
+\usepackage{url}
+\usepackage[]{epsfig,amsmath}[]
+
+
+%\pagestyle{headings}
+%\pagestyle{fancy}
+\pagenumbering{arabic}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New definitions and commands
+\newtheorem{define}{Definition}[section]
+\newtheorem{theorem}[define]{Theorem}
+\newtheorem{question}[define]{Question}
+\newtheorem{problem}[define]{Problem}
+
+
+%**************************************
+
+\begin{document}
+%\title{{\normalsize Fall 2003, Semester research;}\\
+\title{
+{Solving One-dimensional Forward Problems }\\{Using Spectral Element Methods}}
+
+\vfill
+\author{Seungkeol\ Choe \thanks{Computational Engineering and Science Program, University of Utah}}
+
+\renewcommand{\today}{Jan 7th, 2004}
+
+\maketitle
+
+\begin{abstract}
+In this report, we present a spectral polynomial method for solving a Poisson equation with Dirichlet and Neumann boundary conditions respectively on a one dimensional compact interval.
+We can control the number, size of elements, and order of approximating polynomials to obtain accurate solution with faster convergence than its special case, the classical finite element method.
+\end{abstract}
+
+%\noinden {\bf Keywords: Spectral Element Methods, Poisson Equation}
+
+\tableofcontents
+
+%-------------------------------------------------------------------------------
+\clearpage
+
+\section{Introduction}
+\input{sp1d_ch1}
+
+
+\section{Spectral Polynomial Elements Method on an Interval}
+\input{sp1d_ch2}
+
+\section{Experiment Results}
+\input{sp1d_ch3_1}
+\input{sp1d_ch3_2}
+
+\section{Conclusion}
+\input{sp1d_ch4_1}
+
+%------------------------------------------------------------------------------
+%   BIBLIOGRAPHY
+\input{sp1d_chbib}
+
+
+%-------------------------------------------------------------------------------
+%   APPENDIX
+%S
+%\input{sp1d_chapdx}
+
+
+\end{document}

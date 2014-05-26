@@ -1,0 +1,16 @@
+Conductivities: 
+  0 / air          / 0.0
+  1 / skin         / 0.00005
+  2 / fat          / 0.0000375
+  3 / muscle       / 0.000125
+  4 / lung         / 0.000054
+  5 / heartmuscle  / 0.000238
+  6 / heartchamber / 0.00068
+  7 / fatpad       / 0.00005
+  8 / vessel       / 0.00068
+  9 / rib          / 0.00000625
+Number of nodes:  168930 (low-res =  8278)
+Number of cells: 1082723 (low-res = 51419)
+Bounding box: [-273.95, -124.18, 15] 
+            -- [269.41, 115.44, 575]
+	

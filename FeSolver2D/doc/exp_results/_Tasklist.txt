@@ -1,0 +1,19 @@
+-Preprocessing
+ . Input data Loading
+   - Coordinates  x
+   - Elements     x
+   - Boundary Coordinate Indices (Dirichlet/Neumann Boundary) x
+   - Potential on Dirichlet boundary x
+   - Conductivity Function or Values on each values x
+ . Pre-computation
+   - Connctivity betw/ Elements 50% - Need to be get checked for faster way
+
+ 
+-Solver
+ . Local Element 
+ . Global Assembly
+ . Right hand side computation
+
+-Postprocessing
+ . Visualization
+ . Measuring Error

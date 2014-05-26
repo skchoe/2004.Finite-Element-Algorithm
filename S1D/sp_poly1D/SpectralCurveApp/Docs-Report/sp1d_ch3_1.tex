@@ -1,0 +1,85 @@
+In section 1, 2, we present the result of convergence in both h
+refinement and p refinement with the following steady-state
+Poisson differential equation:
+\begin{equation*}
+    \frac{d^2}{dx^2} u(x) = \sin(\pi x),
+\end{equation*}
+for all x in $[0, 1]$.
+
+
+\subsection {H-Convergence of 1-D Spectral Method}
+
+This test is to validate the relation between size of element and
+the accuracy of approximation. We apply equidistance element and
+investigate the movement of error scale. As shown in Figure
+\ref{hconv1f}, the smaller are the elements, the more exact is the
+solution. Moreover by testing with different order of basis, we
+also could see the fact that the higher are orders, the faster do
+they converge.
+
+\begin{figure}[h]
+\begin{center}
+\epsfig{file = figs/1_Hconv1.eps, %
+        height = 9cm}
+\caption{\label{hconv1f}Graph showing change of errors by the size
+of elements}
+\end{center}
+\end{figure}
+
+Figure \ref{pconv1f} is showing the convergence of error bound
+when the order of basis goes close to $10$. With the higher order
+than it, the error shows to value small enough of order $-15$.
+
+\begin{table}[h]
+\centering \caption{\label{hconv1t} Specification of
+                              Figure\ref{hconv1f} and their errors}
+\begin{tabular}{|c|c|c|c|} \hline
+Polynomial order&Color&Err(h=1/32)&Err(h=1/512)   \\ \hline \hline
+    1&Blue   &$1.2179e-004$ &$1.9073e-006$ \\ \hline
+    4&Red    &$1.6362e-011$ &$2.4647e-014$ \\ \hline
+    7&Magenta&$7.3275e-015$ &$3.6859e-014$ \\ \hline
+\end{tabular}
+\end{table}
+
+\clearpage
+%----------------------------------------------------------------------
+
+\subsection {P-Convergence of 1-D Spectral Method}
+\begin{figure}[h]
+\begin{center}
+\epsfig{file = figs/2_PconvDN.eps, %
+        height = 9cm}
+\caption{\label{pconv1f}Graph showing change of errors by the
+increase of order Dirichlet-Neumann}
+\end{center}
+\end{figure}
+
+
+\begin{table}[h]
+\centering \caption{\label{pconv1t} Specification of
+                              Figure\ref{pconv1f} and its error}
+\begin{tabular}{|c|c|} \hline
+Element Size&Err   \\ \hline \hline $0.2$&$6.6613e-016$ \\ \hline
+$0.1$&4.9960e-016 \\ \hline
+\end{tabular}
+\end{table}
+
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\begin{figure}[h]
+\begin{center}
+\epsfig{file = figs/2_PconvDD.eps, %
+        height = 9cm}
+\caption{\label{pconv2f}Graph showing change of errors by the
+increase of order Dirichlet-Dirichlet}
+\end{center}
+\end{figure}
+
+
+\begin{table}[h]
+\centering \caption{\label{pconv2t} Specification of
+                              Figure\ref{pconv2f} and its error}
+\begin{tabular}{|c|c|} \hline
+Element Size&Err   \\ \hline \hline $0.2$&$7.0777e-016$ \\ \hline
+$0.1$&$1.1796e-016$ \\ \hline
+\end{tabular}
+\end{table}

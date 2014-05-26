@@ -1,0 +1,65 @@
+
+%\{ {\it  sp1d\_ch1.tex} \}
+
+Spectral method is a numerical scheme to approximate and simulate
+the solution of partial differential equations. It has developed
+rapidly in the past three decades and been applied to many field
+in numerical simulation.
+
+One of main reasons that it has gained broad and fast acceptance
+is that it can take various system of infinitely differentiable
+basis functions as trial functions, for instance, we can use the
+representation of a function $u$ throughtout the domain via a
+truncated serier exansion as follows:
+\begin{equation}
+\label{solapprx}
+u \approx u_N = \sum_{n=0}^{N} \hat u_n \phi_n,
+\end{equation}
+where $\phi_n$ are the basis functions. In general this basis
+functions may be the Chebyshev polynomials $T_n$ or the Legendre
+polynomials $L_n$ or another member of the class of Jacobi
+polynomials $P_n^{\alpha, \beta}$. By choosing an appropriate
+orthogonal system based on its domain of orthogonality, we can
+apply the method to problems such as periodic/non-periodic
+problems and problems defined on compact domain, half/all
+intervals.
+
+
+Spectral methods can be classified into 2 parts in its
+characteristics. We call them to be nodal and modal method,
+respectively.
+\begin{itemize}
+\item The nodal method is usually called as pseudo-spectral or
+collocation methods. The coefficients $\hat u_n$ of
+(\ref{solapprx}) are obtained by requiring  the residual function
+to be zero exactly at grid that is a set of nodes.
+
+\item The modal method is associated with the method of weighted
+residuals where the residual function is weighted with a set of
+test functions and after integration is set to zero. In our
+formulation we bring in the Galerkin method which has test
+functions same as the basis functions.
+\end{itemize}
+
+In the collocation approach the coefficients represent the nodal
+value of the physical variable unlike the Galerkin method.
+
+The other thing which is so fascinating is its high accuracy and
+convergence. In particular, the spectral polynomial method
+facilitates the control of the resolution of element size and the
+order of approximation. This enables the method to converge in
+exponential speed which shows a noticeable difference from
+classical finite difference and other purely element methods.
+Unlike finite elements and finite difference, the order of
+convergence is not fixed and it is related to the maximum
+regularity of the solution.
+
+In this report, I investigate the spectral polynomial method and
+Fourier method for solving a partial differential equation
+specific to the forward Poisson problem with Dirichlet and Neumann
+boundary condition on inner and outer boundary circles
+respectively. Throughout the report, I will  formulate our
+approach that utilizes spectral polynomial element and Fourier
+method in tensor product form. As an conclusion we present the
+result of numerical solution and its convergence by h/p adaptive
+control.

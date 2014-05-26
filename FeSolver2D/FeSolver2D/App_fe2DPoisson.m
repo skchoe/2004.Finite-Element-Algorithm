@@ -1,0 +1,186 @@
+addpath '../../../Geneser/problemRoutines/elliptic2D/stochastic'
+% addpath '../../../Geneser/utahTorso/refined'
+% addpath '../../../Geneser/utahTorso/potentials'
+%%%%%%%%%%% App_fe2DPoisson %%%%%%%%%%%
+% Script-M file to 
+% 1. Setting the options 
+% 2. Executing the FE solver
+% 3. Plotting the numerical solution
+% 4. Calc exact solution and errors (If applicable)
+
+clear; close all;
+
+
+
+%%%%%%%%%%% EXECUTION EXAMPLE and ERROR BOUND %%%%%%%%%%%
+% ex1: bsOdr =L, bDeg=1, diV=60 -> err=10^-6
+% ex3:     "        "        90 ->     "
+% "  :     "        "        44 ->        -5
+% "  :        Q     "        45 ->        -5
+% '46', 'Q', 'degMax=3' => error 2.5260e-06
+% 0:3x3, 1:6x6, 2:12x12 .....
+% in Square domain , diV = 250 caused out of memory
+
+
+
+
+%%%%%%%%%%%%%%%%% TORSO DATA SPEC %%%%%%%%%%%%%%%%%
+% Total Nodes : 659
+% Total Elts  :
+% Dirichlet Nodes: 198 - 257 (60)
+% Neumann Nodes: 1-51 , 650 (52)
+
+
+
+
+%%%%%%%%%%%%%%%%% SELECTION OF MESH %%%%%%%%%%%%%%%%%
+whichmesh = 340;  % (currently not set up in Elementwise
+                 % conductivity) 1: Square with small square hole
+                 % (solution of type cos(x)cos(y) gives
+                 % Zero-Neumann bdy condition) 
+                 % 2: Unit square with All Dirichlet condition on 4 sides.
+                 % 3: Unit square with Neumann condition on right side
+                 % 34: utahTorso34 Torso irregular mesh
+                 % 37: utahTorso37_g Torso irregular mesh
+                 % 4. Unit square of big(200x200)size
+
+
+
+                 
+%%%%%%%%%%%%%%%%% SETTING OF RESOLUTION MESH %%%%%%%%%%%%%%%%%
+%% resolution: degree of fine/coarse'ness of given whichmesh
+%% (still OnNodes: )if whichmesh == 1 : 2^resolution is the number
+%                                       of divisions in unit square
+%                                       (hole'd square has 8 unit
+%                                       squares)  
+%% if whichmesh == 2 : resolution is the number of division in given square
+%% if whichmesh == 34 : resolution doesn't work. It is fixed by
+%                       given irregular mesh(Rob's torso data 
+% resolution = 1;   % 20: Recommanded to see convergence when
+% whichmesh == 2 -> # Nodes ~~ 400 
+
+
+% In case whichmesh == 34,
+%  resolution == 1 : FEsolver with original mesh 
+%  resolution == 2 : FEsolver with bisecting edge of elements (4
+%                    element substitute a element) 
+%  resolution == 3 : FEsolver with trisecting edge of elements (9"  ")
+
+resolution = 1;
+
+
+
+
+%%%%%%%%%%%%%%%%% APPROXIMATION MODES %%%%%%%%%%%%%%%%%
+% 'L': Linear, 'Q':Quadratic, 'C':Cubic 
+bsOdr = 'C';
+bDeg = 3; % Approximated order of derivative of basis function
+
+
+
+
+
+%%%%%%%%%%%%%%%%% QUADRATURE ORDER SETTING %%%%%%%%%%%%%%%%%
+% Quadrature order: 3*bDeg as an initial seed.
+degMax = 3*bDeg;
+
+
+
+
+%%%%%%%%%%%%%%%%% Predefined Input values (Conductivities, Potentials) %%%%%%
+% 
+% Conductivity Input:
+% Structure: A row vector which has same size as that of Elements
+% Values here are based on 'utahTorso34'
+% Nelt = 1203;
+% Elcond = zeros(Nelt, 1);
+% for i = 1:Nelt
+%   Elcond(i, 1) = i;
+% end
+
+
+% Nelt = 1203;
+% Elcond = .00001*ones(Nelt, 1);
+Elcond = kOnElements(whichmesh);
+
+% Boundar Potential Input
+% Structure: A row vector which has same size as that of BdyD
+% vector contains potentials 
+
+% % Case I : Using real potential vector
+% NbdD = 60;
+% feBdyDP = zeros(NbdD, 1);
+% for i = 1:NbdD
+%   BdyDP(i, 1) = i/NbdD;
+% end
+
+%load('../../../Geneser/utahTorso/potentials/utahTorso34.mat');
+%time = 85;   %time slice
+%BdyDP = potential(:,time); 
+load('../../../Geneser/utahTorso/potentials/wave.mat');
+time = 3;
+% in units of milliVolts
+BdyDP = eastWest(:,time); 
+
+isFakSol = 0; % This solver solves with data from physical measurement.
+
+% % % % % % % % % Mesh/Input Settup 'feInMeshCons' % % % % % % % % %
+%
+[gNdMat, gElm, gBdyD, gBdyN, gIntNd, gBdyDP, gElcond] = ...
+    feInMeshCons(whichmesh, resolution, BdyDP, Elcond, isFakSol);
+
+%%%%%%%%%%%%%%%%% Variance of Boudnary condition %%%%%%%%%%%%%%%%%
+bcVar = 0.05;
+
+%%%%%%%%%%%%%%%%% FESOLVER 'fe2DPoisson' %%%%%%%%%%%%%%%%%
+% Poisson Solver with Zero Neumann boundary condition
+isLaplace = 1;  % flag to set solver to work as Laplace eqn solver (RHS = 0)
+infoFlag = 0;
+itrSize = 10000;% This control the max limit of iteration of 
+                % pcg() Congugate gradient in inverting Global
+                % stiffness matrix 
+exeTag = 1;     % Tag for identifying this execution
+% condVec[] :  [Ndond x 1] Vector for conductivty on each element.
+% bdDVec[]  :  [NbdD x 1] Vector for Dirichlet bdy defined on inner
+% torso (Heart surface) 
+
+%%%%%%%%Printing size of origial mesh%%%%%%%%%%
+% % % % sgNodes = size(gNdMat)
+% % % % sgElm = size(gElm)
+% % % % sgBdyD = size(gBdyD)
+% % % % sgBdyN = size(gBdyN)
+% % % % sgIntNd = size(gIntNd)
+% % % % sgBdyDP = size(gBdyDP)
+
+[Ag, Fg, Fg_BC, SolIn, SolBd, BdyDP, BdyDP_2, Ndm, ...
+	  IntNd, BdyN, BdyD, Elm, phiXY, Wpq, JacVec, VecXYm] ...
+    = fe2DPoisson(gNdMat, gElm, gBdyD, gBdyN, gIntNd, gBdyDP, gElcond, ...
+		  bcVar, bsOdr, degMax, isLaplace, infoFlag, itrSize, exeTag);
+
+
+
+SOLUTION_INTERIOR = SolIn;      % Only for display
+SOLUTION_NEUMANN_BDY = SolBd;   % Only for display
+
+N_solIn = size(SolIn, 1);
+N_solBd = size(SolBd, 1);
+
+
+
+
+%%%%%%%%%%%%%%%%% PLOTTONG OF NUM_SOL %%%%%%%%%%%%%%%%%
+figno = 33;
+fePlotNumSol(figno, 'Deterministic Solution', bsOdr, Ndm, IntNd, ...
+	     BdyN, BdyD,  SolIn, SolBd, BdyDP, Elm);  
+
+     colorbar
+
+
+%%%%%%%%%%%%%%%%% PLOTTONG OF NUM_SOL ON Each Boundary%%%%%%%%%%%%%%%%%
+tic;
+% Number of original boundary points(Geometric Nodes)
+NobN = size(gBdyN, 1);
+NobD = size(gBdyD, 1); 
+[BdyNP, BdyDP] = fePostProcOrdering(Ndm, NobN, NobD, BdyN, BdyD, ...
+				    SolBd, BdyDP, Elm); 
+ElapsedPostprocessing = toc

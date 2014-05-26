@@ -1,0 +1,49 @@
+\section{Example of problem which the exact solution is known.}
+With the following problem,
+\begin{equation}
+-\nabla \cdot \sigma(x,y) \nabla u(x,y) = f(x,y),
+\end{equation}
+is defined on 2-dimensional domain $\Omega$ which has inner
+boundary $\partial \Omega_{i}$ and $\partial \Omega_{o}$.
+
+The boundary conditions are as follows:
+\begin{eqnarray}
+u&=&u_0, \mbox{on}  \partial \Omega_{i}, \\
+\textbf{n} \cdot \nabla u &=& 0, \mbox{on} \partial \Omega_{o}.
+\end{eqnarray}
+
+\begin{itemize}
+    \item $u(x,y) = \cos(\frac{\pi}{3}x)\cos(\frac{2\pi}{3}y),
+    f(x,y) = \frac{5}{9}\cos(\frac{\pi}{3}x)\cos(\frac{2\pi}{3}y)$
+    \item
+    \item
+\end{itemize}
+
+
+\begin{itemize}
+\item Radius 1cm
+\item Number of elements: $2^6 \cdots 2^{12}$
+\item Slope: 1.45xx
+\end{itemize}
+
+
+%\begin{figure}[h]
+%    \begin{center}
+%    \label{hconvLinig}
+%%    \epsfig{file = fig/fe2DLcv_loglog.eps, width = 12cm}
+%    \caption{This figure is showing the h-convergence test for above problem}
+%    \end{center}
+%\end{figure}
+
+
+%\begin{table}[h]
+%\centering \caption{\label{hconvLin} This table shows the
+%convergence of h-type resolution control done above Figure
+%(\ref{hconvLinfig}).
+
+\begin{tabular}{|c||c|c|c|c|c|c|} \hline
+    Number of Unknowns  &12     &40     &144    &544    &2112   &8320   \\ \hline
+    Error($L^{\infty}$) &0.2491 &0.0977 &0.0388 &0.0131 &0.0041 &0.0012 \\ \hline
+\end{tabular}
+%\hspace{.0in}
+%\end{table}

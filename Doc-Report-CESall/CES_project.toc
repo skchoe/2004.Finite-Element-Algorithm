@@ -1,0 +1,20 @@
+\contentsline {section}{\numberline {1}Introduction}{3}
+\contentsline {subsection}{\numberline {1.1}Poisson Equation}{4}
+\contentsline {subsection}{\numberline {1.2}Method of Weighted Residuals}{4}
+\contentsline {section}{\numberline {2}Spectral Polynomial Elements Method on an Interval}{6}
+\contentsline {subsection}{\numberline {2.1}Mathematical Formulations}{6}
+\contentsline {subsubsection}{\numberline {2.1.1}Basis Functions}{6}
+\contentsline {subsubsection}{\numberline {2.1.2}Spectral Polynomial Method in an Element}{7}
+\contentsline {subsubsection}{\numberline {2.1.3}Global Assembly/Direct Stiffness Summation}{8}
+\contentsline {subsubsection}{\numberline {2.1.4}Applying Boundary Conditions}{9}
+\contentsline {subsection}{\numberline {2.2}Experiment Results}{10}
+\contentsline {subsubsection}{\numberline {2.2.1}H/P Convergence Test for One-dimensional Solution}{10}
+\contentsline {subsubsection}{\numberline {2.2.2}High order Polynomial Solution and Its Convergence}{11}
+\contentsline {section}{\numberline {3}Spectral Fourier Method on 2-dimensional Annulus}{14}
+\contentsline {subsection}{\numberline {3.1}Mathematical Formulations}{14}
+\contentsline {subsubsection}{\numberline {3.1.1}Poisson Equation in Polar Coordinates and Basis Functions}{14}
+\contentsline {subsubsection}{\numberline {3.1.2}Formulation of Spectral Polynomial and Fourier Methods}{14}
+\contentsline {subsection}{\numberline {3.2}Experiment Results}{17}
+\contentsline {subsubsection}{\numberline {3.2.1}H/P Convergence Test for Two-dimensional Solution}{17}
+\contentsline {subsubsection}{\numberline {3.2.2}High order Polynomial Solution and Its Convergence}{18}
+\contentsline {section}{\numberline {4}Conclusion}{21}

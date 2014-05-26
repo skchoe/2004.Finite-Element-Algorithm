@@ -1,0 +1,15 @@
+\contentsline {section}{\numberline {1}A Steady-State Diffusion Problem}{2}
+\contentsline {subsection}{\numberline {1.1}Diffusion Problem}{2}
+\contentsline {subsection}{\numberline {1.2}Galerkin Method with Weak Solution}{2}
+\contentsline {subsection}{\numberline {1.3}Boundary Conditions}{2}
+\contentsline {section}{\numberline {2}Spectral Polynomial Methods in 1 Dimensional Space}{3}
+\contentsline {subsection}{\numberline {2.1}Basis Functions}{3}
+\contentsline {subsection}{\numberline {2.2}Spectral Polynomial Method in A Element}{4}
+\contentsline {subsection}{\numberline {2.3}H/P Refinement using Global Assembly}{4}
+\contentsline {section}{\numberline {3}Results}{5}
+\contentsline {subsection}{\numberline {3.1}H-Convergence of 1-D Spectral Method}{5}
+\contentsline {subsection}{\numberline {3.2}P-Convergence of 1-D Spectral Method}{6}
+\contentsline {subsection}{\numberline {3.3}Approximation of High order Polynomial solving 1-D Poisson Equation}{6}
+\contentsline {subsubsection}{\numberline {3.3.1}Existence of Approximate Solution}{7}
+\contentsline {subsubsection}{\numberline {3.3.2}Convergence of Solution in Equidistance and Uniformly Ordered Elements}{10}
+\contentsline {subsubsection}{\numberline {3.3.3}Test of Convergence of Solution in Variable Ordered Elements}{10}

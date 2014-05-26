@@ -1,0 +1,143 @@
+\documentclass[11pt,letterpaper]{article}
+
+% Vertical Lengths - Max 9.0
+\setlength{\voffset}{0in} \setlength{\topmargin}{.0in}
+\setlength{\headheight}{0in} \setlength{\topskip}{-1.2in}
+\setlength{\textheight}{9.0in} \setlength{\footskip}{-.0in}
+
+% Horizontal Lengths - Max 6.5
+\setlength{\hoffset}{0in} \setlength{\oddsidemargin}{-.2in}
+\setlength{\textwidth}{6.9in} \setlength{\evensidemargin}{-.2in}
+
+%\usepackage{fancyheadings}
+
+\usepackage{url}
+\usepackage[]{epsfig,amsmath}[]
+
+
+\pagestyle{headings}
+%\pagestyle{fancy}
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New definitions and commands
+\newtheorem{define}{Definition}[section]
+\newtheorem{theorem}[define]{Theorem}
+\newtheorem{question}[define]{Question}
+\newtheorem{problem}[define]{Problem}
+
+\begin{document}
+
+\title{{\bfseries Boundary Element Method Formulation for Annulus Domain}
+}
+For angular direction we have mode $k = 0, \cdots, N-1$, azimuthal
+direction we have mode $p = 0, \cdots, M$.
+
+We have bases for each of direction
+\begin{align}
+\{\psi(r) \}_{r=0}^M,\\
+\{e^{ik\theta}\}_{k=0}^{N-1}.
+\end{align}
+
+Then in 2D circular domain, the solution $u$ satisfies following
+\begin{equation}
+L(u)(x,y) \equiv \frac{d^2}{dx^2} u(x) + \frac{d^2}{dy^2} u(y)-
+f(x,y) = 0,
+\end{equation}
+for all $(x,y)$ in a circular domain with a hole in the middle.
+
+
+We change the coordinate to polar so that the variables are $r,
+\theta$. We denote $u(x, y), f(x, y)$ in polar coordinate as
+$\Tilde{u}(r, \theta), \Tilde{f}(r, \theta)$ such that
+
+\begin{equation}
+\frac{\partial^2}{\partial r^2} \Tilde{u} +
+\frac{1}{r}\frac{\partial}{\partial r} \Tilde{u} +
+\frac{1}{r^2}\frac{\partial^2}{\partial \theta^2} \Tilde{u} =
+\Tilde{f}
+\end{equation}
+
+To erase the fraction term $\frac{1}{r^2}$, we use the fact the
+domain has hole at the center, then $r \ne 0$. This enables to
+multiply $r^2$ at both sides as follows
+
+\begin{equation}
+r^2 \frac{\partial^2}{\partial r^2} \Tilde{u} + r
+\frac{\partial}{\partial r} \Tilde{u} + \frac{\partial^2}{\partial
+\theta^2} \Tilde{u} = r^2 \Tilde{f}
+\end{equation}
+
+ By using the above bases functions, we represent $u$ as
+\begin{align}
+\Tilde{u}(r, \theta) =
+\sum_{p=0,q=0}^{M,N-1}\Hat{u}_{p,q}\psi_p(r) e^{iq\theta} \\
+\end{align}
+
+We have the following linear combination:
+\begin{equation}
+\left(r^2 \nabla^2 \Tilde{u}, \Tilde{\nu} \right) =
+\left(r^2 \Tilde{f}, \Tilde{\nu}\right),
+\end{equation}
+for each $\Tilde{\nu} = $ which has same representation as
+$\Tilde{u}$.
+
+For any two $(p,q)$, $(j,k)$ components in basis $\{\psi_p(r)
+e^{iq\theta}\}_{p=0, q=0}^{M, N-1}$, we can define components of
+inner product block matrix:
+
+
+\begin{align*}
+\left( r^2 \nabla^2 \left[ \psi_p(r) e^{iq\theta} \right],
+\psi_j(r)e^{ik\theta} \right)
+& =\int_{0}^{2\pi}\int_{a}^{b}
+r^2\frac{\partial^2}{\partial r^2} \left[ \psi_p(r)
+e^{iq\theta}\right]
+\left[ \psi_j(r)e^{ik\theta} \right] dr d\theta &\cdots T_1\\
+& + \int_{0}^{2\pi}\int_{a}^{b} r\frac{\partial}{\partial r}\left[
+\psi_p(r) e^{iq\theta}\right]
+\left[ \psi_j(r)e^{ik\theta}\right] dr d\theta  &\cdots T_2\\
+& + \int_{0}^{2\pi}\int_{a}^{b} \frac{\partial^2}{\partial
+\theta^2} \left[ \psi_p(r) e^{iq\theta}\right] \left[
+\psi_j(r)e^{ik\theta}\right] dr d\theta         &\cdots T_3
+\end{align*}
+\newline
+
+\begin{align*}
+T_1\cdots & \int_{0}^{2\pi}\int_{a}^{b}
+r^2\frac{\partial^2}{\partial r^2} \left[ \psi_p(r)
+e^{iq\theta}\right]
+\left[ \psi_j(r)e^{ik\theta} \right] dr d\theta \\
+=& \left[ \int_{a}^{b}r^2\frac{\partial^2}{\partial r^2} \left[
+\psi_p(r) \psi_j(r) \right] dr \right] \left[ \int_{0}^{2\pi}
+e^{iq\theta}e^{ik\theta}d\theta \right] \\
+=& \left[ r^2 \psi_j(r)\frac{\partial}{\partial r} \psi_p(r)
+]\|_{a}^{b} - \int_{a}^{b}\frac{\partial}{\partial r}\left[ r^2
+\psi_j(r)\right] \frac{\partial}{\partial r} \psi_p(r) dr \right]
+\delta_{kq} \\
+=& \left[ r^2 \psi_j(r)\frac{\partial}{\partial r} \psi_p(r)
+]\|_{a}^{b} - \int_{a}^{b} ( 2r \psi_j(r) \frac{\partial}{\partial
+r} \psi_p(r) + r^2\frac{\partial}{\partial r} \psi_j(r)
+\frac{\partial}{\partial r} \psi_q(r)dr )\right] \delta_{kq}
+\end{align*}
+
+\begin{align*}
+T_2\cdots & \int_{0}^{2\pi}\int_{a}^{b} r\frac{\partial}{\partial
+r}\left[ \psi_p(r) e^{iq\theta}\right]
+\left[ \psi_j(r)e^{ik\theta}\right] dr d\theta\\
+=& \left[ \int_{a}^{b} r\frac{\partial}{\partial r}\psi_p(r)
+\psi_j(r) dr \right] \left[ \int_{0}^{2\pi} e^{iq\theta}  e^{ik\theta}  d\theta \right] \\
+=& \left[ \int_{a}^{b} r\frac{\partial}{\partial r}\psi_p(r)
+\psi_j(r) dr \right] \delta_{qk}
+\end{align*}
+
+\begin{align*}
+T_3\cdots & \int_{0}^{2\pi}\int_{a}^{b} \frac{\partial^2}{\partial
+\theta^2} \left[ \psi_p(r) e^{iq\theta}\right] \left[
+\psi_j(r)e^{ik\theta}\right] dr d\theta \\
+=& \left[ \int_{a}^{b} \psi_p(r) \psi_j(r) dr \right] \left[
+\int_{0}^{2\pi} \frac{\partial^2}{\partial \theta^2} e^{iq\theta}
+e^{ik\theta} d\theta \right] \\
+=& \left[ \int_{a}^{b} \psi_p(r) \psi_j(r) dr \right] \delta_{qk} \\
+\end{align*}
+\end{document}

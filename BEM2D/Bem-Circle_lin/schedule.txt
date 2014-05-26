@@ -1,0 +1,12 @@
+General method
+- collocation
+- high order collocation 
+
+
+1. Formulation
+- Collocation formulation
+
+2. Integration
+-
+ 
+3. Example selection

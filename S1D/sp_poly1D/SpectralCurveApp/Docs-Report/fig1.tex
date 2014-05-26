@@ -1,0 +1,62 @@
+\documentclass[11pt,letterpaper]{article}
+
+% Vertical Lengths - Max 9.0
+\setlength{\voffset}{0in} \setlength{\topmargin}{.0in}
+\setlength{\headheight}{0in} \setlength{\topskip}{-2.2in}
+\setlength{\textheight}{9.0in} \setlength{\footskip}{-.0in}
+
+% Horizontal Lengths - Max 6.5
+\setlength{\hoffset}{0in} \setlength{\oddsidemargin}{-.2in}
+\setlength{\textwidth}{6.9in} \setlength{\evensidemargin}{-.2in}
+
+%\usepackage{fancyheadings}
+
+%\usepackage{url}
+\usepackage[]{epsfig,amsmath}[]
+
+%\pagestyle{headings}
+\pagestyle{plain} \pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New definitions and commands
+\newtheorem{define}{Definition}[section]
+\newtheorem{theorem}[define]{Theorem}
+\newtheorem{question}[define]{Question}
+\newtheorem{problem}[define]{Problem}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Start of document body
+\begin{document}
+
+\title{{\bfseries Figure showing H-convergence of S-curve of order 10}}
+
+
+\begin{figure}[h]
+\begin{center}
+\epsfig{file = figs/figo07.eps, %
+        height = 9cm}
+\caption{\label{crvconvf4}Figure Showing P-convergence of S-curve
+of order 7}
+\end{center}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+\epsfig{file = figs/figo10.eps, %
+        height = 9cm}
+\caption{\label{crvconvf4}Figure Showing P-convergence of S-curve
+of order 10}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[h]
+\begin{center}
+\epsfig{file = figs/figo15.eps, %
+        height = 9cm}
+\caption{\label{crvconvf4}Figure Showing P-convergence of S-curve
+of order 15}
+\end{center}
+\end{figure}
+\end{document}

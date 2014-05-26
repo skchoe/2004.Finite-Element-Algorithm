@@ -1,0 +1,52 @@
+\documentclass[11pt,letterpaper]{article}
+
+\setlength{\oddsidemargin}{-0.06in}
+\setlength{\evensidemargin}{0.06in} \setlength{\topmargin}{0.4in}
+\setlength{\textwidth}{6.50in} \setlength{\textheight}{8.93in}
+\raggedbottom \hfuzz=3pt
+
+\usepackage[]{epsfig,amsmath}[]
+\pagestyle{headings}
+
+\begin{document}
+
+\title{{\bfseries Derivation for Poisson Equation with Conductivity to Polar Coordinate} }
+%\maketitle
+
+The general Poisson equation with conductivity is defined as follows:
+\begin{equation}
+- \nabla \cdot \nu \nabla u = f
+\end{equation}
+
+on $\Omega \in $, where $\nu$ is a smooth function defined on $\Omega$.
+
+Between cartesian coordinate and polar coordinate, we have the following relation in differential operator.
+
+\begin{eqnarray}
+&& \langle \frac{\partial}{\partial x}, \frac{\partial}{\partial x} \rangle \cdot \langle \nu \frac{\partial}{\partial x}, \nu \frac{\partial}{\partial y}\rangle  \\
+&=&\langle \frac{\partial}{\partial x}, \frac{\partial}{\partial x}\rangle \cdot \langle \nu \cos\theta \frac{\partial}{\partial r}+\nu(\frac{\sin\theta}{r})\frac{\partial}{\partial \theta},\nu\sin\theta\frac{\partial}{\partial r}+\nu\frac{\cos\theta}{r}\frac{\partial}{\partial \theta}\rangle \\
+&=& \cos\theta\frac{\partial}{\partial r} [\nu\cos\theta\frac{\partial}{\partial r} + \nu(-\frac{\sin\theta}{r})\frac{\partial}{\partial \theta}] - \frac{\sin\theta}{r}\frac{\partial}{\partial \theta}[\nu\cos\frac{\partial}{\partial r} + \nu(-\frac{\sin\theta}{r})\frac{\partial}{\partial \theta}] \\
+&+& \sin\theta\frac{\partial}{\partial r} [\nu\sin\theta\frac{\partial}{\partial r} + \nu(\frac{\cos\theta}{r})\frac{\partial}{\partial \theta}] + \frac{\cos\theta}{r}\frac{\partial}{\partial \theta}[\nu\sin\frac{\partial}{\partial r} + \nu(\frac{\cos\theta}{r})\frac{\partial}{\partial \theta}] \\
+&=& \cos\theta   [\frac{\partial}{\partial r} \nu \cos\theta\frac{\partial}{\partial r} + \nu\cos\theta\frac{\partial^2}{\partial r^2} + \frac{\partial}{\partial r} \nu (-\frac{\sin\theta}{r})\frac{\partial}{\partial \theta} + \nu(\frac{\sin\theta}{r^2})\frac{\partial}{\partial \theta} \nu (-\frac{\sin\theta}{r})\frac{\partial^2}{\partial r \partial \theta} ]\\
+&-& \frac{\sin\theta}{r} [\frac{\partial}{\partial \theta} \nu \cos\theta \frac{\partial}{\partial r} - \nu \sin\theta \frac{\partial}{\partial r} + \nu \cos\theta \frac{\partial^2}{\partial r \partial \theta} + \frac{\partial}{\partial \theta} \nu (-\frac{\sin\theta}{r}) \frac{\partial}{\partial \theta} + \nu(-\frac{\cos\theta}{r})\frac{\partial}{\partial \theta} + \nu(-\frac{\sin\theta}{r})\frac{\partial^2}{\partial\theta^2}]\\
+&+& \sin\theta   [\frac{\partial}{\partial r} \nu \sin\theta\frac{\partial}{\partial r} + \nu\sin\theta\frac{\partial^2}{\partial r^2} + \frac{\partial}{\partial r} \nu (\frac{\cos\theta}{r})\frac{\partial}{\partial \theta} + \nu(-\frac{\cos\theta}{r^2})\frac{\partial}{\partial \theta} \nu (\frac{\cos\theta}{r})\frac{\partial^2}{\partial r \partial \theta} ]\\
+&+& \frac{\cos\theta}{r} [\frac{\partial}{\partial \theta} \nu \sin\theta \frac{\partial}{\partial r} + \nu \cos\theta \frac{\partial}{\partial r} + \nu \sin\theta \frac{\partial^2}{\partial r \partial \theta} + \frac{\partial}{\partial \theta} \nu (\frac{\cos\theta}{r}) \frac{\partial}{\partial \theta} + \nu(-\frac{\sin\theta}{r})\frac{\partial}{\partial \theta} + \nu(\frac{\cos\theta}{r})\frac{\partial^2}{\partial\theta^2}]\\
+&=& \frac{\partial}{\partial r} \nu \cos^2\theta\frac{\partial}{\partial r} + \nu\cos^2\theta\frac{\partial^2}{\partial r^2} + \frac{\partial}{\partial r} \nu (-\frac{\sin\theta\cos\theta}{r})\frac{\partial}{\partial \theta} + \nu(\frac{\sin\theta\cos\theta}{r^2})\frac{\partial}{\partial \theta} \nu (-\frac{\sin\theta\cos\theta}{r})\frac{\partial^2}{\partial r \partial \theta}\\
+&+& \frac{\partial}{\partial \theta} \nu (-\frac{\sin\theta\cos\theta}{r})\frac{\partial}{\partial r} + \nu \frac{\sin^2\theta}{r} \frac{\partial}{\partial r} + \nu (-\frac{\sin\theta\cos\theta}{r})\frac{\partial^2}{\partial r \partial \theta} \\
+&+& \frac{\partial}{\partial \theta} \nu (\frac{\sin^2\theta}{r^2}) \frac{\partial}{\partial \theta} + \nu(\frac{\sin\theta\cos\theta}{r^2})\frac{\partial}{\partial \theta} + \nu(\frac{\sin^2\theta}{r^2})\frac{\partial^2}{\partial\theta^2}\\
+&+& \frac{\partial}{\partial r} \nu \sin^2\theta\frac{\partial}{\partial r} + \nu\sin^2\theta\frac{\partial^2}{\partial r^2} + \frac{\partial}{\partial r} \nu (\frac{\sin\theta\cos\theta}{r})\frac{\partial}{\partial \theta} + \nu(-\frac{\sin\theta\cos\theta}{r^2})\frac{\partial}{\partial \theta} + \nu (\frac{\sin\theta\cos\theta}{r})\frac{\partial^2}{\partial r \partial \theta} \\
+&+& \frac{\partial}{\partial \theta} \nu (\frac{\sin\theta\cos\theta}{r}) \frac{\partial}{\partial r} + \nu \frac{\cos^2\theta}{r} \frac{\partial}{\partial r} + \nu \frac{\sin\theta\cos\theta}{r} \frac{\partial^2}{\partial r \partial \theta} \\
+&+& \frac{\partial}{\partial \theta} \nu (\frac{\cos^2\theta}{r^2}) \frac{\partial}{\partial \theta} + \nu(-\frac{\sin\theta\cos\theta}{r^2})\frac{\partial}{\partial \theta} + \nu(\frac{\cos^2\theta}{r^2})\frac{\partial^2}{\partial\theta^2}\\
+&=& \frac{\partial}{\partial r} \nu \cos^2\theta\frac{\partial}{\partial r} + \nu\cos^2\theta\frac{\partial^2}{\partial r^2} + \nu \frac{\sin^2\theta}{r} \frac{\partial}{\partial r} + \frac{\partial}{\partial \theta} \nu (\frac{\sin^2\theta}{r^2}) \frac{\partial}{\partial \theta} + \nu(\frac{\sin^2\theta}{r^2})\frac{\partial^2}{\partial\theta^2} \\
+&+& \frac{\partial}{\partial r} \nu \sin^2\theta\frac{\partial}{\partial r} + \nu\sin^2\theta\frac{\partial^2}{\partial r^2} + \nu \frac{\cos^2\theta}{r} \frac{\partial}{\partial r} + \frac{\partial}{\partial \theta} \nu (\frac{\cos^2\theta}{r^2}) \frac{\partial}{\partial \theta} + \nu(\frac{\cos^2\theta}{r^2})\frac{\partial^2}{\partial\theta^2}\\
+&=& \frac{\partial}{\partial r} \nu \frac{\partial}{\partial r} + \nu\frac{\partial^2}{\partial r^2} + \nu \frac{1}{r} \frac{\partial}{\partial r} + \frac{\partial}{\partial \theta} \nu \frac{1}{r^2} \frac{\partial}{\partial \theta} + \nu\frac{1}{r^2}\frac{\partial^2}{\partial\theta^2} \\
+&=& \frac{\partial}{\partial r} (\nu \frac{\partial}{\partial r}) + \nu \frac{1}{r} \frac{\partial}{\partial r} + \frac{\partial}{\partial \theta} (\nu \frac{1}{r^2} \frac{\partial}{\partial \theta}) \\
+&=& \frac{\partial}{\partial r} (\nu \frac{\partial}{\partial r}) + \frac{1}{r} (\nu \frac{\partial}{\partial r}) + \frac{1}{r^2}\frac{\partial}{\partial \theta} (\nu  \frac{\partial}{\partial \theta}) \\
+\end{eqnarray}
+
+Thus the equation becomes
+\begin{equation}
+- \frac{\partial}{\partial r} (\nu \frac{\partial}{\partial r} u ) - \frac{1}{r} (\nu \frac{\partial}{\partial r} u ) - \frac{1}{r^2}\frac{\partial}{\partial \theta} (\nu  \frac{\partial}{\partial \theta} u ) = f
+\end{equation}
+
+\end{document}

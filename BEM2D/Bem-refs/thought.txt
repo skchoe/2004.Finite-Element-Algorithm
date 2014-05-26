@@ -1,0 +1,175 @@
+REPORT for BEM STUDY
+---------------------------------------------------------------------------
+Goal: Understanding BEM and finding numerical solution of  Annulus problem 
+using high-order Galerkin expansion method.
+
+Approach:
+1. Formulation for Boundary Integral expression for 2D Annulus problem.
+2. Lookup text books that expalins existing Boundary Element Method.
+3. Galerkin Boundary Element method Formulation.
+4. Useful Techniques to deal with 2 Singular kernels.
+
+In detail:
+
+1. From this first of this topic, we need exact representation of Green's
+   function for
+		1: Laplace equation
+		2: 2 kinds of Boundary Condition
+		3: Annulus Geometry
+
+	 	Status1: 
+			I've been working on how to derive general Green's function 
+		Result1: 
+			I became to understand how to derive fundamental solution and	fail 
+			to find way to find special Green's function for Annulus.
+		 	This means I still don't know how the point source perturbation	is 
+			working on Annulus domain.
+		Reference1: 
+			[1]http://www.esc.auckland.ac.nz/Academic/Texts/FEM-BEM-notes.html:First
+			article made me be clear how to setup the equation on interior/bdy.
+			
+		Status2: 
+			I've finally found a research paper that has title [2]'A Green's
+			function for the Annulus' by Miroslay Englis, Jaak Peetre, at Annali
+			di Matematica Pura Appl. 1996 p313. 
+
+		Result2: 
+			The main part of the paper is for finding Green's function of
+			Biharmonic equation, but at the appendix, it has GF for laplace equation.
+			Unfortunately, the paper doesn't have acceptable physical explanation
+			and the GF for Laplace is showed in brief and it is not a closed form
+			but a form of Jacobi theta function(?). I thought it seemed to be hard
+			to use. It also assumed homogeneous Dirichlet boundary. 
+			Since I expected a form of fundamental solution + Harmonic function, 
+			it was disappointing.
+
+		Status3: 
+			A week ago, I started to suspect in finding exact form of GF 
+			from literatures.Finding GF in our domain, and bdy condition from 
+			the articles are too time consuming.
+
+		Result3:
+			During the talk with a friend in RPI, I was told that there's 
+			numerical method that take only fundamental solution into account
+		 	to solve any type of geometry and In integral equation approach is kind 
+			of newer than finite/spectral element methods so that there's still 
+			a lot of research've been doing for numerical solution. This inspired me
+			and I decide to talk with advisor on further research after BEM work.
+
+		Reference3:
+			[3]JYlee, JRYoon, A Numerical method for Cauchy problem using SVD. 
+			Comm. Korean Math. Soc. 16, 2001, pp487.
+
+
+2. For text book study, I could find the way of people formulate and how it 
+	 could have differenc variations for each cases. The goal of this item is
+	 to distingush general formulation and particular variation. Specially, in
+	 numerical implementation I could find 
+
+		1. Collocation/Gallerkin.
+		2. In Gallerkin, step/linear functions of compact suport/high order basis.
+		3. Deriving Ax=b and its solvability.	
+		4. Constraints of given conditions for collocation method to solve Ax=b.
+
+		Status1:
+			Most of references I look into are dealing with collocation method 
+			[4,5,6,8]. [8,9] have part(or all) for Galerkin method.  
+			list of the books are at the reference below. 
+
+		Status2:
+			The Galerkin method in [8] and [9] are the same form which apply
+			integration inner product after attaching test functions to 
+			the BEM equation. But problem for [8] is that it just use simple step
+			function to make the equation simpler. [9] has much similar approach
+			with our approach, but both of them does mention evaluation of integral
+			in conceptual level and singluar integral is far from implementation.
+
+		Status3:
+			The unknowns are \hat u and d/dn \hat u. This means we need 2N unknowns
+			and I was confused that advisor said in mathematics, every stiffness
+			matrix from 2nd order pdd is invertible. But [3] said the resulting 
+			matrix are ill-posed and I saw other literatures that deal with
+			regularization after singular integral(stiffness matrix calculation).
+
+		Status4:
+			If we accept the Galerkin formulation done at [3,8,9], we could find 
+			in collocation method we assume the number of boundary condition is 
+			restricted to make matrix A at Ax=b to be nonsingular. This works 
+			as a problem in Galerkin method. Since we used out Boundary conditions
+			in formulations, we obtain the linear system of A u = B d/dn u, Which
+			remains 2Nx2N system. 
+
+    Reference 1-4
+			[4] Boundary element techniques : theory and applications in engineering /
+				  C.A. Brebbia, J.C.F. Telles, L.C. Wrobel. ML:TA347.B69 B734 1984.
+			[5] The boundary element method / L.C. Wrobel. ML TA347.B69 W76 2002    
+			[6] The boundary element method for engineers / 
+					C.A. Brebbia. ML TA335 .B73 1984
+			[7] The boundary element method in geophysics / by Shi-zhe Xu .
+					ML QC809.M37 X8 2001.
+			[8] A practical guide to boundary element methods with the 
+					software library BEMLIB, ML, TA347.B69 P69 2002
+			[9] P. Parreira & M. Guiggiani, ``On the implementation of the 
+					Galerkin approach in the boundary element method'', 
+					Computers & Structures, Vol. 33, pp.269--279, 1989. ML, TA641 .C65    
+
+
+3. I enumerate what I obtained here.
+		1. On Galerking formulation Comparison to spectral mtd on Annulus.
+		2. Singular Integral and quadrature rule.
+		3. 4 Singular Integral Evaluations
+
+		Status 1:
+			I think the Galerkin Boundary Formulation we talked last meeting is so
+			similar to the situation on 2D spectral method on Annulus. 
+			In 2D Spectral, one	of function evaluation in strong form was dealt 
+			with an inverse Fourier transform and it caused that we could solve 
+			the weak form as double integral which I needed a 2D matrix of quadrature points. 
+
+		Status 2:
+			I read from above listeratures and [10] about the issue of singular 
+			integral that follows when we try to solve integral equation 
+			through projection for to certain function space. In particular when
+			we use quadratuer rule, the rule no longer guarantee analytical accuracy
+			and I saw some web pages that investigated quadrature errors. For this 
+			issue, I saw some expert of my graduate schoold senior on graduature
+			rule publish a paper about transform of singular quadrature so that
+			he got rid of singularity then we don't need to worry about singularity
+			when we evaluate the function with quadrature points.
+			I contacted him and am waiting for reply.
+
+		Status 3: 
+ 			In [10], there's 4 kinds of evaluation techniques for singular integral.
+			1: Using Gauss Rule  - We hope to integrate if integrand has removable
+				singularity (like sinx/x x=0), 
+			2: Singular Chebyshev Rule - This is similar Quadrature rule 
+				we want to utilize, 
+			3: Subtraction of singularity - Though some literatures (like [8,9]) 
+				mention and Dr. Carsten Wolters tried to address at last SCI seminar, 
+				this method is useful when we have quite a complicate form of 
+				Green's function which non-fundamental solution parts are meaningful. 
+				We are still standing with only fundamental solution. So this technique 				is not ready for us I thought. 
+			4: The last one is discarding singularity. In our meeting we talked one
+				paragraph of book [8] on this topic. This should be used as a method
+				of last resort.
+
+	Reference 
+		[10] Computational Methods for integral equations, 
+				L.M.Delves & J.L.Mohamed, Cambridge Univ.Press, 1985
+
+4. Through out 2D, 3D problems, we have singularity of Weak(removable), 
+		Strong, Hypersingularity. In 2D case, GF are not hypersingular and
+		d/dn ln r is considered to be removable singularity and has value 1/2 K(x)
+		where K is curvature on x. But ln r is strong singularity and this 
+		is found to need special treatment in numerical scheme. From paper [3], I 
+		found some additional work will lead this in so called super algebraically
+		convergent value. 
+
+		This is an example when we try to apply quite a new method such as
+		high-order Gallerkin BEM, we will face some issues of difficulties that
+		only mathematitians touched in some special/general cases. Though
+		I think I got one of approach to solve it in scientifically
+		correct fashion, there might be better way we could find from the 
+		empirical approach. I think this will be special way that mathematician
+		hardly find out. Or I think we can go around and find how mathematicians
+		have solved this kind of problems.

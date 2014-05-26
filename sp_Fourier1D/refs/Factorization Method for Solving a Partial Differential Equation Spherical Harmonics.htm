@@ -1,0 +1,2035 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0066)http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html -->
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others --><HTML><HEAD><TITLE>Factorization Method for Solving a Partial Differential Equation: Spherical Harmonics</TITLE>
+<META 
+content="Factorization Method for Solving a Partial Differential Equation:&#10;Spherical Harmonics" 
+name=description>
+<META content=BVtypset name=keywords>
+<META content=document name=resource-type>
+<META content=global name=distribution>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2800.1170" name=GENERATOR>
+<META http-equiv=Content-Style-Type content=text/css><LINK 
+href="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/BVtypset.css" 
+rel=STYLESHEET><LINK href="node105.html" rel=previous><LINK href="node104.html" 
+rel=up><LINK href="node107.html" rel=next></HEAD>
+<BODY><!--Navigation Panel--><A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node107.html" 
+name=tex2html1904><IMG height=24 alt=next 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/next.png" 
+width=37 align=bottom border=0></A> <A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node104.html" 
+name=tex2html1898><IMG height=24 alt=up 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/up.png" 
+width=26 align=bottom border=0></A> <A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node105.html" 
+name=tex2html1894><IMG height=24 alt=previous 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/prev.png" 
+width=63 align=bottom border=0></A> <A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node2.html" 
+name=tex2html1900><IMG height=24 alt=contents 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/contents.png" 
+width=65 align=bottom border=0></A> <A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node115.html" 
+name=tex2html1902><IMG height=24 alt=index 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/index.png" 
+width=43 align=bottom border=0></A> <BR><B>Next:</B> <A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node107.html" 
+name=tex2html1905>Static Solutions</A> <B>Up:</B> <A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node104.html" 
+name=tex2html1899>Wave Equation for Spherically</A> <B>Previous:</B> <A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node105.html" 
+name=tex2html1895>Spherically Symmetric Solutions</A> &nbsp; <B><A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node2.html" 
+name=tex2html1901>Contents</A></B> &nbsp; <B><A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node115.html" 
+name=tex2html1903>Index</A></B> <BR><BR><!--End of Navigation Panel-->
+<H2><A name=SECTION00822000000000000000>Factorization Method for Solving a 
+Partial Differential Equation: Spherical Harmonics</A> </H2>
+<P>Now back to the remaining eigenvalues, <!-- MATH
+ $\lambda\not= 0$
+ --><IMG 
+height=34 alt="$ \lambda\not= 0$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3017.png" 
+width=50 align=middle border=0>. The radial equation can be changed into a 
+familiar one by letting <!-- MATH
+ \begin{displaymath}
+j=\frac{J}{\sqrt{r}}\,.
+\end{displaymath}
+ -->
+<P></P>
+<DIV align=center><IMG height=60 
+alt="$\displaystyle j=\frac{J}{\sqrt{r}}\,.&#10;$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3018.png" 
+width=76 align=middle border=0> </DIV>
+<P></P>This results in <!-- MATH
+ \begin{displaymath}
+\frac{d^2J}{dr^2} +\frac{1}{r}~\frac{dJ}{dr} +\left(k^2-\frac{\lambda+
+\frac{1}{4}}{r^2}\right) J=0
+\end{displaymath}
+ -->
+<P></P>
+<DIV align=center><IMG height=67 
+alt="$\displaystyle \frac{d^2J}{dr^2} +\frac{1}{r}~\frac{dJ}{dr} +\left(k^2-\frac{\lambda+&#10;\frac{1}{4}}{r^2}\right) J=0&#10;$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3019.png" 
+width=297 align=middle border=0> </DIV>
+<P></P>which is the familiar Bessel equation of order <!-- MATH
+ $\sqrt{\lambda+
+\frac{1}{4}}$
+ --><IMG height=55 
+alt="$ \sqrt{\lambda+&#10;\frac{1}{4}}$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3020.png" 
+width=68 align=middle border=0>. Its solutions are <!-- MATH
+ $H^{(1)}_{\sqrt{
+\lambda+\frac{1}{4}}}(kr)$
+ --><IMG height=47 
+alt="$ H^{(1)}_{\sqrt{&#10;\lambda+\frac{1}{4}}}(kr)$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3021.png" 
+width=99 align=middle border=0> and <!-- MATH
+ $H^{(2)}_{\sqrt{\lambda+\frac{1}{4}}}(kr)$
+ --><IMG height=47 
+alt="$ H^{(2)}_{\sqrt{\lambda+\frac{1}{4}}}(kr)$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3022.png" 
+width=99 align=middle border=0>, where <IMG height=18 alt="$ \lambda $" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img59.png" 
+width=16 align=bottom border=0> is to be determined. 
+<P>
+<P>
+<P><BR>
+<DIV align=center><I>Lecture</I> 48</DIV>
+<P>
+<P><BR>
+<P>The value of <IMG height=18 alt="$ \lambda $" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img59.png" 
+width=16 align=bottom border=0> is not arbitrary. It is one of the (degenerate) 
+eigenvalues of Eq.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node104.html#eq:26a">5.57</A>), 
+the two-dimensional Helmholtz equation on the unit two-sphere. As already 
+observed on page&nbsp;<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node104.html#small_theta"><IMG 
+alt=[*] 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/crossref.png" 
+align=bottom border=1></A>, for <!-- MATH
+ $\theta \ll 1$
+ --><IMG height=34 
+alt="$ \theta \ll 1$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img2996.png" 
+width=53 align=middle border=0> this equation reduces to Helmholtz's equation on 
+the Euclidean plane. This observation is very useful for several reasons. One of 
+them is that it implies, as shown on page&nbsp;<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node98.html#Factorization_Method"><IMG 
+alt=[*] 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/crossref.png" 
+align=bottom border=1></A>, that there is a simple algebraic way of generating a 
+complete basis for each degenerate eigenspace of <!-- MATH
+ \begin{displaymath}
+\nabla^2 Y=-\lambda Y~.
+\end{displaymath}
+ -->
+<P></P>
+<DIV align=center><IMG height=40 
+alt="$\displaystyle \nabla^2 Y=-\lambda Y~.&#10;$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3023.png" 
+width=121 align=middle border=0> </DIV>
+<P></P>We shall now extend this algebraic method from the eigenfunctions of <IMG 
+height=20 alt="$ \nabla^2$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img2273.png" 
+width=28 align=bottom border=0> on the two-dimensional Euclidean plane to those 
+of <IMG height=20 alt="$ \nabla^2$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img2273.png" 
+width=28 align=bottom border=0> on the two-dimensional surface of a unit sphere. 
+
+<P>The factorization method of solving a partial (or ordinary) differential 
+equation is remarkable. This method differs from a power series or a numerical 
+approach in that one solves a calculus problem without the use of calculus: one 
+obtains the linear algebraic aspects of the problem (eigenvalues, all normalized 
+eigenvectors, their properties, etc.) in one fell swoop without ever having to 
+determine explicitly the detailed functional form ( i.e. local behaviour) of the 
+solutions. To be sure, one can readily determine and exhibit these solutions in 
+explicit form in terms of Legendre and associated Legendre polynomials, and we 
+shall do so. However, this is a straight forward, but secondary, calculus 
+exercise which is an implied but not an integral part of the algebraic approach. 
+
+<P><I>Important Reminder:</I> Throughout the ensuing discussion an 
+<I>eigenfunction</I> on the unit sphere refers to a function which is 
+<I>square-integrable</I>, i.e. 
+<P></P>
+<DIV align=center><A name=eq:inner_product_on_the_2-sphere></A><!-- MATH
+ \begin{equation}
+0<\langle Y,Y\rangle \equiv \int_0^\pi \int_0^{2\pi} \vert Y(\theta,\varphi)
+\vert^2 \sin\theta d\theta d\varphi <\infty~.
+\end{equation}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=middle><IMG height=66 
+      alt="$\displaystyle 0<\langle Y,Y\rangle \equiv \int_0^\pi \int_0^{2\pi} \vert Y(\theta,\varphi) \vert^2 \sin\theta d\theta d\varphi <\infty~.$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3024.png" 
+      width=397 align=middle border=0></TD>
+    <TD noWrap align=right width=10>(559)</TD></TR></TBODY></TABLE></DIV><BR 
+clear=all>
+<P></P>One will see that the very existence of the eigenvalue spectrum of <IMG 
+height=20 alt="$ \nabla^2$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img2273.png" 
+width=28 align=bottom border=0> on the unit sphere hinges on this fact. For this 
+reason, the extension of this algebraic method is considerably more powerful. It 
+yields not only the basis for each eigenspace of <IMG height=20 
+alt="$ \nabla^2$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img2273.png" 
+width=28 align=bottom border=0>, but also the actual value for each allowed 
+degenerate eigenvalue. 
+<P><B>Global Analysis: Algebra</B> 
+<P>Global analysis deals with the solutions of a differential equation 
+``wholesale''. It characterizes them in relationship to one another without 
+specifying their individual behaviour on their domain of definition. Thus one 
+focusses via algebra, linear or otherwise, on ``the space of solutions'', its 
+subspaces, bases etc. 
+<P>Local analysis (next subsubsection), by contrast, deals with the solutions of 
+a differential equation ``retail''. Using differential calculus, numerical 
+analysis, one zooms in on individual functions and characterizes them by their 
+local values, slopes, location of zeroes, etc. 
+<P><I>1. Factorization</I> 
+<P>The algebraic method depends on factoring <!-- MATH
+ \begin{displaymath}
+\nabla^2=\frac{\partial^2}{\partial\theta^2}+
+\frac{\cos \theta}{\sin \theta}\frac{\partial}{\partial\theta}+
+\frac{1}{\sin^2 \theta}\frac{\partial^2}{\partial\varphi^2}
+\end{displaymath}
+ -->
+<P></P>
+<DIV align=center><IMG height=64 
+alt="$\displaystyle \nabla^2=\frac{\partial^2}{\partial\theta^2}+&#10;\frac{\cos \theta}{...&#10;...}{\partial\theta}+&#10;\frac{1}{\sin^2 \theta}\frac{\partial^2}{\partial\varphi^2}&#10;$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3025.png" 
+width=277 align=middle border=0> </DIV>
+<P></P>into a pair of first order operators which are adjoints of each other. 
+The method is analogous to factoring a quadratic polynomial, except that here 
+one has differential operators <!-- MATH
+ $\partial/ \partial \theta$
+ --><IMG 
+height=37 alt="$ \partial/ \partial \theta$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3026.png" 
+width=45 align=middle border=0> and 
+<!-- MATH
+ $\partial/ \partial \varphi$
+ --><IMG height=37 
+alt="$ \partial/ \partial \varphi$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3027.png" 
+width=48 align=middle border=0> instead of the variables <IMG height=17 
+alt="$ x$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img45.png" 
+width=15 align=bottom border=0> and <IMG height=33 alt="$ y$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img2324.png" 
+width=15 align=middle border=0>. Taking our cue from <I>Properties 16</I> and 
+<I>17</I>, one attempts <!-- MATH
+ \begin{displaymath}
+\frac{\partial^2}{\partial\theta^2}+
+\frac{\cos \theta}{\sin \theta}\frac{\partial}{\partial\theta}+
+\frac{1}{\sin^2 \theta}\frac{\partial^2}{\partial\varphi^2}
+\begin{array}[b]{c}
+\textrm {\Large ?\normalsize }\\
+=
+\end{array}
+e^{i\phi}\left( \frac{\partial}{\partial\theta}+\frac{i}{\sin\theta}
+\frac{\partial}{\partial\varphi}\right)
+e^{-i\phi}\left( \frac{\partial}{\partial\theta}-\frac{i}{\sin\theta}
+\frac{\partial}{\partial\varphi}\right)
+\end{displaymath}
+ -->
+<P></P>
+<DIV align=center><IMG height=67 
+alt="\begin{displaymath}&#10;\frac{\partial^2}{\partial\theta^2}+&#10;\frac{\cos \theta}{\sin...&#10;...}-\frac{i}{\sin\theta}&#10;\frac{\partial}{\partial\varphi}\right)&#10;\end{displaymath}" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3028.png" 
+width=579 border=0> </DIV>
+<P></P>However, one immediately finds that this factorization yields <!-- MATH
+ $\frac{1}{\sin\theta} \frac{\partial}{\partial\theta}$
+ --><IMG 
+height=41 alt="$ \frac{1}{\sin\theta} \frac{\partial}{\partial\theta}$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3029.png" 
+width=53 align=middle border=0> for a cross term. This is incorrect. What one 
+needs instead is <!-- MATH
+ $\frac{\cos\theta}{\sin\theta}\frac{\partial}{\partial\theta}$
+ --><IMG 
+height=41 alt="$ \frac{\cos\theta}{\sin\theta}\frac{\partial}{\partial\theta}$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3030.png" 
+width=54 align=middle border=0>. This leads us to consider <BR>
+<DIV align=center><A name=eq:factored_equation></A><!-- MATH
+ \begin{eqnarray}
+\lefteqn{
+e^{ i\phi}\left( \frac{\partial}{\partial\theta}+i\frac{\cos\theta}{\sin\theta}
+\frac{\partial}{\partial\varphi}\right)
+e^{-i\phi}\left( \frac{\partial}{\partial\theta}-i\frac{\cos\theta}{\sin\theta}
+\frac{\partial}{\partial\varphi}\right)
+}\nonumber \\
+&&=\frac{\partial^2}{\partial\theta^2}+
+\frac{\cos \theta}{\sin \theta}\frac{\partial}{\partial\theta}+
+\frac{i}{\sin^2\theta}(1-\cos^2\theta)\frac{\partial}{\partial\varphi}+
+\frac{\cos^2\theta}{\sin^2 \theta}\frac{\partial^2}{\partial\varphi^2}
+\nonumber \\
+&&=\frac{1}{\sin^2\theta}\frac{\partial}{\partial\theta} \sin\theta
+\frac{\partial}{\partial\theta}+
+\frac{1}{\sin^2 \theta}\frac{\partial^2}{\partial\varphi^2}
+-\frac{\partial^2}{\partial\varphi^2}
+-\frac{1}{i}\frac{\partial}{\partial\varphi}
+\nonumber \\
+&&\equiv ~~~~~~~~~~~~~~~~~~~~~~\nabla^2 ~~~~~~~~~~~~~+L^2_\varphi ~~-L_\varphi
+\end{eqnarray}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=left colSpan=3><IMG height=63 
+      alt="$\displaystyle {&#10;e^{ i\phi}\left( \frac{\partial}{\partial\theta}+i\frac{\cos\th...&#10;...theta}-i\frac{\cos\theta}{\sin\theta}&#10;\frac{\partial}{\partial\varphi}\right)&#10;}$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3031.png" 
+      width=369 align=middle border=0></TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD noWrap align=left><IMG height=64 
+      alt="$\displaystyle =\frac{\partial^2}{\partial\theta^2}+&#10;\frac{\cos \theta}{\sin \th...&#10;...varphi}+&#10;\frac{\cos^2\theta}{\sin^2 \theta}\frac{\partial^2}{\partial\varphi^2}$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3032.png" 
+      width=440 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD noWrap align=left><IMG height=64 
+      alt="$\displaystyle =\frac{1}{\sin^2\theta}\frac{\partial}{\partial\theta} \sin\theta...&#10;...rac{\partial^2}{\partial\varphi^2}&#10;-\frac{1}{i}\frac{\partial}{\partial\varphi}$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3033.png" 
+      width=384 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD noWrap align=left><IMG height=40 
+      alt="$\displaystyle \equiv ~~~~~~~~~~~~~~~~~~~~~~\nabla^2 ~~~~~~~~~~~~~+L^2_\varphi ~~-L_\varphi$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3034.png" 
+      width=370 align=middle border=0></TD>
+    <TD align=right width=10>(560)</TD></TR></TBODY></TABLE></DIV><BR clear=all>
+<P></P>Here we have introduced the self-adjoint operator <!-- MATH
+ \begin{displaymath}
+L_\varphi=\frac{1}{i}\frac{\partial}{\partial\varphi}~.
+\end{displaymath}
+ -->
+<P></P>
+<DIV align=center><IMG height=60 
+alt="$\displaystyle L_\varphi=\frac{1}{i}\frac{\partial}{\partial\varphi}~.&#10;$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3035.png" 
+width=104 align=middle border=0> </DIV>
+<P></P>It generates rotations around the polar axis of a sphere. This operator, 
+together with the two mutually adjoint operators <!-- MATH
+ \begin{displaymath}
+L_\pm =\pm
+e^{i\phi}\left( \frac{\partial}{\partial\theta}\pm i\frac{\cos\theta}
+{\sin\theta}
+\frac{\partial}{\partial\varphi}\right)
+\end{displaymath}
+ -->
+<P></P>
+<DIV align=center><IMG height=63 
+alt="$\displaystyle L_\pm =\pm&#10;e^{i\phi}\left( \frac{\partial}{\partial\theta}\pm i\frac{\cos\theta}&#10;{\sin\theta}&#10;\frac{\partial}{\partial\varphi}\right)&#10;$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3036.png" 
+width=244 align=middle border=0> </DIV>
+<P></P>are of fundamental importance to the factorization method of solving the 
+given differential equation. In terms of them the factorized Eq.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:factored_equation">5.60</A>) 
+and its complex conjugate have the form 
+<P></P>
+<DIV align=center><A name=eq:both_factored_equations></A><!-- MATH
+ \begin{equation}
+L_\pm L_\mp = -\nabla^2- L^2_\varphi \pm L_\varphi~.
+\end{equation}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=middle><IMG height=40 
+      alt="$\displaystyle L_\pm L_\mp = -\nabla^2- L^2_\varphi \pm L_\varphi~.$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3037.png" 
+      width=219 align=middle border=0></TD>
+    <TD noWrap align=right width=10>(561)</TD></TR></TBODY></TABLE></DIV><BR 
+clear=all>
+<P></P>This differs from Eq.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node98.html#eq:factored_Euclidean_Laplacian">5.14</A>), 
+(<I>Property 17</I> on page&nbsp;<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node98.html#Factorization_Method"><IMG 
+alt=[*] 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/crossref.png" 
+align=bottom border=1></A>), the factored Laplacian on the Euclidean plane. 
+<P><I>2. Fundamental Relations</I> 
+<P>In spite of this difference, the commutation relations corresponding to 
+Eqs.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node98.html#eq:1st_commutator">5.16</A>), 
+(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node98.html#eq:2nd_commutator">5.17</A>), 
+and (<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node98.html#eq:3rd_commutator">5.18</A>) 
+are all the same, except one. Thus, instead of Eq.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node98.html#eq:2nd_commutator">5.17</A>), 
+for a sphere one has 
+<P></P>
+<DIV align=center><A name=eq:first_commutator></A><!-- MATH
+ \begin{equation}
+[L_+,L_-]=2L_\varphi~.
+\end{equation}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=middle><IMG height=37 
+      alt="$\displaystyle [L_+,L_-]=2L_\varphi~.$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3038.png" 
+      width=140 align=middle border=0></TD>
+    <TD noWrap align=right width=10>(562)</TD></TR></TBODY></TABLE></DIV><BR 
+clear=all>
+<P></P>This is obtained by subtracting the two Eqs.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:both_factored_equations">5.61</A>). 
+However, the commutation relations corresponding to the other two equations 
+remain the same. Indeed, a little algebraic computation yields <!-- MATH
+ \begin{displaymath}
+L_\varphi L_\mp= L_\pm L_\varphi \pm  L_\varphi~,
+\end{displaymath}
+ -->
+<P></P>
+<DIV align=center><IMG height=34 
+alt="$\displaystyle L_\varphi L_\mp= L_\pm L_\varphi \pm L_\varphi~,&#10;$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3039.png" 
+width=180 align=middle border=0> </DIV>
+<P></P>or 
+<P></P>
+<DIV align=center><A name=eq:second_commutator></A><!-- MATH
+ \begin{equation}
+[L_\varphi, L_\pm]= \pm L_\pm ~.
+\end{equation}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=middle><IMG height=37 
+      alt="$\displaystyle [L_\varphi, L_\pm]= \pm L_\pm ~.$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3040.png" 
+      width=145 align=middle border=0></TD>
+    <TD noWrap align=right width=10>(563)</TD></TR></TBODY></TABLE></DIV><BR 
+clear=all>
+<P></P>Furthermore, using Eq.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:both_factored_equations">5.61</A>) 
+one finds <BR>
+<DIV align=center><!-- MATH
+ \begin{eqnarray}
+[\nabla^2,L_+]&=& [-L_+L_- -L^2_\varphi +L_\varphi ,L_+]\nonumber\\
+              &=&-[L_+L_-,L_+]-[L^2_\varphi,L_+]+[L_\varphi,L_+]\nonumber\\
+              &=&-L_+(L_-L_+ - L_+L_-)\nonumber\\
+              & &\mbox{}-L_\varphi(L_\varphi L_+ - L_+L_\varphi)
+                                 -(L_\varphi L_+ - L_+L_\varphi)L_\varphi
+                                                     \nonumber\\
+              & &\mbox{} + (L_\varphi L_+ - L_+L_\varphi)\nonumber\\
+              &=&0~.
+\end{eqnarray}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=right><IMG height=40 alt="$\displaystyle [\nabla^2,L_+]$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3041.png" 
+      width=71 align=middle border=0></TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=40 
+      alt="$\displaystyle [-L_+L_- -L^2_\varphi +L_\varphi ,L_+]$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3042.png" 
+      width=201 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=40 
+      alt="$\displaystyle -[L_+L_-,L_+]-[L^2_\varphi,L_+]+[L_\varphi,L_+]$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3043.png" 
+      width=287 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=37 
+      alt="$\displaystyle -L_+(L_-L_+ - L_+L_-)$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3044.png" 
+      width=178 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD noWrap align=left>&nbsp;&nbsp;<IMG height=37 
+      alt="$\displaystyle -L_\varphi(L_\varphi L_+ - L_+L_\varphi)&#10;-(L_\varphi L_+ - L_+L_\varphi)L_\varphi$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3045.png" 
+      width=349 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD noWrap align=left>&nbsp;&nbsp;<IMG height=37 
+      alt="$\displaystyle + (L_\varphi L_+ - L_+L_\varphi)$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3046.png" 
+      width=150 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=33 alt="$\displaystyle 0~.$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3047.png" 
+      width=26 align=middle border=0></TD>
+    <TD align=right width=10>(564)</TD></TR></TBODY></TABLE></DIV><BR clear=all>
+<P></P>The last equality was obtained with the help of Eqs.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:first_commutator">5.62</A>) 
+and (<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:second_commutator">5.63</A>). 
+Together with the complex conjugate of this equation, one has therefore 
+<P></P>
+<DIV align=center><A name=eq:third_commutator></A><!-- MATH
+ \begin{equation}
+[\nabla^2,L_\pm]=0~.
+\end{equation}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=middle><IMG height=40 
+      alt="$\displaystyle [\nabla^2,L_\pm]=0~.$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3048.png" 
+      width=117 align=middle border=0></TD>
+    <TD noWrap align=right width=10>(565)</TD></TR></TBODY></TABLE></DIV><BR 
+clear=all>
+<P></P>In addition, one has quite trivially 
+<P></P>
+<DIV align=center><A name=eq:fourth_commutator></A><!-- MATH
+ \begin{equation}
+[\nabla^2,L_\varphi]=0
+\end{equation}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=middle><IMG height=40 
+      alt="$\displaystyle [\nabla^2,L_\varphi]=0$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3049.png" 
+      width=104 align=middle border=0></TD>
+    <TD noWrap align=right width=10>(566)</TD></TR></TBODY></TABLE></DIV><BR 
+clear=all>
+<P></P>The three algebraic relations, Eqs.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:first_commutator">5.62</A>)-(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:second_commutator">5.63</A>) 
+and their consequences, Eq.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:third_commutator">5.65</A>)-(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:fourth_commutator">5.66</A>), 
+are the fundamental equations from which one deduces the allowed degenerate 
+eigenvalues of Eq.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node104.html#eq:26a">5.57</A>) 
+as well as the corresponding <I>normalized</I> eigenfunctions. 
+<P><I>3. The Eigenfunctions</I> 
+<P>One starts by considering a function <!-- MATH
+ $Y_\lambda^m$
+ --><IMG 
+height=34 alt="$ Y_\lambda^m$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3050.png" 
+width=32 align=middle border=0> which is a simultaneous solution to the two 
+eigenvalue equations <BR>
+<DIV align=center><!-- MATH
+ \begin{eqnarray*}
+L_\varphi Y_\lambda^m &=& m Y_\lambda^m \\
+\nabla^2 Y_\lambda^m &=& -\lambda Y_\lambda^m~.
+\end{eqnarray*}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=right><IMG height=35 
+      alt="$\displaystyle L_\varphi Y_\lambda^m$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3051.png" 
+      width=55 align=middle border=0></TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=35 alt="$\displaystyle m Y_\lambda^m$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3052.png" 
+      width=49 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right><IMG height=40 
+      alt="$\displaystyle \nabla^2 Y_\lambda^m$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3053.png" 
+      width=56 align=middle border=0></TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=35 
+      alt="$\displaystyle -\lambda Y_\lambda^m~.$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3054.png" 
+      width=70 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR></TBODY></TABLE></DIV><BR clear=all>
+<P></P>This is a consistent system, and it is best to postpone until later the 
+easy task of actually exhibiting non-zero solutions to it. First we deduce three 
+properties of any given solution <!-- MATH
+ $Y_\lambda^m$
+ --><IMG height=34 
+alt="$ Y_\lambda^m$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3050.png" 
+width=32 align=middle border=0>. 
+<P>The first property is obtained by applying the operator <IMG height=34 
+alt="$ L_+$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img110.png" 
+width=29 align=middle border=0> to this solution. One finds that <BR>
+<DIV align=center><!-- MATH
+ \begin{eqnarray*}
+L_\varphi (L_+Y_\lambda^m)&=& (L_+L_\varphi + L_+)Y_\lambda^m\\
+&=&(m+1)(L_+Y_\lambda^m)
+\end{eqnarray*}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=right><IMG height=37 
+      alt="$\displaystyle L_\varphi (L_+Y_\lambda^m)$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3055.png" 
+      width=93 align=middle border=0></TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=37 
+      alt="$\displaystyle (L_+L_\varphi + L_+)Y_\lambda^m$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3056.png" 
+      width=141 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=37 
+      alt="$\displaystyle (m+1)(L_+Y_\lambda^m)$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3057.png" 
+      width=134 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR></TBODY></TABLE></DIV><BR clear=all>
+<P></P>Similarly, one finds <!-- MATH
+ \begin{displaymath}
+L_\varphi (L_-Y_\lambda^m)=(m-1)(L_-Y_\lambda^m)~.
+\end{displaymath}
+ -->
+<P></P>
+<DIV align=center><IMG height=37 
+alt="$\displaystyle L_\varphi (L_-Y_\lambda^m)=(m-1)(L_-Y_\lambda^m)~.&#10;$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3058.png" 
+width=260 align=middle border=0> </DIV>
+<P></P>Thus <!-- MATH
+ $L_+Y_\lambda^m$
+ --><IMG height=34 
+alt="$ L_+Y_\lambda^m$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3059.png" 
+width=57 align=middle border=0> and <!-- MATH
+ $L_-Y_\lambda^m$
+ --><IMG 
+height=34 alt="$ L_-Y_\lambda^m$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3060.png" 
+width=57 align=middle border=0> are again eigenfunctions of <IMG height=34 
+alt="$ L_\varphi$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3061.png" 
+width=27 align=middle border=0>, but having eigenvalues <IMG height=33 
+alt="$ m+1$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3062.png" 
+width=53 align=middle border=0> and <IMG height=33 alt="$ m-1$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3063.png" 
+width=54 align=middle border=0>. One is, therefore, justified in calling <IMG 
+height=34 alt="$ L_+$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img110.png" 
+width=29 align=middle border=0> and <IMG height=34 alt="$ L_-$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img112.png" 
+width=29 align=middle border=0> <I>raising</I> and <I>lowering</I> operators. 
+The ``raised'' and ``lowered'' functions <!-- MATH
+ $L_\pm Y_\lambda^m$
+ --><IMG 
+height=34 alt="$ L_\pm Y_\lambda^m$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3064.png" 
+width=57 align=middle border=0> have the additional property that they are still 
+eigenfunctions of <IMG height=20 alt="$ \nabla^2$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img2273.png" 
+width=28 align=bottom border=0> belonging to the same eigenvalue <IMG height=18 
+alt="$ \lambda $" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img59.png" 
+width=16 align=bottom border=0>. Indeed, with the help of Eq.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:third_commutator">5.65</A>) 
+one finds <!-- MATH
+ \begin{displaymath}
+\nabla^2 L_\pm Y_\lambda^m=L_\pm \nabla^2 Y_\lambda^m
+=-\lambda L_\pm Y_\lambda^m~.
+\end{displaymath}
+ -->
+<P></P>
+<DIV align=center><IMG height=40 
+alt="$\displaystyle \nabla^2 L_\pm Y_\lambda^m=L_\pm \nabla^2 Y_\lambda^m&#10;=-\lambda L_\pm Y_\lambda^m~.&#10;$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3065.png" 
+width=295 align=middle border=0> </DIV>
+<P></P>Thus, <I>if <!-- MATH
+ $Y_\lambda^m$
+ --><IMG height=34 
+alt="$ Y_\lambda^m$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3050.png" 
+width=32 align=middle border=0> belongs to the eigenspace of <IMG height=18 
+alt="$ \lambda $" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img59.png" 
+width=16 align=bottom border=0>, then so do <!-- MATH
+ $L_+Y_\lambda^m$
+ --><IMG 
+height=34 alt="$ L_+Y_\lambda^m$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3059.png" 
+width=57 align=middle border=0> and <!-- MATH
+ $L_-Y_\lambda^m$
+ --><IMG 
+height=34 alt="$ L_-Y_\lambda^m$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3060.png" 
+width=57 align=middle border=0>.</I> 
+<P><I>4. Normalization and the Eigenvalues</I> 
+<P>The second and third properties concern the normalization of <!-- MATH
+ $L_\pm Y^m_\lambda$
+ --><IMG height=34 alt="$ L_\pm Y^m_\lambda$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3066.png" 
+width=57 align=middle border=0> and the allowed values of <IMG height=18 
+alt="$ \lambda $" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img59.png" 
+width=16 align=bottom border=0>. One obtains them by examining the sequence of 
+squared norms of the sequence of eigenfunctions <!-- MATH
+ \begin{displaymath}
+L_\pm^k Y_\lambda^m~~,~~~~~k=0,1,2,\cdots~~~.
+\end{displaymath}
+ -->
+<P></P>
+<DIV align=center><IMG height=41 
+alt="$\displaystyle L_\pm^k Y_\lambda^m~~,~~~~~k=0,1,2,\cdots~~~.&#10;$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3067.png" 
+width=246 align=middle border=0> </DIV>
+<P></P>All of them are square-integrable. Hence their norms are non-negative. In 
+particular, for <IMG height=18 alt="$ k=1$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3068.png" 
+width=50 align=bottom border=0> one has <BR>
+<DIV align=center><A name=eq:normalization_integral></A><!-- MATH
+ \begin{eqnarray}
+0\le \int_0^\pi \int_0^{2\pi} \vert L_\pm Y_\lambda^m(\theta,\varphi)
+\vert^2 \sin\theta d\theta d\varphi &\equiv& \langle L_\pm Y_\lambda^m,
+L_\pm Y_\lambda^m \rangle \nonumber \\
+&=&\langle Y_\lambda^m,L_\mp L_\pm Y_\lambda^m \rangle \nonumber \\
+&=&\langle Y_\lambda^m,(-)(\nabla^2+L^2_\varphi \pm L_\varphi )
+Y_\lambda^m \rangle \nonumber \\
+&=&[\lambda - m(m\pm 1)] \langle Y_\lambda^m,Y_\lambda^m \rangle
+\end{eqnarray}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=right><IMG height=66 
+      alt="$\displaystyle 0\le \int_0^\pi \int_0^{2\pi} \vert L_\pm Y_\lambda^m(\theta,\varphi)&#10;\vert^2 \sin\theta d\theta d\varphi$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3069.png" 
+      width=303 align=middle border=0></TD>
+    <TD noWrap align=middle width=10><IMG height=33 
+      alt="$\displaystyle \equiv$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img456.png" 
+      width=20 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=37 
+      alt="$\displaystyle \langle L_\pm Y_\lambda^m,&#10;L_\pm Y_\lambda^m \rangle$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3070.png" 
+      width=131 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=37 
+      alt="$\displaystyle \langle Y_\lambda^m,L_\mp L_\pm Y_\lambda^m \rangle$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3071.png" 
+      width=131 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=40 
+      alt="$\displaystyle \langle Y_\lambda^m,(-)(\nabla^2+L^2_\varphi \pm L_\varphi )&#10;Y_\lambda^m \rangle$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3072.png" 
+      width=242 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=37 
+      alt="$\displaystyle [\lambda - m(m\pm 1)] \langle Y_\lambda^m,Y_\lambda^m \rangle$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3073.png" 
+      width=208 align=middle border=0></TD>
+    <TD align=right width=10>(567)</TD></TR></TBODY></TABLE></DIV><BR clear=all>
+<P></P>This is the second property. It is a powerful result for two reasons: 
+<P>First of all, if <!-- MATH
+ $Y^m_\lambda$
+ --><IMG height=34 
+alt="$ Y^m_\lambda$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3074.png" 
+width=32 align=middle border=0> has been normalized to unity, then so will be 
+<P></P>
+<DIV align=center><A name=eq:normalized_and_laddered_eigenfunction></A><!-- MATH
+ \begin{equation}
+\frac{1}{[\lambda - m(m\pm 1)]^{1/2}} L_\pm Y_\lambda^m(\theta,\varphi)
+\equiv Y_\lambda^{m\pm 1}(\theta,\varphi)
+\end{equation}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=middle><IMG height=58 
+      alt="$\displaystyle \frac{1}{[\lambda - m(m\pm 1)]^{1/2}} L_\pm Y_\lambda^m(\theta,\varphi) \equiv Y_\lambda^{m\pm 1}(\theta,\varphi)$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3075.png" 
+      width=365 align=middle border=0></TD>
+    <TD noWrap align=right width=10>(568)</TD></TR></TBODY></TABLE></DIV><BR 
+clear=all>
+<P></P>This means that once the normalization integral has been worked out for 
+any one of the <!-- MATH
+ $Y^m_\lambda$
+ --><IMG height=34 alt="$ Y^m_\lambda$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3074.png" 
+width=32 align=middle border=0>'s, the already normalized <!-- MATH
+ $Y_\lambda^{m\pm 1}$
+ --><IMG height=40 alt="$ Y_\lambda^{m\pm 1}$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3076.png" 
+width=50 align=middle border=0> are given by Eq.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:normalized_and_laddered_eigenfunction">5.68</A>); 
+no additional normalization integrals need to be evaluated. By repeatedly 
+applying the operator <IMG height=34 alt="$ L_\pm$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3077.png" 
+width=29 align=middle border=0> one can extend this result to <!-- MATH
+ $Y_\lambda^{m\pm 2}$
+ --><IMG height=40 alt="$ Y_\lambda^{m\pm 2}$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3078.png" 
+width=50 align=middle border=0>, <!-- MATH
+ $Y_\lambda^{m\pm 3}$
+ --><IMG 
+height=40 alt="$ Y_\lambda^{m\pm 3}$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3079.png" 
+width=50 align=middle border=0>, etc. They all are already normalized if <!-- MATH
+ $Y^m_\lambda$
+ --><IMG height=34 alt="$ Y^m_\lambda$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3074.png" 
+width=32 align=middle border=0> is. <I>No extra work is necessary.</I> 
+<P>Secondly, repeated use of the relation (<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:normalization_integral">5.67</A>) 
+yields <!-- MATH
+ \begin{displaymath}
+\langle L^k_\pm Y_\lambda^m,L^k_\pm Y_\lambda^m \rangle=
+[\lambda - \left( m\pm(k-1)\right)(m\pm k)] \cdots [\lambda - m(m\pm 1)]
+\langle Y_\lambda^m,Y_\lambda^m \rangle
+\end{displaymath}
+ -->
+<P></P>
+<DIV align=center><IMG height=42 
+alt="$\displaystyle \langle L^k_\pm Y_\lambda^m,L^k_\pm Y_\lambda^m \rangle=&#10;[\lambda...&#10;...(m\pm k)] \cdots [\lambda - m(m\pm 1)]&#10;\langle Y_\lambda^m,Y_\lambda^m \rangle&#10;$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3080.png" 
+width=610 align=middle border=0> </DIV>
+<P></P>This relation implies that for sufficiently large integer <IMG height=18 
+alt="$ k$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img78.png" 
+width=15 align=bottom border=0> the leading factor in square brackets must 
+vanish. If it did not, the squared norm of 
+<!-- MATH
+ $L^k_\pm Y_\lambda^m$
+ --><IMG height=39 alt="$ L^k_\pm Y_\lambda^m$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3081.png" 
+width=57 align=middle border=0> would become negative. To prevent this from 
+happening, <IMG height=18 alt="$ \lambda $" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img59.png" 
+width=16 align=bottom border=0> must have very special values. This is the third 
+property: The only allowed values of <IMG height=18 alt="$ \lambda $" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img59.png" 
+width=16 align=bottom border=0> are necessarily <!-- MATH
+ \begin{displaymath}
+\lambda=\ell(\ell+1)~~~~~\ell=0,1,2,\cdots~.
+\end{displaymath}
+ -->
+<P></P>
+<DIV align=center><IMG height=37 
+alt="$\displaystyle \lambda=\ell(\ell+1)~~~~~\ell=0,1,2,\cdots~.&#10;$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3082.png" 
+width=258 align=middle border=0> </DIV>
+<P></P>(Note that <!-- MATH
+ $\ell=-1,-2,\cdots$
+ --><IMG height=34 
+alt="$ \ell=-1,-2,\cdots$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3083.png" 
+width=128 align=middle border=0> would give nothing new.) Any other value for 
+<IMG height=18 alt="$ \lambda $" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img59.png" 
+width=16 align=bottom border=0> would yield a contradiction, namely a negative 
+norm for some integer <IMG height=18 alt="$ k$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img78.png" 
+width=15 align=bottom border=0>. As a consequence, one has the result that for 
+each allowed eigenvalue there is a sequence of eigenfunctions 
+<P></P>
+<DIV align=center><A name=eq:sequence_of_eigenfunctions></A><!-- MATH
+ \begin{equation}
+Y_\ell^m(\theta,\varphi)~~~~~m=0,\pm 1,\pm 2,\cdots
+\end{equation}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=middle><IMG height=37 
+      alt="$\displaystyle Y_\ell^m(\theta,\varphi)~~~~~m=0,\pm 1,\pm 2,\cdots$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3084.png" 
+      width=258 align=middle border=0></TD>
+    <TD noWrap align=right width=10>(569)</TD></TR></TBODY></TABLE></DIV><BR 
+clear=all>
+<P></P>(<I>Nota bene:</I> Note that these eigenfunctions are now labelled by the 
+non-negative integer <IMG height=18 alt="$ \ell $" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img108.png" 
+width=13 align=bottom border=0> instead of the corresponding eigenvalue <IMG 
+height=18 alt="$ \lambda $" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img59.png" 
+width=16 align=bottom border=0>.) Of particular interest are the two 
+eigenfunctions <!-- MATH
+ $Y^\ell_\ell$
+ --><IMG height=39 alt="$ Y^\ell_\ell$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3085.png" 
+width=26 align=middle border=0> and <!-- MATH
+ $Y^{-\ell}_\ell$
+ --><IMG 
+height=41 alt="$ Y^{-\ell}_\ell$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3086.png" 
+width=37 align=middle border=0>. The squared norm of <!-- MATH
+ $L_+Y^\ell_\ell$
+ --><IMG height=39 alt="$ L_+Y^\ell_\ell$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3087.png" 
+width=50 align=middle border=0>, <!-- MATH
+ \begin{displaymath}
+\Vert L_+Y^\ell_\ell \Vert^2=
+                   [\ell(\ell+1)-\ell(\ell+1)]\Vert Y^\ell_\ell\Vert^2
+\end{displaymath}
+ -->
+<P></P>
+<DIV align=center><IMG height=41 
+alt="$\displaystyle \Vert L_+Y^\ell_\ell \Vert^2=&#10;[\ell(\ell+1)-\ell(\ell+1)]\Vert Y^\ell_\ell\Vert^2&#10;$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3088.png" 
+width=309 align=middle border=0> </DIV>
+<P></P>is not positive. It vanishes. This implies that 
+<P></P>
+<DIV align=center><A name=eq:top></A><!-- MATH
+ \begin{equation}
+Y^{\ell+1}_\ell \propto L_+Y^\ell_\ell=0~.
+\end{equation}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=middle><IMG height=41 
+      alt="$\displaystyle Y^{\ell+1}_\ell \propto L_+Y^\ell_\ell=0~.$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3089.png" 
+      width=160 align=middle border=0></TD>
+    <TD noWrap align=right width=10>(570)</TD></TR></TBODY></TABLE></DIV><BR 
+clear=all>
+<P></P>In other words, <!-- MATH
+ $Y^{\ell+1}_\ell$
+ --><IMG height=41 
+alt="$ Y^{\ell+1}_\ell$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3090.png" 
+width=43 align=middle border=0> and all subsequent members of the above 
+sequence, Eq.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:sequence_of_eigenfunctions">5.69</A>) 
+vanish, i.e. they do not exist. Similarly one finds that 
+<P></P>
+<DIV align=center><A name=eq:bottom></A><!-- MATH
+ \begin{equation}
+Y^{-\ell-1}_\ell \propto L_-Y^{-\ell}_\ell=0~.
+\end{equation}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=middle><IMG height=41 
+      alt="$\displaystyle Y^{-\ell-1}_\ell \propto L_-Y^{-\ell}_\ell=0~.$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3091.png" 
+      width=181 align=middle border=0></TD>
+    <TD noWrap align=right width=10>(571)</TD></TR></TBODY></TABLE></DIV><BR 
+clear=all>
+<P></P>Thus members of the sequence below <!-- MATH
+ $Y^{-\ell}_\ell$
+ --><IMG 
+height=41 alt="$ Y^{-\ell}_\ell$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3086.png" 
+width=37 align=middle border=0> do not exist either. It follows that the 
+sequence of eigenfunctions corresponding to <!-- MATH
+ $\ell(\ell+1)$
+ --><IMG 
+height=37 alt="$ \ell (\ell +1)$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img114.png" 
+width=67 align=middle border=0> is finite. The sequence has only <IMG height=34 
+alt="$ 2\ell +1$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img113.png" 
+width=54 align=middle border=0> members, namely <!-- MATH
+ \begin{displaymath}
+Y^{-\ell}_\ell(\theta,\varphi),
+Y^{-\ell+1}_\ell(\theta,\varphi),\cdots,
+Y^{-1}_\ell(\theta,\varphi),
+Y^{0}_\ell(\theta,\varphi),
+Y^{1}_\ell(\theta,\varphi),\cdots,
+Y^{\ell-1}_\ell(\theta,\varphi),
+Y^{\ell}_\ell(\theta,\varphi)
+\end{displaymath}
+ -->
+<P></P>
+<DIV align=center><IMG height=42 
+alt="$\displaystyle Y^{-\ell}_\ell(\theta,\varphi),&#10;Y^{-\ell+1}_\ell(\theta,\varphi),...&#10;...varphi),\cdots,&#10;Y^{\ell-1}_\ell(\theta,\varphi),&#10;Y^{\ell}_\ell(\theta,\varphi)&#10;$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3092.png" 
+width=656 align=middle border=0> </DIV>
+<P></P>for each integer <IMG height=18 alt="$ \ell $" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img108.png" 
+width=13 align=bottom border=0>. The union of these sequences forms a 
+semi-infinite lattice in the <IMG height=37 alt="$ (\ell ,m)$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3093.png" 
+width=52 align=middle border=0> as shown in Figure&nbsp;<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#fig:semi-infinite_lattice_of_harmonics">5.19</A>. 
+
+<DIV align=center><BR><IMG height=371 
+alt="\begin{texdraw}&#10;\drawdim cm \linewd .02 \arrowheadtype t:V&#10;\move(0 -4)&#10;\rlvec(0 ...&#10;...\par\move(1.9 -2.1) \textref h:C v:T&#10;\rtext td:-45 {$m=-\ell$}&#10;\par\end{texdraw}" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3094.png" 
+width=300 align=bottom border=0> <BR></DIV>
+<DIV align=center><A name=fig:semi-infinite_lattice_of_harmonics></A><A 
+name=17373></A>
+<TABLE>
+  <CAPTION align=bottom><STRONG>Figure 5.19:</STRONG> Lattice of eigenfunctions 
+  (spherical hamonics) labelled by the angular integers <IMG height=18 
+  alt="$ \ell $" 
+  src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img108.png" 
+  width=13 align=bottom border=0> and <IMG height=17 alt="$ m$" 
+  src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img109.png" 
+  width=21 align=bottom border=0>. Application of the raising operator <IMG 
+  height=34 alt="$ L_+$" 
+  src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img110.png" 
+  width=29 align=middle border=0> increases <IMG height=17 alt="$ m$" 
+  src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img109.png" 
+  width=21 align=bottom border=0> by <IMG height=17 alt="$ 1$" 
+  src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img111.png" 
+  width=14 align=bottom border=0>, until one comes to the top of each vertical 
+  sequence (fixed <IMG height=18 alt="$ \ell $" 
+  src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img108.png" 
+  width=13 align=bottom border=0>). The lowering operator <IMG height=34 
+  alt="$ L_-$" 
+  src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img112.png" 
+  width=29 align=middle border=0> decreases <IMG height=17 alt="$ m$" 
+  src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img109.png" 
+  width=21 align=bottom border=0> by <IMG height=17 alt="$ 1$" 
+  src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img111.png" 
+  width=14 align=bottom border=0>, until one reaches the bottom. In between 
+  there are exactly <IMG height=34 alt="$ 2\ell +1$" 
+  src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img113.png" 
+  width=54 align=middle border=0> lattice points, which express the (<IMG 
+  height=34 alt="$ 2\ell +1$" 
+  src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img113.png" 
+  width=54 align=middle border=0>)-fold degeneracy of the eigenvalue <!-- MATH
+ $\ell(\ell+1)$
+ --><IMG height=37 alt="$ \ell (\ell +1)$" 
+  src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img114.png" 
+  width=67 align=middle border=0>. There do not exist any harmonics above or 
+  below the dashed boundaries.</CAPTION>
+  <TBODY>
+  <TR>
+    <TD><IMG height=1265 alt=\begin{figure}\end{figure} 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img2403.png" 
+      width=978 border=0></TD></TR></TBODY></TABLE></DIV>
+<P>For obvious reasons it is appropriate to refer to this sequence as a 
+<I>ladder</I> with <IMG height=34 alt="$ 2\ell +1$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img113.png" 
+width=54 align=middle border=0> elements, and to call <!-- MATH
+ $Y^\ell_\ell$
+ --><IMG height=39 alt="$ Y^\ell_\ell$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3085.png" 
+width=26 align=middle border=0> the <I>top</I>, and <!-- MATH
+ $Y^{-\ell}_\ell$
+ --><IMG height=41 alt="$ Y^{-\ell}_\ell$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3086.png" 
+width=37 align=middle border=0> the <I>bottom</I> of the ladder. The raising and 
+lowering operators <IMG height=34 alt="$ L_\pm$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3077.png" 
+width=29 align=middle border=0> are the ladder operators which take us up and 
+down the <IMG height=37 alt="$ (2\ell+1)$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3095.png" 
+width=69 align=middle border=0>-element ladder. It is easy to determine the 
+elements <!-- MATH
+ $Y^{\pm\ell}_\ell$
+ --><IMG height=41 
+alt="$ Y^{\pm\ell}_\ell$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3096.png" 
+width=37 align=middle border=0> at the top and the bottom, and to use the ladder 
+operators to generate any element in between. 
+<P><I>5. Orthonormality and Completeness</I> 
+<P>The operators<!-- MATH
+ $\{ \nabla^2,L_\phi \}$
+ --> <IMG height=38 
+alt="$ \{ \nabla^2,L_\phi \}$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3097.png" 
+width=77 align=middle border=0> form a <I>complete set of commuting 
+operators</I>. This means that their eigenvalues <IMG height=37 
+alt="$ (\ell ,m)$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3093.png" 
+width=52 align=middle border=0> serve as sufficient labels to uniquely identify 
+each of their (common) eigenbasis elements for the vector space of solutions to 
+the Hermholtz equation <!-- MATH
+ \begin{displaymath}
+[\nabla^2+\ell(\ell+1)]Y^m_\ell(\theta,\varphi)=0
+\end{displaymath}
+ -->
+<P></P>
+<DIV align=center><IMG height=40 
+alt="$\displaystyle [\nabla^2+\ell(\ell+1)]Y^m_\ell(\theta,\varphi)=0&#10;$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3098.png" 
+width=231 align=middle border=0> </DIV>
+<P></P>on the two-sphere. No additional labels are necessary. The fact that 
+these operators are self-adjoint relative to the inner product, Eq.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:inner_product_on_the_2-sphere">5.59</A>), 
+implies that these eigenvectors (a.k.a spherical harmonics) are 
+<I>orthonormal</I>: <!-- MATH
+ \begin{displaymath}
+\langle Y^m_\ell,Y^{m'}_{\ell'} \rangle =\delta_{\ell {\ell'}}
+\delta_{m {m'}}
+\end{displaymath}
+ -->
+<P></P>
+<DIV align=center><IMG height=43 
+alt="$\displaystyle \langle Y^m_\ell,Y^{m'}_{\ell'} \rangle =\delta_{\ell {\ell'}}&#10;\delta_{m {m'}}&#10;$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3099.png" 
+width=175 align=middle border=0> </DIV>
+<P></P>
+<P>The semi-infinite set <!-- MATH
+ $\{ Y^m_\ell(\theta,\varphi):~-\ell\le m\le \ell;
+~ \ell=0,1,\cdots\}$
+ --><IMG 
+height=37 
+alt="$ \{ Y^m_\ell(\theta,\varphi):~-\ell\le m\le \ell;&#10;~ \ell=0,1,\cdots\}$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3100.png" 
+width=333 align=middle border=0> is a basis for the vector space of functions 
+square-integrable on the unit two-sphere. Let <!-- MATH
+ $g(\theta,\varphi)$
+ --><IMG height=37 alt="$ g(\theta,\varphi)$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3101.png" 
+width=59 align=middle border=0> be any such function. Then <BR>
+<DIV align=center><!-- MATH
+ \begin{eqnarray*}
+g(\theta,\varphi)&=& \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell
+Y^m_\ell(\theta,\varphi) \langle Y^m_\ell ,g\rangle\\
+&=&\sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell 
+Y^m_\ell(\theta,\varphi) \int_0^\pi \sin\theta'd\theta' 
+				\int_0^{2\pi} d\varphi'
+	\overline{Y^m_\ell(\theta',\varphi')}g(\theta',\varphi')
+\end{eqnarray*}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=right><IMG height=37 
+      alt="$\displaystyle g(\theta,\varphi)$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3102.png" 
+      width=59 align=middle border=0></TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=77 
+      alt="$\displaystyle \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell&#10;Y^m_\ell(\theta,\varphi) \langle Y^m_\ell ,g\rangle$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3103.png" 
+      width=210 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=77 
+      alt="$\displaystyle \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell&#10;Y^m_\ell(\theta,\varphi)...&#10;...int_0^{2\pi} d\varphi'&#10;\overline{Y^m_\ell(\theta',\varphi')}g(\theta',\varphi')$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3104.png" 
+      width=459 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR></TBODY></TABLE></DIV><BR clear=all>
+<P></P>In other words, the spherical harmonics are the basis elements for a 
+generalized double Fourier series representation of the function <!-- MATH
+ $g(\theta,\varphi)$
+ --><IMG height=37 alt="$ g(\theta,\varphi)$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3101.png" 
+width=59 align=middle border=0>. If one leaves this function unspecified, then 
+this <I>completeness relation</I> can be restated in the equivalent form <!-- MATH
+ \begin{displaymath}
+\sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell
+Y^m_\ell(\theta,\varphi) \overline{Y^m_\ell(\theta',\varphi')}=
+\frac{\delta(\theta-\theta')}{\sin\theta} \delta(\varphi-\varphi')
+\end{displaymath}
+ -->
+<P></P>
+<DIV align=center><IMG height=77 
+alt="$\displaystyle \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell&#10;Y^m_\ell(\theta,\varphi)...&#10;...\varphi')}=&#10;\frac{\delta(\theta-\theta')}{\sin\theta} \delta(\varphi-\varphi')&#10;$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3105.png" 
+width=405 align=middle border=0> </DIV>
+<P></P>in terms of the Dirac delta functions on the compact domains <!-- MATH
+ $0\le \theta \le\pi$
+ --><IMG height=34 alt="$ 0\le \theta \le\pi$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3106.png" 
+width=85 align=middle border=0> and <!-- MATH
+ $0\le\varphi\le 2\pi$
+ --><IMG 
+height=33 alt="$ 0\le\varphi\le 2\pi$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3107.png" 
+width=98 align=middle border=0>. 
+<P><B>Local Analysis: Calculus</B> 
+<P>What is the formula for a harmonics <!-- MATH
+ $Y^m_l(\theta,\phi)$
+ --><IMG 
+height=37 alt="$ Y^m_l(\theta,\phi)$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3108.png" 
+width=76 align=middle border=0>? An explicit functional form determines the 
+graph, the location of its zeroes, and other aspects of its local behaviour. 
+<P><I>1. Spherical Harmonics: Top and Bottom of the Ladder</I> 
+<P>Each member of the ladder sequence satisfies the differential equation <!-- MATH
+ \begin{displaymath}
+L_\varphi Y^m_\ell \equiv \frac{1}{i}\frac{\partial}{\partial \varphi}
+Y^m_\ell(\theta,\varphi) =m Y^m_\ell(\theta,\varphi)~.
+\end{displaymath}
+ -->
+<P></P>
+<DIV align=center><IMG height=60 
+alt="$\displaystyle L_\varphi Y^m_\ell \equiv \frac{1}{i}\frac{\partial}{\partial \varphi}&#10;Y^m_\ell(\theta,\varphi) =m Y^m_\ell(\theta,\varphi)~.&#10;$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3109.png" 
+width=318 align=middle border=0> </DIV>
+<P></P>Consequently, all eigenfunctions have the form 
+<P></P>
+<DIV align=center><A name=eq:factored_harmonic></A><!-- MATH
+ \begin{equation}
+Y^m_\ell(\theta,\varphi)=
+c_{\ell m}P^m_\ell(\theta)\frac{e^{im\varphi}}{\sqrt{2\pi}}~.
+\end{equation}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=middle><IMG height=65 
+      alt="$\displaystyle Y^m_\ell(\theta,\varphi)= c_{\ell m}P^m_\ell(\theta)\frac{e^{im\varphi}}{\sqrt{2\pi}}~.$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3110.png" 
+      width=231 align=middle border=0></TD>
+    <TD noWrap align=right width=10>(572)</TD></TR></TBODY></TABLE></DIV><BR 
+clear=all>
+<P></P>Here <!-- MATH
+ $c_{\ell m}$
+ --><IMG height=33 alt="$ c_{\ell m}$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3111.png" 
+width=31 align=middle border=0> is a normalization factor. The two 
+eigenfunctions <!-- MATH
+ $Y^\ell_\ell$
+ --><IMG height=39 alt="$ Y^\ell_\ell$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3085.png" 
+width=26 align=middle border=0> and <!-- MATH
+ $Y^{-\ell}_\ell$
+ --><IMG 
+height=41 alt="$ Y^{-\ell}_\ell$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3086.png" 
+width=37 align=middle border=0> at the top and the bottom of the ladder satisfy 
+Eqs.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:top">5.70</A>) 
+and (<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:bottom">5.71</A>) 
+respectively, namely 
+<P></P>
+<DIV align=center><A name=eq:raising_and_lowering_operators></A><!-- MATH
+ \begin{equation}
+L_{\pm}Y^{\pm \ell}_\ell\equiv
+\pm e^{ i\phi}\left( \frac{\partial}{\partial\theta} \pm i\frac{\cos\theta}{\sin\theta}
+\frac{\partial}{\partial\varphi}\right)
+P^{\pm\ell}_\ell(\theta)e^{\pm i\ell\varphi}
+=0
+\end{equation}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=middle><IMG height=63 
+      alt="$\displaystyle L_{\pm}Y^{\pm \ell}_\ell\equiv \pm e^{ i\phi}\left( \frac{\partia...&#10;...artial}{\partial\varphi}\right) P^{\pm\ell}_\ell(\theta)e^{\pm i\ell\varphi} =0$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3112.png" 
+      width=408 align=middle border=0></TD>
+    <TD noWrap align=right width=10>(573)</TD></TR></TBODY></TABLE></DIV><BR 
+clear=all>
+<P></P>It is easy to see that their solutions are <BR>
+<DIV align=center><!-- MATH
+ \begin{eqnarray*}
+Y^\ell_\ell    &=& c_\ell \sin^\ell\theta e^{i\ell\varphi}\\
+Y^{-\ell}_\ell &=& c_\ell \sin^\ell\theta e^{-i\ell\varphi}~.
+\end{eqnarray*}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=right><IMG height=41 alt="$\displaystyle Y^\ell_\ell$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3113.png" 
+      width=26 align=middle border=0></TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=41 
+      alt="$\displaystyle c_\ell \sin^\ell\theta e^{i\ell\varphi}$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3114.png" 
+      width=92 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right><IMG height=41 alt="$\displaystyle Y^{-\ell}_\ell$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3115.png" 
+      width=37 align=middle border=0></TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=41 
+      alt="$\displaystyle c_\ell \sin^\ell\theta e^{-i\ell\varphi}~.$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3116.png" 
+      width=114 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR></TBODY></TABLE></DIV><BR clear=all>
+<P></P>The normalization condition <!-- MATH
+ \begin{displaymath}
+\int_0^\pi \int_0^{2\pi} \vert Y^{\pm\ell}_\ell(\theta,\varphi)
+\vert^2 \sin\theta d\theta d\varphi =1
+\end{displaymath}
+ -->
+<P></P>
+<DIV align=center><IMG height=66 
+alt="$\displaystyle \int_0^\pi \int_0^{2\pi} \vert Y^{\pm\ell}_\ell(\theta,\varphi)&#10;\vert^2 \sin\theta d\theta d\varphi =1&#10;$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3117.png" 
+width=283 align=middle border=0> </DIV>
+<P></P>implies that 
+<P></P>
+<DIV align=center><A name=eq:top_of_the_ladder></A><!-- MATH
+ \begin{equation}
+Y_\ell^\ell(\theta,\phi)= \frac{(-1)^\ell}{2^\ell \ell !}
+             \sqrt{\frac{(2\ell+1)!}{4\pi} }
+		\sin^\ell \theta e^{i\ell \phi}.
+\end{equation}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=middle><IMG height=73 
+      alt="$\displaystyle Y_\ell^\ell(\theta,\phi)= \frac{(-1)^\ell}{2^\ell \ell !} \sqrt{\frac{(2\ell+1)!}{4\pi} } \sin^\ell \theta e^{i\ell \phi}.$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3118.png" 
+      width=313 align=middle border=0></TD>
+    <TD noWrap align=right width=10>(574)</TD></TR></TBODY></TABLE></DIV><BR 
+clear=all>
+<P></P>The phase factor <IMG height=39 alt="$ (-1)^\ell$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3119.png" 
+width=50 align=middle border=0> is not determined by the normalization. Its form 
+is chosen so as to simplify the to-be-derived formula for the Legendre 
+polynomials, Eq.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:Legendre_polynomials">5.78</A>). 
+
+<P><I>2. Spherical harmonics: Legendre and Associated Legendre polynomials</I> 
+<P>The functions <!-- MATH
+ $Y^m_\ell (\theta,\varphi)$
+ --><IMG height=37 
+alt="$ Y^m_\ell (\theta,\varphi)$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3120.png" 
+width=77 align=middle border=0> are obtained by applying the lowering operator 
+<IMG height=34 alt="$ L_-$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img112.png" 
+width=29 align=middle border=0> to <!-- MATH
+ $Y^\ell_\ell (\theta,\varphi)$
+ --><IMG height=39 
+alt="$ Y^\ell_\ell (\theta,\varphi)$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3121.png" 
+width=71 align=middle border=0>. A systematic way of doing this is first to 
+apply repeatedly the lowering relation <BR>
+<DIV align=center><A name=eq:lowering_relation></A><!-- MATH
+ \begin{eqnarray}
+\lefteqn{Y^{m-1}_\ell (\theta,\varphi)=} \nonumber\\
+	&=& \frac{1}{\sqrt{\ell(\ell+1)-m(m-1)}}~
+				L_- Y^m_\ell (\theta,\varphi)\nonumber\\
+	&=&\frac{1}{\sqrt{\ell^2-m^2+\ell+m}}(-1)e^{-i\varphi}
+		\left( \frac{\partial}{\partial\theta} 
+		- i\frac{\cos\theta}{\sin\theta}
+		\frac{\partial}{\partial\varphi}\right)Y^m_\ell (\theta,\varphi)\nonumber\\
+	&=&\frac{-1}{\sqrt{(\ell+m)(\ell-m+1)}}e^{-i\varphi}
+		\left( \frac{\partial}{\partial\theta} 
+		+m\frac{\cos\theta}{\sin\theta} \right)Y^m_\ell (\theta,\varphi)\nonumber\\
+	&=&\frac{1}{\sqrt{(\ell+m)(\ell-m+1)}} \frac{1}{\sin^{m-1}\theta}
+	    \frac{\partial}{\partial (\cos \theta)} ~\sin^m\theta 
+					e^{-i\varphi}Y^m_\ell
+\end{eqnarray}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=left colSpan=3><IMG height=40 
+      alt="$\displaystyle {Y^{m-1}_\ell (\theta,\varphi)=}$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3122.png" 
+      width=114 align=middle border=0></TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=58 
+      alt="$\displaystyle \frac{1}{\sqrt{\ell(\ell+1)-m(m-1)}}~&#10;L_- Y^m_\ell (\theta,\varphi)$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3123.png" 
+      width=296 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=63 
+      alt="$\displaystyle \frac{1}{\sqrt{\ell^2-m^2+\ell+m}}(-1)e^{-i\varphi}&#10;\left( \frac{...&#10;...a}{\sin\theta}&#10;\frac{\partial}{\partial\varphi}\right)Y^m_\ell (\theta,\varphi)$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3124.png" 
+      width=458 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=63 
+      alt="$\displaystyle \frac{-1}{\sqrt{(\ell+m)(\ell-m+1)}}e^{-i\varphi}&#10;\left( \frac{\p...&#10;...partial\theta}&#10;+m\frac{\cos\theta}{\sin\theta} \right)Y^m_\ell (\theta,\varphi)$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3125.png" 
+      width=429 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=60 
+      alt="$\displaystyle \frac{1}{\sqrt{(\ell+m)(\ell-m+1)}} \frac{1}{\sin^{m-1}\theta}&#10;\frac{\partial}{\partial (\cos \theta)} ~\sin^m\theta&#10;e^{-i\varphi}Y^m_\ell$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3126.png" 
+      width=439 align=middle border=0></TD>
+    <TD align=right width=10>(575)</TD></TR></TBODY></TABLE></DIV><BR clear=all>
+<P></P>to <!-- MATH
+ $Y^\ell_\ell (\theta,\varphi)$
+ --><IMG height=39 
+alt="$ Y^\ell_\ell (\theta,\varphi)$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3121.png" 
+width=71 align=middle border=0> until one obtains the azimuthally invariant 
+harmonic <!-- MATH
+ $Y^0_\ell (\theta,\varphi)=Y^0_\ell (\theta)$
+ --><IMG 
+height=38 alt="$ Y^0_\ell (\theta,\varphi)=Y^0_\ell (\theta)$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3127.png" 
+width=143 align=middle border=0>. Then continue applying this lowering relation, 
+or alternatively the raising relation <BR>
+<DIV align=center><A name=eq:raising_relation></A><!-- MATH
+ \begin{eqnarray}
+\lefteqn{Y^{m}_\ell(\theta,\varphi)=} \nonumber\\
+	&=& \frac{1}{\sqrt{\ell(\ell+1)-m(m-1)}}~
+				L_+ Y^{m-1}_\ell(\theta,\varphi)\nonumber\\
+	&=&\frac{-1}{\sqrt{(\ell+m)(\ell-m+1)}} \sin^m\theta  
+	  \frac{\partial}{\partial (\cos \theta)} ~\frac{1}{\sin^{m-1}\theta}
+					e^{i\varphi}Y^{m-1}_\ell
+\end{eqnarray}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=left colSpan=3><IMG height=37 
+      alt="$\displaystyle {Y^{m}_\ell(\theta,\varphi)=}$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3128.png" 
+      width=97 align=middle border=0></TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=58 
+      alt="$\displaystyle \frac{1}{\sqrt{\ell(\ell+1)-m(m-1)}}~&#10;L_+ Y^{m-1}_\ell(\theta,\varphi)$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3129.png" 
+      width=313 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=60 
+      alt="$\displaystyle \frac{-1}{\sqrt{(\ell+m)(\ell-m+1)}} \sin^m\theta&#10;\frac{\partial}{\partial (\cos \theta)} ~\frac{1}{\sin^{m-1}\theta}&#10;e^{i\varphi}Y^{m-1}_\ell$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3130.png" 
+      width=445 align=middle border=0></TD>
+    <TD align=right width=10>(576)</TD></TR></TBODY></TABLE></DIV><BR clear=all>
+<P></P>until one obtains the desired harmionic <!-- MATH
+ $Y^m_\ell (\theta,\varphi)$
+ --><IMG height=37 
+alt="$ Y^m_\ell (\theta,\varphi)$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3120.png" 
+width=77 align=middle border=0>. The execution of this two-step algorithm reads 
+as follows: 
+<P><I>Step 1:</I> Letting <!-- MATH
+ $m=\vert m\vert$
+ --><IMG height=37 
+alt="$ m=\vert m\vert$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3131.png" 
+width=73 align=middle border=0>, apply Eq.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:lowering_relation">5.75</A>) 
+<IMG height=17 alt="$ m$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img109.png" 
+width=21 align=bottom border=0> times and obtain <BR>
+<DIV align=center><!-- MATH
+ \begin{eqnarray*}
+Y^{0}_\ell(\theta,\varphi) &=& \sqrt{\frac{(\ell-m)!}{(\ell+m)!}}\underbrace{L_-L_-\cdots L_-}_
+{m~\textrm{times}} Y^m_\ell(\theta,\varphi)\\
+&=&\sqrt{\frac{(\ell-m)!}{(\ell+m)!}} \frac{\partial^m}{\partial (\cos \theta)^m}
+~\sin^m\theta e^{-im\varphi}Y^m_\ell(\theta,\varphi),
+\end{eqnarray*}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=right><IMG height=40 
+      alt="$\displaystyle Y^{0}_\ell(\theta,\varphi)$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3132.png" 
+      width=72 align=middle border=0></TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=80 
+      alt="$\displaystyle \sqrt{\frac{(\ell-m)!}{(\ell+m)!}}\underbrace{L_-L_-\cdots L_-}_&#10;{m~\textrm{times}} Y^m_\ell(\theta,\varphi)$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3133.png" 
+      width=274 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=80 
+      alt="$\displaystyle \sqrt{\frac{(\ell-m)!}{(\ell+m)!}} \frac{\partial^m}{\partial (\cos \theta)^m}&#10;~\sin^m\theta e^{-im\varphi}Y^m_\ell(\theta,\varphi),$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3134.png" 
+      width=355 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR></TBODY></TABLE></DIV><BR clear=all>
+<P></P>which, because of Eq.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:factored_harmonic">5.72</A>), 
+is independent of <IMG height=33 alt="$ \varphi$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img1162.png" 
+width=17 align=middle border=0>. Now let <IMG height=18 alt="$ m=\ell$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3135.png" 
+width=54 align=bottom border=0>, use Eq.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:top_of_the_ladder">5.74</A>), 
+and obtain <BR>
+<DIV align=center><A name=eq:azimuthally_symmetric_harmonic></A><!-- MATH
+ \begin{eqnarray}
+Y^{0}_\ell(\theta,\varphi) &=& \frac{(-1)^\ell}{2^\ell \ell !}
+             \sqrt{\frac{(2\ell+1)}{4\pi} }
+			\frac{\partial^\ell}{\partial (\cos \theta)^\ell}
+	\sin^{2\ell} \theta\\
+	&\equiv &  \sqrt{\frac{(2\ell+1)}{4\pi} } P_\ell (\cos\theta).
+\nonumber
+\end{eqnarray}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=right><IMG height=40 
+      alt="$\displaystyle Y^{0}_\ell(\theta,\varphi)$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3132.png" 
+      width=72 align=middle border=0></TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=73 
+      alt="$\displaystyle \frac{(-1)^\ell}{2^\ell \ell !}&#10;\sqrt{\frac{(2\ell+1)}{4\pi} }&#10;\frac{\partial^\ell}{\partial (\cos \theta)^\ell}&#10;\sin^{2\ell} \theta$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3136.png" 
+      width=265 align=middle border=0></TD>
+    <TD align=right width=10>(577)</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD noWrap align=middle width=10><IMG height=33 
+      alt="$\displaystyle \equiv$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img456.png" 
+      width=20 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=73 
+      alt="$\displaystyle \sqrt{\frac{(2\ell+1)}{4\pi} } P_\ell (\cos\theta).$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3137.png" 
+      width=167 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR></TBODY></TABLE></DIV><BR clear=all>
+<P></P>The polynomials in the variable <!-- MATH
+ $x=\cos\theta$
+ --><IMG 
+height=18 alt="$ x=\cos\theta$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3138.png" 
+width=78 align=bottom border=0> 
+<P></P>
+<DIV align=center><A name=eq:Legendre_polynomials></A><!-- MATH
+ \begin{equation}
+P_\ell(x)\equiv \frac{1}{2^\ell \ell !} \frac{d^\ell}{dx^\ell} (x^2-1)^\ell
+\end{equation}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=middle><IMG height=65 
+      alt="$\displaystyle P_\ell(x)\equiv \frac{1}{2^\ell \ell !} \frac{d^\ell}{dx^\ell} (x^2-1)^\ell$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3139.png" 
+      width=209 align=middle border=0></TD>
+    <TD noWrap align=right width=10>(578)</TD></TR></TBODY></TABLE></DIV><BR 
+clear=all>
+<P></P>are called the <I>Legendre polynomials</I>. They have the property that 
+at the North pole they have the common value unity, while at the South pole 
+their value is <IMG height=33 alt="$ +1$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3140.png" 
+width=29 align=middle border=0> whenever <IMG height=37 alt="$ P_\ell(x)$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3141.png" 
+width=48 align=middle border=0> is an even polynomial and <IMG height=33 
+alt="$ -1$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3142.png" 
+width=29 align=middle border=0> whenever it is odd: <!-- MATH
+ \begin{displaymath}
+P_\ell(x=\pm 1)=(\pm 1)^\ell.
+\end{displaymath}
+ -->
+<P></P>
+<DIV align=center><IMG height=41 
+alt="$\displaystyle P_\ell(x=\pm 1)=(\pm 1)^\ell.&#10;$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3143.png" 
+width=173 align=middle border=0> </DIV>
+<P></P><I>Step 2:</I> To obtain the harmonics having positive azimuthal integer 
+<IMG height=17 alt="$ m$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img109.png" 
+width=21 align=bottom border=0>, apply the raising operator <IMG height=34 
+alt="$ L_+$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img110.png" 
+width=29 align=middle border=0> <IMG height=17 alt="$ m$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img109.png" 
+width=21 align=bottom border=0> times to <IMG height=38 alt="$ Y^0_\ell$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3144.png" 
+width=27 align=middle border=0>. With the help of Eq.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:raising_relation">5.76</A>) 
+one obtains (for <!-- MATH
+ $m=\vert m\vert$
+ --><IMG height=37 
+alt="$ m=\vert m\vert$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3131.png" 
+width=73 align=middle border=0>) <BR>
+<DIV align=center><A name=eq:harmonic_for_positive_m></A><!-- MATH
+ \begin{eqnarray}
+Y^{m}_\ell(\theta,\varphi) &=& \sqrt{\frac{(\ell-m)!}{(\ell+m)!}}\underbrace{L_+L_+\cdots L_+}_
+{m~\textrm{times}} Y^0_\ell(\theta,\varphi) \nonumber\\
+&=&\sqrt{\frac{(\ell-m)!}{(\ell+m)!}}(-1)^m \sin^m \theta \frac{\partial^m}{\partial (\cos \theta)^m}
+~e^{im\varphi}Y^0_\ell(\theta,\varphi)\nonumber\\
+&=&
+		\sqrt{\frac{(\ell-m)!}{(\ell+m )!}}
+	\frac{(-1)^{\ell+m}}{2^\ell \ell !} \sqrt{\frac{2\ell+1}{4\pi} }
+	\sin^{m}
+\frac{\partial^{\ell+m}}{\partial (\cos \theta)^{\ell+m }}
+ \sin^{2\ell}\theta e^{im\varphi}\nonumber\\
+&=& \sqrt{\frac{(\ell-m)!}{(\ell+m )!}}
+					\sqrt{\frac{2\ell+1}{4\pi} }
+~P^{m}_\ell(\cos\theta)~e^{im\varphi}
+\end{eqnarray}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=right><IMG height=37 
+      alt="$\displaystyle Y^{m}_\ell(\theta,\varphi)$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3145.png" 
+      width=77 align=middle border=0></TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=80 
+      alt="$\displaystyle \sqrt{\frac{(\ell-m)!}{(\ell+m)!}}\underbrace{L_+L_+\cdots L_+}_&#10;{m~\textrm{times}} Y^0_\ell(\theta,\varphi)$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3146.png" 
+      width=269 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=80 
+      alt="$\displaystyle \sqrt{\frac{(\ell-m)!}{(\ell+m)!}}(-1)^m \sin^m \theta \frac{\partial^m}{\partial (\cos \theta)^m}&#10;~e^{im\varphi}Y^0_\ell(\theta,\varphi)$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3147.png" 
+      width=385 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=80 
+      alt="$\displaystyle \sqrt{\frac{(\ell-m)!}{(\ell+m )!}}&#10;\frac{(-1)^{\ell+m}}{2^\ell \...&#10;...al^{\ell+m}}{\partial (\cos \theta)^{\ell+m }}&#10;\sin^{2\ell}\theta e^{im\varphi}$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3148.png" 
+      width=463 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=80 
+      alt="$\displaystyle \sqrt{\frac{(\ell-m)!}{(\ell+m )!}}&#10;\sqrt{\frac{2\ell+1}{4\pi} }&#10;~P^{m}_\ell(\cos\theta)~e^{im\varphi}$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3149.png" 
+      width=294 align=middle border=0></TD>
+    <TD align=right width=10>(579)</TD></TR></TBODY></TABLE></DIV><BR clear=all>
+<P></P>The polynomials in the variable <!-- MATH
+ $x=\cos\theta$
+ --><IMG 
+height=18 alt="$ x=\cos\theta$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3138.png" 
+width=78 align=bottom border=0> 
+<P></P>
+<DIV align=center><A name=eq:associated_Legendre_polynomial></A><!-- MATH
+ \begin{equation}
+P^m_\ell(x)\equiv \frac{(-1)^m}{2^\ell \ell !}(1-x^2)^{m/2}
+\frac{d^{\ell+m}}{dx^{\ell+m}} (x^2-1)^\ell
+\end{equation}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=middle><IMG height=65 
+      alt="$\displaystyle P^m_\ell(x)\equiv \frac{(-1)^m}{2^\ell \ell !}(1-x^2)^{m/2} \frac{d^{\ell+m}}{dx^{\ell+m}} (x^2-1)^\ell$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3150.png" 
+      width=354 align=middle border=0></TD>
+    <TD noWrap align=right width=10>(580)</TD></TR></TBODY></TABLE></DIV><BR 
+clear=all>
+<P></P>are called the <I>associated Legendre polynomials</I>. Inserting Eq.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:harmonic_for_positive_m">5.79</A>) 
+into Eq.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node104.html#eq:26a">5.57</A>), 
+one finds that they satisfy the differential equation <!-- MATH
+ \begin{displaymath}
+\left[ \frac{1}{\sin\theta} \frac{d}{d\theta} \sin\theta
+	\frac{d}{d\theta}+\ell(\ell+1)-\frac{m^2}{\sin^2\theta} \right]
+P^{m}_\ell(\cos\theta)=0~.
+\end{displaymath}
+ -->
+<P></P>
+<DIV align=center><IMG height=64 
+alt="$\displaystyle \left[ \frac{1}{\sin\theta} \frac{d}{d\theta} \sin\theta&#10;\frac{d...&#10;...heta}+\ell(\ell+1)-\frac{m^2}{\sin^2\theta} \right]&#10;P^{m}_\ell(\cos\theta)=0~.&#10;$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3151.png" 
+width=432 align=middle border=0> </DIV>
+<P></P>Also note that <!-- MATH
+ $P^{-m}_\ell(\cos\theta)$
+ --><IMG height=39 
+alt="$ P^{-m}_\ell(\cos\theta)$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3152.png" 
+width=95 align=middle border=0> satisfies the same differential equation. In 
+other words, <!-- MATH
+ $P^{-m}_\ell$
+ --><IMG height=39 alt="$ P^{-m}_\ell$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3153.png" 
+width=43 align=middle border=0> and <!-- MATH
+ $P^{m}_\ell$
+ --><IMG height=34 
+alt="$ P^{m}_\ell$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3154.png" 
+width=32 align=middle border=0> must be proportional to each other. (Why?) 
+Indeed, 
+<P></P>
+<DIV align=center><A 
+name=eq:relation_between_positive_and_negative_m_polynomials></A><!-- MATH
+ \begin{equation}
+P^{-m}_\ell(\cos\theta)=(-1)^m \frac{(\ell-m)!}{(\ell+m )!}
+P^{m}_\ell(\cos\theta)~.
+\end{equation}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=middle><IMG height=62 
+      alt="$\displaystyle P^{-m}_\ell(\cos\theta)=(-1)^m \frac{(\ell-m)!}{(\ell+m )!} P^{m}_\ell(\cos\theta)~.$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3155.png" 
+      width=333 align=middle border=0></TD>
+    <TD noWrap align=right width=10>(581)</TD></TR></TBODY></TABLE></DIV><BR 
+clear=all>
+<P></P>This one sees by comparing the the right hand side of Eq.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:harmonic_for_positive_m">5.79</A>) 
+with the right hand side of <BR>
+<DIV align=center><A name=eq:harmonic_via_L_-_only></A><!-- MATH
+ \begin{eqnarray}
+Y^{\vert m\vert}_\ell(\theta,\varphi)
+&=& \sqrt{\frac{(\ell+\vert m\vert)!}{(\ell-\vert m\vert )!}}
+			\underbrace{L_-L_-\cdots L_-}_
+	{\ell -\vert m\vert ~\textrm{times}} Y^\ell_\ell(\theta,\varphi)
+					\nonumber\\
+&=& \sqrt{\frac{(\ell+\vert m\vert)!}{(\ell-\vert m\vert )!}}
+\frac{1}{\sin^{\vert m\vert} \theta }
+\frac{\partial^{\ell-\vert m\vert}}{\partial (\cos \theta)^{\ell-\vert m\vert }}
+\sin^\ell\theta~e^{-i(\ell-\vert m\vert) \varphi}~Y^\ell_\ell(\theta,\varphi)
+					\nonumber\\
+&=& \sqrt{\frac{(\ell+\vert m\vert)!}{(\ell-\vert m\vert )!}}
+\frac{1}{\sin^{\vert m\vert} \theta }
+\frac{\partial^{\ell-\vert m\vert}}{\partial (\cos \theta)^{\ell-\vert m\vert }}
+	\frac{(-1)^\ell}{2^\ell \ell !}  \sqrt{\frac{2\ell+1}{4\pi} }
+		\sin^{2\ell} \theta e^{i\vert m\vert\varphi}\nonumber\\
+&=& \sqrt{\frac{(\ell+\vert m\vert)!}{(\ell-\vert m\vert )!}}
+\sqrt{\frac{2\ell+1}{4\pi} }
+(-1)^m P^{-\vert m\vert}_\ell(\cos\theta)~e^{i\vert m\vert\varphi}~~~.
+\end{eqnarray}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=right><IMG height=47 
+      alt="$\displaystyle Y^{\vert m\vert}_\ell(\theta,\varphi)$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3156.png" 
+      width=84 align=middle border=0></TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=80 
+      alt="$\displaystyle \sqrt{\frac{(\ell+\vert m\vert)!}{(\ell-\vert m\vert )!}}&#10;\underb...&#10;..._-\cdots L_-}_&#10;{\ell -\vert m\vert ~\textrm{times}} Y^\ell_\ell(\theta,\varphi)$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3157.png" 
+      width=278 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=80 
+      alt="$\displaystyle \sqrt{\frac{(\ell+\vert m\vert)!}{(\ell-\vert m\vert )!}}&#10;\frac{1...&#10;...}&#10;\sin^\ell\theta~e^{-i(\ell-\vert m\vert) \varphi}~Y^\ell_\ell(\theta,\varphi)$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3158.png" 
+      width=471 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=80 
+      alt="$\displaystyle \sqrt{\frac{(\ell+\vert m\vert)!}{(\ell-\vert m\vert )!}}&#10;\frac{1...&#10;...ll !} \sqrt{\frac{2\ell+1}{4\pi} }&#10;\sin^{2\ell} \theta e^{i\vert m\vert\varphi}$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3159.png" 
+      width=483 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=80 
+      alt="$\displaystyle \sqrt{\frac{(\ell+\vert m\vert)!}{(\ell-\vert m\vert )!}}&#10;\sqrt{\...&#10;...{4\pi} }&#10;(-1)^m P^{-\vert m\vert}_\ell(\cos\theta)~e^{i\vert m\vert\varphi}~~~.$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3160.png" 
+      width=399 align=middle border=0></TD>
+    <TD align=right width=10>(582)</TD></TR></TBODY></TABLE></DIV><BR clear=all>
+<P></P>
+<P>This validates Eq.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:relation_between_positive_and_negative_m_polynomials">5.81</A>), 
+but only for <!-- MATH
+ $m=\vert m\vert$
+ --><IMG height=37 
+alt="$ m=\vert m\vert$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3131.png" 
+width=73 align=middle border=0>. One sees, however, that this formula is also 
+true for <!-- MATH
+ $m=-\vert m\vert$
+ --><IMG height=37 
+alt="$ m=-\vert m\vert$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3161.png" 
+width=88 align=middle border=0>. Could it be that formulas Eqs.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:harmonic_for_positive_m">5.79</A>) 
+and (<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:associated_Legendre_polynomial">5.80</A>) 
+are also true whenever <!-- MATH
+ $m=-\vert m\vert$
+ --><IMG height=37 
+alt="$ m=-\vert m\vert$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3161.png" 
+width=88 align=middle border=0>? The answer is `yes'. This follows from 
+considering the <!-- MATH
+ $m=-\vert m\vert$
+ --><IMG height=37 
+alt="$ m=-\vert m\vert$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3161.png" 
+width=88 align=middle border=0> harmonics. They are obtained by using Eq.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:lowering_relation">5.75</A>) 
+<!-- MATH
+ $\vert m \vert$
+ --><IMG height=37 alt="$ \vert m \vert$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3162.png" 
+width=32 align=middle border=0> times starting with <IMG height=38 
+alt="$ Y^0_\ell$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3144.png" 
+width=27 align=middle border=0>: <BR>
+<DIV align=center><A name=eq:negative_m_harmonic></A><!-- MATH
+ \begin{eqnarray}
+Y^{-\vert m\vert}_\ell(\theta,\varphi)
+&=& \sqrt{\frac{(\ell-\vert m\vert)!}{(\ell+\vert m\vert )!}}\underbrace{L_-L_-\cdots L_-}_
+{\vert m\vert ~\textrm{times}} Y^0_\ell(\theta,\varphi)\nonumber\\
+&=&\sqrt{\frac{(\ell-\vert m\vert )!}{(\ell+\vert m\vert )!}}\sin^{\vert m\vert} \theta \frac{\partial^{\vert m\vert}}{\partial (\cos \theta)^{\vert m\vert }}
+~e^{-i\vert m\vert \varphi}Y^0_\ell(\theta,\varphi)\nonumber\\
+&=& \sqrt{\frac{(\ell-\vert m\vert)!}{(\ell+\vert m\vert )!}}
+	\frac{(-1)^{\ell}}{2^\ell \ell !} \sqrt{\frac{2\ell+1}{4\pi} }
+	\sin^{\vert m\vert}
+\frac{\partial^{\ell+\vert m\vert}}{\partial (\cos \theta)^{\ell+\vert m\vert }}
+ \sin^{2\ell}\theta e^{-i\vert m\vert\varphi}\nonumber\\
+&=& \sqrt{\frac{(\ell-\vert m\vert)!}{(\ell+\vert m\vert )!}}
+					\sqrt{\frac{2\ell+1}{4\pi} }
+~(-1)^m P^{\vert m\vert}_\ell(\cos\theta)~e^{-i\vert m\vert\varphi}\\
+&=& \sqrt{\frac{(\ell+\vert m\vert)!}{(\ell-\vert m\vert )!}}
+					\sqrt{\frac{2\ell+1}{4\pi} }
+~P^{-\vert m\vert}_\ell(\cos\theta)~e^{-i\vert m\vert\varphi}
+\end{eqnarray}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=right><IMG height=47 
+      alt="$\displaystyle Y^{-\vert m\vert}_\ell(\theta,\varphi)$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3163.png" 
+      width=95 align=middle border=0></TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=80 
+      alt="$\displaystyle \sqrt{\frac{(\ell-\vert m\vert)!}{(\ell+\vert m\vert )!}}\underbrace{L_-L_-\cdots L_-}_&#10;{\vert m\vert ~\textrm{times}} Y^0_\ell(\theta,\varphi)$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3164.png" 
+      width=280 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=80 
+      alt="$\displaystyle \sqrt{\frac{(\ell-\vert m\vert )!}{(\ell+\vert m\vert )!}}\sin^{\...&#10;...os \theta)^{\vert m\vert }}&#10;~e^{-i\vert m\vert \varphi}Y^0_\ell(\theta,\varphi)$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3165.png" 
+      width=377 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=80 
+      alt="$\displaystyle \sqrt{\frac{(\ell-\vert m\vert)!}{(\ell+\vert m\vert )!}}&#10;\frac{(...&#10;...\cos \theta)^{\ell+\vert m\vert }}&#10;\sin^{2\ell}\theta e^{-i\vert m\vert\varphi}$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3166.png" 
+      width=484 align=middle border=0></TD>
+    <TD align=right width=10>&nbsp;</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=80 
+      alt="$\displaystyle \sqrt{\frac{(\ell-\vert m\vert)!}{(\ell+\vert m\vert )!}}&#10;\sqrt{\...&#10;...+1}{4\pi} }&#10;~(-1)^m P^{\vert m\vert}_\ell(\cos\theta)~e^{-i\vert m\vert\varphi}$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3167.png" 
+      width=382 align=middle border=0></TD>
+    <TD align=right width=10>(583)</TD></TR>
+  <TR vAlign=center>
+    <TD noWrap align=right>&nbsp;</TD>
+    <TD noWrap align=middle width=10><IMG height=33 alt="$\displaystyle =$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img133.png" 
+      width=19 align=middle border=0></TD>
+    <TD noWrap align=left><IMG height=80 
+      alt="$\displaystyle \sqrt{\frac{(\ell+\vert m\vert)!}{(\ell-\vert m\vert )!}}&#10;\sqrt{\...&#10;...{2\ell+1}{4\pi} }&#10;~P^{-\vert m\vert}_\ell(\cos\theta)~e^{-i\vert m\vert\varphi}$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3168.png" 
+      width=341 align=middle border=0></TD>
+    <TD align=right width=10>(584)</TD></TR></TBODY></TABLE></DIV><BR clear=all>
+<P></P>(<I>Nota bene:</I> The first line was obtained by using Eq.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:lowering_relation">5.75</A>) 
+and letting <!-- MATH
+ $m=-1,-2,\cdots,-\vert m \vert$
+ --><IMG height=37 
+alt="$ m=-1,-2,\cdots,-\vert m \vert$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3169.png" 
+width=190 align=middle border=0>, the third, fourth, and fifth line used Eqs.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:azimuthally_symmetric_harmonic">5.77</A>), 
+(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:associated_Legendre_polynomial">5.80</A>), 
+and (<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:relation_between_positive_and_negative_m_polynomials">5.81</A>), 
+respectively. ) Comparison with Eq.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:harmonic_for_positive_m">5.79</A>) 
+verifies that the spherical harmonic 
+<P></P>
+<DIV align=center><!-- MATH
+ \begin{equation}
+\boxed{
+Y^{m}_\ell(\theta,\varphi)
+=\sqrt{\frac{(\ell-m)!}{(\ell+m )!}}
+					\sqrt{\frac{2\ell+1}{4\pi} }
+~P^{m}_\ell(\cos\theta)~e^{im\varphi}  }
+\end{equation}
+ -->
+<TABLE cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=center>
+    <TD noWrap align=middle><IMG height=91 
+      alt="$\displaystyle \boxed{ Y^{m}_\ell(\theta,\varphi) =\sqrt{\frac{(\ell-m)!}{(\ell+m )!}} \sqrt{\frac{2\ell+1}{4\pi} } ~P^{m}_\ell(\cos\theta)~e^{im\varphi} }$" 
+      src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3170.png" 
+      width=402 align=middle border=0></TD>
+    <TD noWrap align=right width=10>(585)</TD></TR></TBODY></TABLE></DIV><BR 
+clear=all>
+<P></P>is indeed correct for all positive and negative integers <IMG height=17 
+alt="$ m$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img109.png" 
+width=21 align=bottom border=0> that satisfy <!-- MATH
+ $-\ell<m<\ell$
+ --><IMG 
+height=34 alt="$ -\ell<m<\ell$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3171.png" 
+width=102 align=middle border=0>. 
+<P>A second result is obtained by comparing Eq.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:negative_m_harmonic">5.83</A>) 
+with Eq.(<A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node106.html#eq:harmonic_for_positive_m">5.79</A>). 
+This comparison yields the complex conjugation formula <!-- MATH
+ \begin{displaymath}
+\overline{Y^{m}_\ell(\theta,\varphi)}=(-1)^m Y^{-m}_\ell(\theta,\varphi),
+\end{displaymath}
+ -->
+<P></P>
+<DIV align=center><IMG height=44 
+alt="$\displaystyle \overline{Y^{m}_\ell(\theta,\varphi)}=(-1)^m Y^{-m}_\ell(\theta,\varphi),&#10;$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img3172.png" 
+width=242 align=middle border=0> </DIV>
+<P></P>which holds for both for positive and negative azimuthal integers <IMG 
+height=17 alt="$ m$" 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/img109.png" 
+width=21 align=bottom border=0>. 
+<P>
+<HR>
+<!--Navigation Panel--><A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node107.html" 
+name=tex2html1904><IMG height=24 alt=next 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/next.png" 
+width=37 align=bottom border=0></A> <A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node104.html" 
+name=tex2html1898><IMG height=24 alt=up 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/up.png" 
+width=26 align=bottom border=0></A> <A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node105.html" 
+name=tex2html1894><IMG height=24 alt=previous 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/prev.png" 
+width=63 align=bottom border=0></A> <A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node2.html" 
+name=tex2html1900><IMG height=24 alt=contents 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/contents.png" 
+width=65 align=bottom border=0></A> <A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node115.html" 
+name=tex2html1902><IMG height=24 alt=index 
+src="Factorization Method for Solving a Partial Differential Equation Spherical Harmonics_files/index.png" 
+width=43 align=bottom border=0></A> <BR><B>Next:</B> <A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node107.html" 
+name=tex2html1905>Static Solutions</A> <B>Up:</B> <A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node104.html" 
+name=tex2html1899>Wave Equation for Spherically</A> <B>Previous:</B> <A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node105.html" 
+name=tex2html1895>Spherically Symmetric Solutions</A> &nbsp; <B><A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node2.html" 
+name=tex2html1901>Contents</A></B> &nbsp; <B><A 
+href="http://www.math.ohio-state.edu/~gerlach/math/BVtypset/node115.html" 
+name=tex2html1903>Index</A></B> <!--End of Navigation Panel-->
+<ADDRESS>Ulrich Gerlach 2003-04-06 </ADDRESS></BODY></HTML>

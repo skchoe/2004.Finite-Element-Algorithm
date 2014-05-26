@@ -1,0 +1,104 @@
+\documentclass[11pt,letterpaper]{article}
+
+% Vertical Lengths - Max 9.0
+\setlength{\voffset}{0in} \setlength{\topmargin}{.0in}
+\setlength{\headheight}{0in} \setlength{\topskip}{-1.2in}
+\setlength{\textheight}{9.0in} \setlength{\footskip}{-.0in}
+
+% Horizontal Lengths - Max 6.5
+\setlength{\hoffset}{0in} \setlength{\oddsidemargin}{-.2in}
+\setlength{\textwidth}{6.9in} \setlength{\evensidemargin}{-.2in}
+
+%\usepackage{fancyheadings}
+
+\usepackage{url}
+\usepackage[]{epsfig,amsmath}[]
+
+
+\pagestyle{headings}
+%\pagestyle{fancy}
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New definitions and commands
+\newtheorem{define}{Definition}[section]
+\newtheorem{theorem}[define]{Theorem}
+\newtheorem{question}[define]{Question}
+\newtheorem{problem}[define]{Problem}
+
+\begin{document}
+
+\title{{\bfseries Matlab implementation of double integral in Fourier method}
+}
+
+%\vfill
+%\author{Seung-Keol Choe \thanks{Computational Engineering and Science program, University of Utah}\\
+%        Mike Kirby \thanks{Assistant Professor, Scientific Computing and Imaging Institute, University of Utah}
+%       }
+
+%\renewcommand{\today}{Aug 28th, 2003}
+
+%\maketitle
+
+%\begin{abstract}
+%This document is for specifying details of Spectral methods and
+%Fourier method.
+%\end{abstract}
+
+%\tableofcontents
+%\listoffigures
+%\listoftables
+
+%\clearpage
+%--------------------------------------------------------------------------------------
+%  SEC.1 A Steady-State Diffusion Problem
+%\input{sp1d_ch1}
+
+Double integral in Fourier method is defined as follows
+\begin{equation}
+G(p,q) \equiv \int_a^b \int_0^{2\pi} f(r, \theta) \psi_p(r)
+e^{iq\theta} d\theta dr.
+\\
+\end{equation}
+
+Let $V$ be the discrete sampling of above function $f(r, \theta)$,
+then $V$ is 2x2 array of components
+\begin{equation}
+v_{s,t} = f(r_s, \theta_t)
+\end{equation}
+where $s = 0, \cdots, M-1$ and $t=0, \cdots, N-1$ with $M$ is
+number of quadrature points for current element and $N$ is number
+of elements in the circle.
+
+For each $s = 0, \cdots, M-1$, the matlab fft($v_s^T$) $\equiv
+\{v_{s,k}\}_{k=0}^{N-1}$ for vector $v_s^T$ is defined as
+\begin{equation}
+\mbox{fft}(v_s^T)_k \equiv v_{s,k} = \sum_{t=0}^{N-1} v_{s,t} e^{ik\theta_t} \\
+\end{equation}
+where $\{\theta_t\}_{t = 0}^{N-1} = \{0, \frac{2\pi}{N}, \cdots,
+\frac{2\pi}{N}(N-1)\}$, and $k = 0, \cdots, N-1$.
+
+Then we have the approximation of $G(p,q)$ based on Gauss-Lobatto
+quadrature formula and approximation of integral by Trepezoidal
+rule.
+\begin{equation}
+G(p, q) \approx \sum_{s=0}^{M-1} \omega_s \psi_p(r_s)
+\sum_{t=0}^{N-1} v_{s,t} e^{iq\theta_t}.
+\end{equation}
+We obtain this by using fft() in matlab:
+\begin{equation}
+\sum_{s=0}^{M-1} \omega_s \psi_p(r_s) \mbox{fft}(v^T_{s})_q.
+\end{equation}
+
+Here's some questions to check this idea is logically correct.
+\begin{itemize} \item Is integration just approximation
+or exact evaluation? \item Is Trapezoidal rule right to be applied
+to change from integral to summation? \item The integration
+approximation needs usually dividing the summation by N. I think I
+have to use $\frac{1}{N}$ in front of summation representation of
+integral. \item In Fourier basis, we can substitute the exponent
+from (-) to (+). Why are still use from 0 to N?
+\end{itemize}
+
+
+\end{document}

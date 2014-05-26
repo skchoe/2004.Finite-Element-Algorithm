@@ -1,0 +1,182 @@
+\documentclass[11pt,letterpaper]{article}
+
+% Vertical Lengths - Max 9.0
+\setlength{\voffset}{0in} \setlength{\topmargin}{.0in}
+\setlength{\headheight}{0in} \setlength{\topskip}{-1.2in}
+\setlength{\textheight}{9.0in} \setlength{\footskip}{-.0in}
+
+% Horizontal Lengths - Max 6.5
+\setlength{\hoffset}{0in}
+\setlength{\oddsidemargin}{-.2in}
+\setlength{\textwidth}{6.9in}
+\setlength{\evensidemargin}{-.2in}
+
+\usepackage{fancyheadings}
+
+\usepackage{url}
+\usepackage[]{epsfig,amsmath}[]
+
+
+%\pagestyle{headings}
+\pagestyle{fancy}
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New definitions and commands
+\newtheorem{define}{Definition}[section]
+\newtheorem{theorem}[define]{Theorem}
+\newtheorem{question}[define]{Question}
+\newtheorem{problem}[define]{Problem}
+
+\begin{document}
+
+\title{{\normalsize Fall 2003, Semester research;}\\
+        {\bfseries Development of Numerical Solver using Spectral and Fourier Method}
+}
+
+\vfill
+\author{Seung-Keol Choe \thanks{Computational Engineering and Science program, University of Utah}\\
+        Mike Kirby \thanks{Assistant Professor, Scientific Computing and Imaging Institute, University of Utah}
+       }
+
+\renewcommand{\today}{Aug 28th, 2003}
+
+\maketitle
+
+\begin{abstract}
+This document is for specifying details of Spectral methods and
+Fourier method.
+\end{abstract}
+
+\tableofcontents
+%\listoffigures
+%\listoftables
+
+\clearpage
+%--------------------------------------------------------------------------------------
+%  SEC.1 A Steady-State Diffusion Problem
+\input{sp1d_ch1}
+
+
+\clearpage
+%--------------------------------------------------------------------------------------
+%  SEC.2 Spectral Polynomial Methods in 1 Dimensional Space
+%\input{sp1d_ch2}
+\section {Spectral Polynomial Methods in 1 Dimensional Space}
+
+Our problem is the Poisson equation
+\begin{equation}
+\label{poisson1} L(u) \equiv  \nabla^2 u - f = 0,
+\end{equation}
+for all $x \in \Omega$. In one dimensional case, \ref{poisson1} is
+written as
+\begin{equation}
+\label{poisson2}
+L(u)(x) \equiv \frac{d^2}{dx^2} u(x) - f(x) = 0,
+\end{equation}
+for all $x$ in $[a, b]$.
+
+We solve this equation in weak sense. That is to say, we define a
+functional $\left( \cdot \right) : C^0 \rightarrow \Re$ such that
+\begin{equation}
+\left(\nabla^2 u, \nu \right) = \int_{\Omega} \frac{d^2}{dx^2}
+u(x) \cdot \nu(x) d\mu(x),
+\end{equation}
+for each $\nu$ in $C^0$, where $C^0$ is a set of continuous
+functions. Then we find the solution u by solving the equation as
+follows:
+
+\begin{equation} \label{weakabs}
+\left(\nabla^2 u, \nu \right) = \left(f, \nu\right),
+\end{equation}
+for each $\nu$ in $C^0$.
+
+%--------------------------------------------------------------------------
+\subsection {Basis Functions}
+
+The spectral approximation of solution $u$ is generally
+represented as
+\begin{equation}\label{genrep}
+u(x) = \sum_{i=0}^{N_{dof-1}} \hat u_i(x)\Psi_i(x)
+\end{equation}
+on $[a, b]$. To construct this the global basis functions
+$\{\Psi_i(x)\}_{i=0}^{N_{dof-1}}$, each $\Psi$ is represented by
+the linear combination of local basis functions $\psi_i$ on each
+element in $[a, b]$, say $\Omega^e$.
+
+We define a basis functions ${\psi_i}$ on $\Omega^{st}$ to be a
+real valued function with the Legendre polynomial $\{P_i^{1,1}\}$
+as follows:
+\begin{equation}\label{locbasis}
+  \psi_i(\xi) =\large \{
+  \begin{array}{ll}
+  \frac{1-\xi}{2}, & i=0 \\
+  \frac{1+\xi}{2}, & i=1 \\
+  \left(\frac{1-\xi}{2}\right)\left(\frac{1+\xi}{2}\right)P_{i-2}^{1,1}(\xi),
+  &i\ge 2
+  \end{array}
+\end{equation}
+for all $\xi$ in $[-1, 1]$.
+
+Then on a single standard element $\Omega^{st}$, the approximation
+$u(\xi)$ is represented as
+\begin{equation}\label{locrep}
+u(\xi) = \sum_{i=0}^{N^e} \hat u_{i}^{e}\psi_i(\xi),
+\end{equation}
+for $\xi$ in $\Omega^{st}$.
+
+%--------------------------------------------------------------------------
+\subsection {Spectral Polynomial Method in A Element}
+
+
+We apply the basis representation \ref{locrep} to weak formulation
+\ref{weakabs} with the same test function $\{\psi_q\}$, then we
+obtain the following:
+\begin{equation}\label{locmat}
+ \sum_{p=0}^{N^e} \hat u_p^e \left(\nabla^2 \psi_p, \psi_q \right)
+= \left(\nabla^2 \sum_{p=0}^{N^e} u_p^e \psi_p, \psi_q\right) =
+\left( f, \psi_q \right)
+\end{equation}
+for $q = 0, \cdots, N^e$.
+
+With this relation we can setup a system of linear equations for
+the coefficient $\{\hat u_p^e\}_{p=0}^{N^e}$ with $N^e+1 \times
+N^e+1$ matrix $\mathbf{L}_{N^e}$ defined as follows:
+\begin{equation}\label{loceqn}
+    \mathbf{L}_{N^e} \cdot \mathbf{\hat u} = \mathbf{f},
+\end{equation}
+where
+\begin{eqnarray}\label{locdefs}
+\mathbf{L}_{N^e}(p,q) &=
+\int_{\Omega^e}\frac{d^2}{d\xi^2}\psi_p(\xi)\psi_q(\xi) d\xi, \\
+\mathbf{\hat u} &= \left[\hat u_p\right]_{p=0}^{N^e}, \\
+\mathbf{f} &= \left[ \int_{\Omega^e} f(\xi) \psi_q(\xi) d\xi
+\right]_{q=0}^{N^e}.
+\end{eqnarray}
+
+\subsection {H/P Refinement using Global Assembly}
+
+\clearpage
+%--------------------------------------------------------------------------------------
+%  SEC.3 RESULTS
+\section {Results}
+
+%\subsection {H/P-Refinement}
+\input{sp1d_ch3_1}
+%\subsection {Note on High-order methods}
+\input{sp1d_ch3_2}
+
+
+%--------------------------------------------------------------------------------------
+%
+%\clearpage
+
+%--------------------------------------------------------------------------------------
+%   BIBLIOGRAPHY
+\input{sp1d_chbib}
+
+%--------------------------------------------------------------------------------------
+%   APPENDIX
+%\input{sp1d_chapdx}
+
+\end{document}

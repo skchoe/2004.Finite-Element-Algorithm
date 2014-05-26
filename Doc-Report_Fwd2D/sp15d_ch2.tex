@@ -1,0 +1,147 @@
+%\{ {\it  sp1d\_ch2.tex} \}
+
+\subsection{Poisson Equation in Polar Coordinates and Basis Functions}
+
+We formulate the Generalized Poisson problem on an annulus $[a, b]\times[0, 2\pi]$, $a > 0$ under the periodic solution $u$ as follows:
+\begin{eqnarray}\label{genpois}
+-\left[\frac{\partial}{\partial r} (\sigma(r,\theta) \frac{\partial}{\partial r}) + \frac{1}{r} (\sigma(r,\theta) \frac{\partial}{\partial r}) + \frac{1}{r^2}\frac{\partial}{\partial \theta} (\sigma(r,\theta)  \frac{\partial}{\partial \theta})\right] u(r, \theta) = f(r, \theta),\\
+\mbox{with periodicity of }u, \;\;\; u(r,0) = u(r,2\pi),
+\end{eqnarray}
+where $r \in [a, b]$ and $\theta \in [0, 2 \pi]$. The boundary conditions for this domain is given by
+\begin{equation}
+u(a,\theta) = {\mathcal G}_D(\theta), \hspace{1in} \frac{\partial}{\partial r} u(b,\theta) = {\mathcal G}_N(\theta),
+\end{equation}
+where $\theta \in [0,2\pi]$.
+
+\vspace{0.1in}
+The representation of approximation of $u$ is guaranteed by Weierstrass theorem:
+\begin{equation}\label{truncapp}
+u(r,\theta) = \sum_{j=0}^{N_r} \sum_{k=-N_\theta/2+1}^{N_\theta/2} \hat{u}_{jk} \phi_j(r) e^{ik\theta},
+\end{equation}
+where $r \in [a, b]$ and $\theta \in [0, 2 \pi]$ for the global degree of freedom $N_r$ and $N_{\theta}$ on $\hat{u}_{jk}$'s.
+
+\vspace{0.1in}
+The basis function $\{\phi_j\}_{j=0}^{N_r}$ at (\ref{truncapp}) are defined as modified Jacobi polynomials defined in \cite{Karniadarkis}, \cite{Choe}.
+
+\vspace{0.1in}
+As a review of discrete Fourier transform in $N$-point grid described in \cite{Trefethen}, the formula for the discrete Fourier transform for $\{v_j\}$ is
+\begin{equation}
+\hat{v}_k = h \sum_{j=1}^{N} e^{-ikx_j}v_j, \;\; k = -\frac{N}{2}+1, \ldots , \frac{N}{2},
+\end{equation}
+where $x_j = j\frac{2\pi}{N}$ and the inverse discrete Fourier transform for $\{\hat{v}_k\}$ is given by
+\begin{equation}
+v_j = \frac{1}{2\pi}\sum_{k = -N/2+1}^{Nr/2}e^{ikx_j}\hat{v}_k,\;\; j = 1, \ldots, N.
+\end{equation}
+
+
+\subsection{Formulation of Spectral Polynomial and Fourier Methods}
+
+In this project, we assume the conductivity term $\sigma$ in (\ref{genpois}) to be only dependent of variables showing the radius domain as we multiply $r^2$ in each side of (\ref{genpois}). Then the Poisson equation and its modified form of polar coordinate was obtained as follows:
+\begin{eqnarray}
+-\left[r^2 \frac{\partial}{\partial r} (\sigma(r) \frac{\partial}{\partial r}) + r \sigma(r) \frac{\partial}{\partial r} + \sigma(r) \frac{\partial^2}{\partial \theta^2}\right] u(r, \theta) = r^2 f(r, \theta).
+\end{eqnarray}
+
+\vspace{0.1in}
+To apply Galerkin method, test functions are of the form:
+\begin{equation}
+\phi_p(r) e^{iq\theta}, \hspace{.5in} p=0,\ldots,N_r, \;\; q = -\frac{N_\theta}{2}+1,\ldots,\frac{N_\theta}{2}.
+\end{equation}
+
+\vspace{0.1in}
+We have the weak form of the equation:
+\begin{equation}\label{galeqn}
+-\langle  r^2 \frac{\partial}{\partial r} (\sigma \frac{\partial}{\partial r}u) + r \sigma \frac{\partial}{\partial r}u + \sigma \frac{\partial^2}{\partial \theta^2}u, \phi_p e^{iq\theta} \rangle = \langle r^2 f, \phi_p e^{iq\theta} \rangle.
+\end{equation}
+
+\vspace{0.1in} Define $T_i, i = 1,\ldots,4$ as follows
+\begin{eqnarray}
+T_1 &=& \int_{0}^{2\pi} \int_{a}^{b} \phi_p e^{iq\theta} r^2 \frac{\partial}{\partial r}\left[\sigma(r) \frac{\partial}{\partial r}u(r, \theta)\right] dr d\theta,\\
+T_2 &=& \int_{0}^{2\pi} \int_{a}^{b} \phi_p e^{iq\theta} r \sigma(r) \frac{\partial}{\partial r}u(r, \theta) dr d\theta,\\
+T_3 &=& \int_{0}^{2\pi} \int_{a}^{b} \phi_p e^{iq\theta} \sigma(r) \frac{\partial^2}{\partial \theta^2}u(r, \theta) dr d\theta,\\
+\mbox{and} \hspace{.5in}T_4 &=& \int_{0}^{2\pi} \int_{a}^{b} \phi_p e^{iq\theta} r^2 f(r, \theta) dr d\theta
+\end{eqnarray}
+
+Then we can represent (\ref{galeqn}) to be:
+\begin{equation}\label{smpeqn}
+- T_1 - T_2 - T_3 = T_4.
+\end{equation}
+
+We can obtain boundary term by integration by part on $T_1$
+\begin{eqnarray}
+T_1 &=& \int_0^{2\pi}e^{iq\theta} \left[ r^2\sigma(r)\frac{\partial}{\partial r}u(r,\theta)\phi_p(r)\right]_a^b d\theta \\
+&-&2 \int_0^{2\pi}\int_a^b e^{iq\theta} r \sigma(r)\frac{\partial}{\partial r}u(r,\theta)\phi_p(r)drd\theta \\
+&-& \int_0^{2\pi}\int_a^b e^{iq\theta} r^2\sigma(r)\frac{\partial}{\partial r}u(r,\theta) \frac{d}{dr}\phi_p(r)drd\theta.
+\end{eqnarray}
+
+Then the right hand side of (\ref{smpeqn}) becomes
+\begin{eqnarray}\label{rhseqn1}
+- T_1 - T_2 - T_3 &=& - \int_0^{2\pi}e^{iq\theta} \left[ r^2\sigma(r)\frac{\partial}{\partial r}u(r,\theta)\phi_p(r)\right]_a^b d\theta \\
+&+& \int_0^{2\pi}\int_a^b e^{iq\theta} r \sigma(r) \frac{\partial}{\partial r}u(r,\theta)\phi_p(r)drd\theta \\
+&+& \int_0^{2\pi}\int_a^b e^{iq\theta} r^2 \sigma(r) \frac{\partial}{\partial r}u(r,\theta) \frac{d}{dr}\phi_p(r)drd\theta \\
+&-& \int_0^{2\pi}\int_a^b e^{iq\theta} \sigma(r) \frac{\partial^2}{\partial \theta^2}u(r, \theta) \phi_p(r) dr d\theta
+\end{eqnarray}
+
+By using (\ref{truncapp}) and the orthogonal property in
+$\{e^{ik\theta}\}k = -\frac{N_\theta}{2}+1,\ldots,\frac{N_\theta}{2}$,
+we can simplify (\ref{rhseqn1}) as follows:
+
+\begin{eqnarray}\label{rhseqn2}
+- T_1 - T_2 - T_3 &=& - \int_0^{2\pi}e^{iq\theta} \left[ r^2\sigma(r)\frac{\partial}{\partial r}u(r,\theta)\phi_p(r)\right]_a^b d\theta \\
+&+& 2\pi \sum_{j=0}^{N_\theta} \hat{u}_{jq} \int_a^b r \sigma(r) \frac{d}{dr} \phi_j(r) \phi_p(r) dr \\
+&+& 2\pi \sum_{j=0}^{N_\theta} \hat{u}_{jq} \int_a^b r^2 \sigma(r) \frac{d}{dr} \phi_j(r) \frac{d}{dr}\phi_p(r) dr \\
+&+& 2\pi \sum_{j=0}^{N_\theta} \hat{u}_{jq} q^2 \int_a^b \sigma(r) \phi_j(r) \phi_p(r) dr.
+\end{eqnarray}
+
+
+Let us define the following matrices:
+\begin{eqnarray}
+({\bf M}_1)_{jp} & = & \int_a^b r \sigma(r) \frac{d}{dr} \phi_j(r) \phi_p(r) \;dr  \\
+({\bf M}_2)_{jp} & = & \int_a^b r^2 \sigma(r) \frac{d}{dr} \phi_j(r) \frac{d}{dr} \phi_p(r) \;dr  \\
+({\bf M}_3)_{jp} & = & \int_a^b \sigma(r) \phi_j(r) \phi_p(r) \; dr,
+\end{eqnarray}
+where $j, p = 0, \ldots, N_\theta$.
+
+Now the form $T_4$ is as follows.
+
+\begin{eqnarray}
+T_4 &=& \int_a^b \int_0^{2\pi} \phi_p(r) e^{iq\theta} r^2 f(r,\theta) d\theta dr \\
+    &=& \int_a^b r^2\phi_p(r) \int_0^{2\pi} f(r,\theta) e^{iq\theta} d\theta dr \\
+\end{eqnarray}
+
+For given $r$, the Discrete Fourier Transform for $f(r, \theta)$ is defined by
+\begin{equation}
+f(r, \theta_\tau) = \frac{1}{2\pi} \sum_{k=-N_\theta/2+1}^{N_\theta/2} e^{ik\theta_\tau} \widehat{f(r)}_k
+\end{equation}
+
+where
+\begin{equation}
+\widehat{f(r)}_k = \frac{2\pi}{N_\theta} \sum_{j=1}^{N_\theta} e^{-ik\theta_j} f(r, \theta_j)
+\end{equation}
+with $ k \in \{-\frac{N_\theta}{2}+1, \cdots, \frac{N_\theta}{2}\}$ and $\theta_j \in \{ \frac{2\pi}{N_\theta}, \cdots, 2\pi  \}$.  
+
+Then
+\begin{center}
+\begin{eqnarray}
+T_4&=& \int_a^b r^2\phi_p(r) \int_0^{2\pi} \frac{1}{2\pi} \sum_{k=-N_\theta/2+1}^{N_\theta/2} e^{ik\theta} \widehat{f(r)}_k e^{iq\theta} d\theta dr \\
+%&=& \int_a^b r^2\phi_p(r) \sum_{k=-N_\theta/2+1}^{N_\theta/2} \widehat{f(r)}_k \frac{1}{2\pi} \int_0^{2\pi}  e^{ik\theta} e^{iq\theta} d\theta dr \\
+%&=& \int_a^b r^2\phi_p(r) \sum_{k=-N_\theta/2+1}^{N_\theta/2} \widehat{f(r)}_k \delta_{k,q} dr\\
+&=& \int_a^b r^2\phi_p(r) \widehat{f(r)}_q dr.
+%&=& \sum_\sigma w_\sigma r_\sigma^2\phi_p(r_\sigma) \widehat{f(r_\sigma)}_q.
+\end{eqnarray}
+\end{center}
+
+
+Since we have this relation $- T_1 - T_2 - T_3 = T_4$,
+
+\begin{eqnarray}
+ 2\pi \sum_{j=0}^{N_\theta} \hat{u}_{jq} {M_1}_{jp}
++ 2\pi \sum_{j=0}^{N_\theta} \hat{u}_{jq} {M_2}_{jp} 
++ 2\pi \sum_{j=0}^{N_\theta} \hat{u}_{jq} q^2 {M_3}_{jp} 
+= \int_a^b r^2\phi_p(r) \widehat{f(r)}_q dr \\
++ b^2\sigma(b) \phi_p(b) \int_0^{2\pi}e^{iq\theta} {\mathcal G}_N(\theta) d\theta 
+- a^2\sigma(a) \phi_p(a) \int_0^{2\pi}e^{iq\theta} \frac{\partial}{\partial r}u(a,\theta) d\theta
+\end{eqnarray}
+where $j, p = 0, \ldots, N_r$.
+
+ At this stage, we can apply Fourier transform to the integral term having ${\mathcal G}_N$ and the same idea as 
+one-dimensional case to each term about boundary conditions.

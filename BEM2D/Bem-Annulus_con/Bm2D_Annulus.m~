@@ -1,0 +1,250 @@
+function [uo, qi] = B2D_Annulus(Np, R, r, Nel, ui, qo)
+
+    qalpha = 0;
+    qbeta = 0;
+    [z, w] = JacobiGLZW(Np, qalpha, qbeta);
+    Nzmx = size(z, 1);
+
+    Alpha = zeros(Nel, Nel, 4);
+    Beta = zeros(Nel, Nel, 4);
+    
+    [Alpha(:,:,1), Beta(:,:,1)] = calcAB_outout(Np, z, w, R, r, Nel, Alpha(:,:,1), Beta(:,:,1));    % AB^{1,1}
+    [Alpha(:,:,2), Beta(:,:,2)] = calcAB_outin (Np, z, w, R, r, Nel, Alpha(:,:,2), Beta(:,:,2));    % AB^{1,2}
+    [Alpha(:,:,3), Beta(:,:,3)] = calcAB_inout (Np, z, w, R, r, Nel, Alpha(:,:,3), Beta(:,:,3));    % AB^{2,1}
+    [Alpha(:,:,4), Beta(:,:,4)] = calcAB_inin  (Np, z, w, R, r, Nel, Alpha(:,:,4), Beta(:,:,4));    % AB^{2,2}
+
+    % Fs
+    Fsout = calcFsout(Nel, Alpha(:,:,1), Beta(:,:,3), ui, qo);
+    Fsin  = calcFsin (Nel, Alpha(:,:,2), Beta(:,:,4), ui, qo);
+
+    Fs = [Fsout;Fsin];
+
+    Lg00 = zeros(Nel, Nel);
+    Lg01 = zeros(Nel, Nel);
+    Lg10 = zeros(Nel, Nel);
+    Lg11 = zeros(Nel, Nel);
+
+    for i = 1:Nel
+        for j = 1:Nel
+
+            % Lg00
+            elt = Beta(i, j, 1);
+
+            if i==j
+                Lg00(i, j) = .5 + elt;
+            else
+                Lg00(i, j) = elt;
+            end
+
+            % Lg01
+            Lg01(i, j) = -1 * Alpha(i, j, 3);
+
+            % Lg10
+            Lg10(i, j) = Beta(i, j, 2);
+
+            % Lg11
+            Lg11(i, j) = -1 * Alpha(i, j, 4);
+
+        end
+    end
+
+    Lg = [Lg00 Lg01;Lg10 Lg11]
+    
+    % Alternative Diagonals
+    N2 = 2*Nel;
+    for i = 1:N2
+        diag = 0;
+        for j = 1:N2
+            if i~=j
+                diag = diag + Lg(i,j);
+            end
+            Lg(i, i) = -1 * diag;
+        end
+    end
+    
+    Lg_
+
+    Sol = inv(Lg) * Fs;
+
+    uo = Sol(1:Nel);
+    qi = Sol(Nel+1:2*Nel);
+
+return
+
+
+
+
+% [alpha, beta] = calcAB_outout(Np, z, w, radius, Nel, alpha, beta)
+function [alpha, beta] = calcAB_outout(Np, z, w, R, r, Nel, alpha, beta)
+
+    Nzw = size(z, 1);
+
+    h = 2*pi/Nel;
+    d = h/2;
+
+    for i = 1:Nel
+
+        % angle \theta located in the center of current element.
+        thi = (i-1) * h + d;
+        
+        for j = 1:Nel
+
+            thj1 = (j-1) * h;
+            thj2 = thj1 + h;
+          
+            thetacnt = (j-1) * h + d;
+        
+            if i==j % Integration on a singular element
+
+                alpha(i, j) = Alpha_sing(R, thj1, thj2, thi, z, w);
+
+                beta(i, j)  = Beta_sing(thj1, thj2);
+
+            else    % Integration on a non-singular element
+                
+                alpha(i, j) = Alpha_nonsing(R, thj1, thj2, r, thi, z, w);
+
+                beta(i, j)  = Beta_nonsing(R, thj1, thj2, r, thi, z, w);
+            end
+            
+        end
+
+    end
+    
+return
+
+
+
+function [alpha_outin, beta_outin] = calcAB_outin(Np, z, w, R, r, Nel, alpha_outin, beta_outin)
+
+    Nzw = size(z, 1);
+
+    h = 2*pi/Nel;
+    d = h/2;
+
+    for i = 1:Nel
+
+        % angle \theta located in the center of current element.
+        thi = (i-1) * h + d;
+        
+        for j = 1:Nel
+
+            thj1 = (j-1) * h;
+            thj2 = thj1 + h;
+
+            thj = (j-1) * h + d;
+
+            alpha_outin(i, j) = Alpha_nonsing(R, thj1, thj2, r, thi, z, w);
+
+            beta_outin(i, j) = Beta_nonsing(R, thj1, thj2, r, thi, z, w);
+
+        end
+
+    end
+    
+return
+
+
+
+
+function [alpha_inout, beta_inout] = calcAB_inout(Np, z, w, R, r, Nel, alpha_inout, beta_inout)
+ 
+    Nzw = size(z, 1);
+
+    h = 2*pi/Nel;
+    d = h/2;
+
+    for i = 1:Nel
+
+        % angle \theta located in the center of current element.
+        thi = (i-1) * h + d;
+        
+        for j = 1:Nel
+
+            thj1 = (j-1) * h;
+            thj2 = thj1 + h;
+          
+            thetacnt = (j-1) * h + d;
+        
+            alpha_inout(i, j) = -1 * Alpha_nonsing(r, thj1, thj2, R, thi, z, w);
+
+            beta_inout(i, j) = Beta_nonsing(r, thj1, thj2, R, thi, z, w);
+                
+        end
+
+    end
+    
+return
+
+
+
+function [alpha, beta] = calcAB_inin(Np, z, w, R, r, Nel, alpha, beta)
+
+    Nzw = size(z, 1);
+
+    h = 2*pi/Nel;
+    d = h/2;
+
+    for i = 1:Nel
+
+        % angle \theta located in the center of current element.
+        thi = (i-1) * h + d;
+        
+        for j = 1:Nel
+
+            thj1 = (j-1) * h;
+            thj2 = thj1 + h;
+          
+            thetacnt = (j-1) * h + d;
+
+            if i==j % Integration on a singular element
+
+                alpha(i, j) = -1 * Alpha_sing(r, thj1, thj2, thi, z, w);
+
+                beta(i, j)  = Beta_sing(thj1, thj2);
+
+            else    % Integration on a non-singular element
+
+                alpha(i, j) = -1 * Alpha_nonsing(r, thj1, thj2, r, thi, z, w);
+
+                beta(i, j)  = Beta_nonsing(r, thj1, thj2, r, thi, z, w);
+
+            end
+
+        end
+
+    end
+
+return
+
+
+
+
+function Fsout = calcFsout(Nel, alpha_out, beta_inout, ui, qo)
+
+    Fsout = zeros(Nel, 1);
+    
+    h = 2*pi/Nel;
+    d = h/2;
+
+    for i = 1:Nel
+        Fsout(i, 1) = - dot(beta_inout(i, :), ui) + dot(alpha_out(i, :), qo);
+    end
+    
+return
+
+
+
+function Fsin = calcFsin(Nel, alpha_outin, beta_in, ui, qo)
+
+    Fsin = zeros(Nel, 1);
+
+    h = 2*pi/Nel;
+    d = h/2;
+
+    for i = 1:Nel
+        Fsin(i, 1) = -.5 * ui(i, 1) - dot(beta_in(i, :), ui) + dot(alpha_outin(i, :), qo);
+    end
+
+return
+

@@ -1,0 +1,46 @@
+/App_fe2DPoisson.m/1.50/Thu Nov 18 20:38:20 2004//
+/JacobiGLZW.m/1.1/Thu Jul  8 18:26:58 2004//
+/JacobiGRZW.m/1.1/Thu Jul  8 18:26:58 2004//
+/JacobiGZW.m/1.1/Thu Jul  8 18:26:58 2004//
+/JacobiGZeros.m/1.1/Thu Jul  8 18:26:58 2004//
+/JacobiMassMatrix.m/1.1/Thu Jul  8 18:26:59 2004//
+/JacobiPoly.m/1.1/Thu Jul  8 18:26:59 2004//
+/JacobiPolyDerivative.m/1.1/Thu Jul  8 18:26:59 2004//
+/JacobiPolyDerivative2.m/1.1/Thu Jul  8 18:26:59 2004//
+/JacobiPolyDerivativeN.m/1.1/Thu Jul  8 18:26:59 2004//
+/ModifiedJacobiPoly.m/1.1/Thu Jul  8 18:27:00 2004//
+/ModifiedJacobiPolyDerivative.m/1.1/Thu Jul  8 18:27:00 2004//
+/QuadratureDegree.m/1.1/Thu Jul  8 18:27:00 2004//
+/cvSlTable.mat/1.1/Mon Oct 11 16:44:24 2004//
+/fe2DPoisson.m/1.38/Sun Nov 14 22:35:35 2004//
+/feDataProc.m/1.14/Wed Nov  3 18:24:56 2004//
+/feEvalL2Error.m/1.4/Fri Oct 15 19:08:42 2004//
+/feEvalLogSlope.m/1.1/Wed Sep  1 18:53:19 2004//
+/feExactSolution.m/1.6/Fri Oct 15 19:08:42 2004//
+/feInConduct.m/1.1/Fri Oct 15 19:08:42 2004//
+/feInConductDxy.m/1.1/Fri Oct 15 19:08:42 2004//
+/feInLoadMesh.m/1.1/Fri Oct 15 19:08:42 2004//
+/feInMeshCons.m/1.6/Tue Nov 16 21:59:08 2004//
+/feInMeshSquareDD.m/1.1/Fri Oct 15 19:08:43 2004//
+/feInMeshSquareDN.m/1.1/Fri Oct 15 19:08:43 2004//
+/feInMeshSqulus.m/1.1/Fri Oct 15 19:08:43 2004//
+/feInSolution.m/1.1/Fri Oct 15 19:08:43 2004//
+/feInSource.m/1.1/Fri Oct 15 19:08:43 2004//
+/feLocalBasis.m/1.3/Tue Aug 31 20:00:54 2004//
+/feMeshTorsoBis34.m/1.3/Fri Oct 15 19:08:43 2004//
+/feMeshTorsoBis37.m/1.3/Fri Oct 15 19:08:43 2004//
+/feMeshTorsoOrg34.m/1.9/Tue Nov 16 21:59:08 2004//
+/feMeshTorsoOrg37.m/1.2/Fri Oct 15 19:08:43 2004//
+/feMeshTorsoTrs34.m/1.3/Fri Oct 15 19:08:43 2004//
+/feMeshTorsoTrs37.m/1.3/Fri Oct 15 19:08:43 2004//
+/fePlotExactSol.m/1.2/Fri Oct 15 19:08:43 2004//
+/fePlotNumSol.m/1.15/Thu Oct 21 20:46:51 2004//
+/fePostProcOrdering.m/1.6/Thu Nov 18 20:38:21 2004//
+/feSetHnodesCubic.m/1.9/Wed Oct 20 17:42:08 2004//
+/feSetHnodesQuadratic.m/1.7/Thu Nov 18 20:38:21 2004//
+/pathlist.m/1.1/Wed Oct 27 07:33:02 2004//
+/tmpDivUnknowns.m/1.3/Thu Oct 21 20:46:51 2004//
+D/data////
+D/fig////
+D/test////
+/feMeshTorsoOrg340.m/1.1/Thu Nov 18 21:24:12 2004//
